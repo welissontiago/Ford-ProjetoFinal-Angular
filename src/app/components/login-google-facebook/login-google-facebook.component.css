@@ -1,0 +1,56 @@
+.modos-entrar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modos-entrar p {
+  color: var(--text-color-two);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.modos-entrar p::after {
+  content: "";
+  width: 127px;
+  height: 1px;
+  background: var(--element-line);
+  position: absolute;
+  top: 10px;
+  right: -150px;
+}
+
+.modos-entrar p::before {
+  content: "";
+  width: 127px;
+  height: 1px;
+  background: var(--element-line);
+  position: absolute;
+  top: 10px;
+  left: -150px;
+}
+
+.escolher-modo {
+  display: flex;
+  gap: 60px;
+  width: 100%;
+}
+
+.escolher-modo h3 {
+  box-sizing: border-box;
+  padding: 10px 40px;
+  background-color: var(--bg-element-color-one);
+  color: var(--text-color-three);
+  border: 1px solid var(--border-color-two);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+}
+
+.escolher-modo h3:hover {
+  background-color: var(--border-color-two);
+  border: 1px solid var(--bg-element-color-one);
+}

@@ -31,15 +31,35 @@
   .mat-mdc-text-field-wrapper {
   padding-left: 0;
   padding-right: 0;
-  border: 1px solid var(--input-border);
   color: var(--gray-text);
+}
+
+:host ::ng-deep .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-notched-outline__trailing {
+  border-color: var(--input-border);
 }
 
 :host
   ::ng-deep
-  .mat-mdc-form-field-has-icon-prefix:hover
-  .mat-mdc-text-field-wrapper:hover {
-  border: 1px solid var(--components-color);
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__leading,
+:host
+  ::ng-deep
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__notch,
+:host
+  ::ng-deep
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__trailing {
+  border-color: var(--components-color) !important;
+}
+
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: var(--input-border) !important;
+  border-width: 2px;
 }
 
 :host
@@ -48,7 +68,6 @@
   .mat-mdc-text-field-wrapper {
   padding-left: 0;
   padding-right: 0;
-  border: 1px solid var(--input-border);
   color: var(--gray-text);
 }
 
@@ -59,13 +78,6 @@
   ):hover
   .mdc-floating-label {
   color: var(--gray-text);
-}
-
-:host
-  ::ng-deep
-  .mat-mdc-form-field-has-icon-suffix:hover
-  .mat-mdc-text-field-wrapper:hover {
-  border: 1px solid var(--components-color);
 }
 
 :host

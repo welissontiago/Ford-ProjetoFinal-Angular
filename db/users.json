@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador do Sistema",
+      "email": "admin3213@email.com",
+      "phone": "71999999999",
+      "password": "admin",
+      "role": "admin"
+    }
+  ]
+}

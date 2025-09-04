@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,10 +13,15 @@ import {
 } from '@angular/forms';
 import { LoginGoogleFacebookComponent } from '../login-google-facebook/login-google-facebook.component';
 import { LoginRegisterCardComponent } from '../login-register-card/login-register-card.component';
+import { AuthService } from '../../core/services/auth.service';
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-component',
   imports: [
+    RouterModule,
+    CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
@@ -31,6 +36,8 @@ import { LoginRegisterCardComponent } from '../login-register-card/login-registe
 })
 export class LoginComponentComponent implements OnInit {
   loginForm!: FormGroup;
+  private authService = inject(AuthService);
+  private router = inject(Router);
   hide = true;
 
   constructor(private fb: FormBuilder) {}
@@ -38,8 +45,20 @@ export class LoginComponentComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required],
+      password: ['', Validators.required],
       checkboxLembreme: [''],
     });
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      this.authService.login(this.loginForm.value as any).subscribe((users) => {
+        if (users.length) {
+          this.router.navigate(['/home']);
+        } else {
+          console.error('Email ou senha inválidos');
+        }
+      });
+    }
   }
 }

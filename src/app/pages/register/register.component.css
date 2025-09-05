@@ -1,0 +1,35 @@
+.container-bg {
+  background-color: var(--body);
+}
+
+.container-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ford-logo-orange {
+  align-self: baseline;
+  width: 200px;
+  height: 100px;
+}
+
+.forms-login {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 520px) {
+  .container-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .ford-logo-orange {
+    align-self: center;
+  }
+}

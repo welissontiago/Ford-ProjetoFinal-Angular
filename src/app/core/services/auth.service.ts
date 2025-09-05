@@ -9,7 +9,7 @@ import { Role } from '../models/role.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly apiUrl = 'http://localhost:3000/users';
+  private readonly apiUrl = 'http://localhost:3001/users';
   private readonly userKey = 'currentUser';
 
   private http = inject(HttpClient);

@@ -1,0 +1,145 @@
+.titles-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titles-register h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.titles-register p {
+  margin-bottom: 15px;
+}
+
+.checkbox-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.checkbox-section span {
+  color: var(--text-special);
+}
+
+.input-custom {
+  width: 350px;
+  height: 50px;
+}
+
+.input-custom:hover {
+  border-color: var(--components-color) !important;
+}
+
+.login-form p {
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-form-field-has-icon-prefix
+  .mat-mdc-text-field-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--gray-text);
+}
+
+:host ::ng-deep .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-notched-outline__trailing {
+  border-color: var(--input-border);
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__leading,
+:host
+  ::ng-deep
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__notch,
+:host
+  ::ng-deep
+  .mat-mdc-form-field:not(.mdc-text-field--focused):hover
+  .mdc-notched-outline__trailing {
+  border-color: var(--components-color) !important;
+}
+
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
+:host ::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: var(--input-border) !important;
+  border-width: 2px;
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-form-field-has-icon-suffix
+  .mat-mdc-text-field-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--gray-text);
+}
+
+:host
+  ::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-floating-label {
+  color: var(--gray-text);
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-form-field.mat-form-field-animations-enabled
+  .mdc-text-field__input {
+  color: var(--text-title);
+}
+
+:host ::ng-deep .input-custom .mat-mdc-form-field-flex {
+  background-color: var(--input-bg);
+  padding-right: 0;
+}
+
+:host ::ng-deep a:-webkit-any-link {
+  text-decoration: none;
+  color: var(--text-special);
+}
+
+:host ::ng-deep .mat-internal-form-field > label {
+  color: var(--text-color-one);
+  font-weight: 500;
+}
+
+:host ::ng-deep .button-enter {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .mat-mdc-unelevated-button .mat-mdc-button-touch-target {
+  background-color: var(--text-special);
+  border-radius: 7px;
+}
+
+:host
+  ::ng-deep
+  .mat-mdc-unelevated-button:hover
+  .mat-mdc-button-touch-target:hover {
+  background-color: var(--component-hover);
+}
+
+:host ::ng-deep .mat-mdc-unelevated-button:not(:disabled):hover {
+  color: var(--input-bg);
+}
+
+@media (max-width: 500px) {
+  .input-custom {
+    width: 320px;
+  }
+}

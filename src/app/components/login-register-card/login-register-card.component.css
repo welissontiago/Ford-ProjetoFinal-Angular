@@ -27,3 +27,9 @@
   );
   border-radius: 8px 8px 0 0;
 }
+
+@media (max-width: 500px) {
+  .login-bg {
+    padding: 30px;
+  }
+}

@@ -39,6 +39,7 @@ export class LoginComponentComponent implements OnInit {
   private authService = inject(AuthService);
   private router = inject(Router);
   hide = true;
+  loginInvalido = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -52,11 +53,13 @@ export class LoginComponentComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
+      this.loginInvalido = false;
       this.authService.login(this.loginForm.value as any).subscribe((users) => {
         if (users.length) {
           this.router.navigate(['/home']);
         } else {
           console.error('Email ou senha inválidos');
+          this.loginInvalido = true;
         }
       });
     }

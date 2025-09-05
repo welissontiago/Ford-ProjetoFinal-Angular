@@ -54,3 +54,19 @@
   background-color: var(--border-color-two);
   border: 1px solid var(--bg-element-color-one);
 }
+
+@media (max-width: 500px) {
+  .modos-entrar p::after,
+  .modos-entrar p::before {
+    width: 80px;
+  }
+  .modos-entrar p::after {
+    right: -100px;
+  }
+  .modos-entrar p::before {
+    left: -100px;
+  }
+  .escolher-modo {
+    gap: 30px;
+  }
+}

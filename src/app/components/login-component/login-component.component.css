@@ -138,3 +138,38 @@
 .cadastre-se p {
   color: var(--text-color-two);
 }
+
+.error-message {
+  color: #f44336;
+  background-color: #ffebee;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  :host ::ng-deep .input-custom {
+    width: 320px;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-title {
+    display: flex;
+    align-self: baseline;
+  }
+  .cadastre-se p {
+    font-size: 12px;
+  }
+  :host ::ng-deep .checkbox-section {
+    gap: 40px;
+  }
+}

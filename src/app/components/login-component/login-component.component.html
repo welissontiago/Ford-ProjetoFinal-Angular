@@ -37,6 +37,10 @@
       <a routerLink="/cadastro">Esqueceu a senha?</a>
     </div>
 
+    <div *ngIf="loginInvalido" class="error-message">
+      <mat-icon>error_outline</mat-icon>
+      <span>E-mail ou senha inválidos. Por favor, tente novamente.</span>
+    </div>
 
     <div class="button-enter">
       <button mat-flat-button>

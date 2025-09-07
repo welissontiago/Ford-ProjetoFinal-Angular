@@ -1,7 +1,7 @@
 .login-bg {
   background-color: var(--card-background);
   border-radius: 8px;
-  border: 1px solid #f90;
+  border: 1px solid var(--components-color);
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
@@ -19,12 +19,7 @@
   left: 0;
   height: 10px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    #b47f2f 5.18%,
-    #c17910 51.45%,
-    rgba(180, 127, 47, 0.7) 98.02%
-  );
+  background: var(--gradient-login-register);
   border-radius: 8px 8px 0 0;
 }
 

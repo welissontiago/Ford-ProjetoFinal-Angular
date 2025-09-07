@@ -1,6 +1,10 @@
 <app-login-register-card>
   <div class="infos">
-    <img src="icons/open.svg" alt="entrar svg" />
+    @if (themeService.currentTheme() === 'dark') {
+    <img src="icons/open.svg" alt="entrar icone">
+    } @else {
+    <img src="icons/open-blue.svg" alt="entrar icone">
+    }
     <h1 class="--title-text-24px color-titles font-wight-700">
       Seja Bem-vindo de Volta
     </h1>

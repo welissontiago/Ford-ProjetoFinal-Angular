@@ -16,6 +16,7 @@ import { LoginRegisterCardComponent } from '../login-register-card/login-registe
 import { AuthService } from '../../core/services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-login-component',
@@ -37,6 +38,7 @@ import { CommonModule } from '@angular/common';
 export class LoginComponentComponent implements OnInit {
   loginForm!: FormGroup;
   private authService = inject(AuthService);
+  public themeService = inject(ThemeService);
   private router = inject(Router);
   hide = true;
   loginInvalido = false;

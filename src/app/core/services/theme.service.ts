@@ -20,9 +20,9 @@ export class ThemeService {
       const theme = this.currentTheme();
       localStorage.setItem('app-theme', theme);
       if (theme === 'light') {
-        this.renderer.addClass(document.body, 'light-theme');
+        this.renderer.addClass(document.documentElement, 'white-theme');
       } else {
-        this.renderer.removeClass(document.body, 'light-theme');
+        this.renderer.removeClass(document.documentElement, 'white-theme');
       }
     });
   }

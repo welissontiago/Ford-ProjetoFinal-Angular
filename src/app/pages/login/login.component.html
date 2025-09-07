@@ -1,5 +1,12 @@
-<img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company">
+<div class="header-login">
+  @if (themeService.currentTheme() === 'dark') {
+  <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company">
+  } @else {
+  <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company">
+  }
+  <app-theme-toggle class="theme"></app-theme-toggle>
+</div>
+
 <div class="forms-login">
   <app-login-component></app-login-component>
-  <app-theme-toggle></app-theme-toggle>
 </div>

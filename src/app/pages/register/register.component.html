@@ -1,15 +1,14 @@
-<body>
-  <div class="container-bg">
-    <div class="container-register"></div>
-    <img
-      class="ford-logo-orange"
-      src="logo-ford/logo-orange.png"
-      alt="logo da Ford motor Company"
-    />
-    <div class="container-register">
-      <div class="forms-login">
-        <app-register-forms></app-register-forms>
-      </div>
-    </div>
+<div class="container-register"></div>
+<div class="header-login">
+  @if (themeService.currentTheme() === 'dark') {
+  <a routerLink="/login"><img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company"></a>
+  } @else {
+  <a routerLink="/login"><img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company"></a>
+  }
+  <app-theme-toggle class="theme"></app-theme-toggle>
+</div>
+<div class="container-register">
+  <div class="forms-login">
+    <app-register-forms></app-register-forms>
   </div>
-</body>
+</div>

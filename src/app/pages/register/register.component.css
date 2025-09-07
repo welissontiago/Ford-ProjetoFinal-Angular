@@ -1,7 +1,3 @@
-.container-bg {
-  background-color: var(--body);
-}
-
 .container-register {
   display: flex;
   align-items: center;

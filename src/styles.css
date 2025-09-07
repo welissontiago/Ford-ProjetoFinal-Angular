@@ -12,6 +12,7 @@
 
 :root {
   --body: #1a1a1a;
+  --card-background: #323232;
   --components-color: #ff9900;
   --text-color-one: #b5b7b8;
   --text-color-two: #9ea0a0;
@@ -29,8 +30,9 @@
   --border-color-two: #515151;
 }
 
-:root .white-theme {
-  --body: #1a1a1a;
+html.white-theme {
+  --body: #F4F4F4;
+  --card-background: #FFFFFF;
   --components-color: #ff9900;
   --text-color-one: #b5b7b8;
   --text-color-two: #9ea0a0;
@@ -46,6 +48,11 @@
   --input-bg: #262626;
   --input-border: #555556;
   --border-color-two: #515151;
+}
+
+body{
+  background: var(--body);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .color-titles {

@@ -1,12 +1,23 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Administrador do Sistema",
       "email": "admin3213@email.com",
       "phone": "71999999999",
       "password": "admin",
       "role": "admin"
+    },
+    {
+      "id": "1c4d",
+      "name": "uelisson",
+      "email": "teste@teste.com",
+      "phone": "71900000000",
+      "password": "teste@123",
+      "repeatPassword": "teste@123",
+      "checkboxTermos": true,
+      "checkboxNewsLetter": false,
+      "role": "usuario"
     }
   ]
 }

@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginGoogleFacebookComponent } from '../../login-google-facebook/login-google-facebook.component';
+import { AuthService } from '../../../core/services/auth.service';
+import { passwordMatchValidator } from '../../../core/validators/password-match.validator';
 
 @Component({
   selector: 'app-register-forms',
@@ -35,21 +37,42 @@ import { LoginGoogleFacebookComponent } from '../../login-google-facebook/login-
 export class RegisterFormsComponent implements OnInit {
   hide = true;
   registerForm!: FormGroup;
+  private authService = inject(AuthService);
   private router = inject(Router);
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.maxLength(11)]],
-      password: ['', [Validators.required]],
-      repeatPassword: ['', [Validators.required]],
-      checkboxTermos: ['', [Validators.required]],
-      checkboxNewsLetter: [''],
-    });
+    this.registerForm = this.fb.group(
+      {
+        name: ['', [Validators.required, Validators.minLength(3)]],
+        email: ['', [Validators.required, Validators.email]],
+        phone: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(11),
+            Validators.minLength(11),
+          ],
+        ],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        repeatPassword: ['', [Validators.required]],
+        checkboxTermos: [false, [Validators.requiredTrue]],
+        checkboxNewsLetter: [false],
+      },
+      {
+        validators: passwordMatchValidator,
+      }
+    );
   }
 
-  onSubmit() {}
+  onSubmit() {
+    if (this.registerForm.valid) {
+      this.authService
+        .register(this.registerForm.value as any)
+        .subscribe(() => {
+          this.router.navigate(['/login']);
+        });
+    }
+  }
 }

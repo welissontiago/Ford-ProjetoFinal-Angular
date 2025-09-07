@@ -47,6 +47,10 @@
   color: var(--gray-text);
 }
 
+.mat-mdc-form-field-error {
+  text-align: end;
+}
+
 :host ::ng-deep .mdc-notched-outline__leading,
 :host ::ng-deep .mdc-notched-outline__notch,
 :host ::ng-deep .mdc-notched-outline__trailing {

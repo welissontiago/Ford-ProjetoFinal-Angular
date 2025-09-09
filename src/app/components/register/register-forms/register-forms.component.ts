@@ -16,9 +16,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginGoogleFacebookComponent } from '../../login-google-facebook/login-google-facebook.component';
 import { AuthService } from '../../../core/services/auth.service';
 import { passwordMatchValidator } from '../../../core/validators/password-match.validator';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { TermosComponent } from '../termos/termos.component';
 
 @Component({
   selector: 'app-register-forms',
+  standalone: true,
   imports: [
     LoginGoogleFacebookComponent,
     LoginRegisterCardComponent,
@@ -39,6 +42,7 @@ export class RegisterFormsComponent implements OnInit {
   registerForm!: FormGroup;
   private authService = inject(AuthService);
   private router = inject(Router);
+  readonly dialog = inject(MatDialog);
 
   constructor(private fb: FormBuilder) {}
 
@@ -64,6 +68,14 @@ export class RegisterFormsComponent implements OnInit {
         validators: passwordMatchValidator,
       }
     );
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(TermosComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   onSubmit() {

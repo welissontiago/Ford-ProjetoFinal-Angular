@@ -17,11 +17,31 @@
 .checkbox-section {
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
+}
+
+.checkbox-section mat-checkbox {
+  margin-top: 16px;
+}
+
+.checkbox-section mat-checkbox:last-child {
+  margin-top: -10px;
 }
 
 .checkbox-section span {
   color: var(--text-special);
+}
+
+.termos {
+  background: none;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-special);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.termos:hover {
+  color: var(--component-hover);
 }
 
 .input-custom {
@@ -145,5 +165,15 @@
 @media (max-width: 500px) {
   .input-custom {
     width: 320px;
+  }
+  :host ::ng-deep .mat-internal-form-field > label {
+    font-weight: 400;
+    font-size: 0.7rem;
+  }
+  .termos {
+    font-size: 0.7rem;
+  }
+  .login-form p {
+    margin-top: 20px;
   }
 }

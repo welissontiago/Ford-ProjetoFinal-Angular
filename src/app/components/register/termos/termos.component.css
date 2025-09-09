@@ -1,0 +1,16 @@
+.mat-typography p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--text-color-four);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mat-typography h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--text-color-four);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

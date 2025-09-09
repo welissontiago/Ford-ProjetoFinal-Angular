@@ -13,9 +13,11 @@
   --body: #1a1a1a;
   --card-background: #323232;
   --components-color: #ff9900;
+  --text-a-color-hover: #ff9600;
   --text-color-one: #b5b7b8;
   --text-color-two: #9ea0a0;
   --text-color-three: #f4f4f4;
+  --text-color-four: #262626;
   --element-line: #4e4f4f;
   --bg-element-color-one: #262626;
   --text-title: #ffffff;
@@ -27,6 +29,7 @@
   --input-bg: #262626;
   --input-border: #555556;
   --border-color-two: #515151;
+  --header-bg: #1c1c1d;
   --gradient-login-register: linear-gradient(
     90deg,
     #b47f2f 5.18%,
@@ -39,9 +42,11 @@ html.white-theme {
   --body: #f4f4f4;
   --card-background: #ffffff;
   --components-color: #2563eb;
+  --text-a-color-hover: #a9aade;
   --text-color-one: #4e4f4f;
   --text-color-two: #9ea0a0;
   --text-color-three: #f4f4f4;
+  --text-color-four: #262626;
   --element-line: #4e4f4f;
   --bg-element-color-one: #2563eb;
   --text-title: #262626;
@@ -53,6 +58,7 @@ html.white-theme {
   --input-bg: #ebebf2;
   --input-border: #555556;
   --border-color-two: #5f86da;
+  --header-bg: #044ea7;
   --gradient-login-register: linear-gradient(
     90deg,
     #97c4f7 5.18%,
@@ -154,4 +160,24 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+p,
+ul,
+h3,
+li,
+ul {
+  margin: 0px;
 }

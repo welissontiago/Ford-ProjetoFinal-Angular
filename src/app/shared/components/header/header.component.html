@@ -1,0 +1,81 @@
+<body>
+  <header class="header-bg">
+    <div class="header">
+      <a href="./"
+        >@if (themeService.currentTheme() === 'dark') {
+        <img
+          class="ford-logo-orange"
+          src="logo-ford/logo-orange.png"
+          alt="logo da Ford motor Company"
+        />
+        } @else {
+        <img
+          class="ford-logo-blue"
+          src="logo-ford/logo-zul.png"
+          alt="logo da Ford motor Company"
+        />
+        }</a
+      >
+      <nav aria-label="primaria">
+        <ul class="header-menu">
+          <li><a href="/">Veículos</a></li>
+          <li><a href="/">Ofertas</a></li>
+          <li><a href="/">Comprar</a></li>
+          <li>
+            <button matButton [matMenuTriggerFor]="menu">
+              Serviços <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <div class="row">
+                <div class="column">
+                  <span class="menu-title">Serviços</span>
+                  <button mat-menu-item>Ford Pós-Venda</button>
+                  <button mat-menu-item>Recall</button>
+                  <button mat-menu-item>Ford Protect</button>
+                  <button mat-menu-item>Garantia Ford</button>
+                  <button mat-menu-item>Peças Ford</button>
+                </div>
+                <div class="column">
+                  <span class="menu-title">Meu Ford</span>
+                  <button mat-menu-item>Minhas Experiências Ford</button>
+                  <button mat-menu-item>Tutoriais (Guia 360)</button>
+                  <button mat-menu-item>Serviço Leva e Traz</button>
+                  <button mat-menu-item>Revisões Ford</button>
+                  <button mat-menu-item>Agende seu Serviço</button>
+                  <button mat-menu-item>Manuais</button>
+                </div>
+                <div class="column">
+                  <span class="menu-title">Tecnologia</span>
+                  <button mat-menu-item>SYNC®</button>
+                  <button mat-menu-item>FordPass™</button>
+                  <button mat-menu-item>Assistência de Emergência</button>
+                  <button mat-menu-item>Applink™</button>
+                  <button mat-menu-item>Atualização SYNC®</button>
+                </div>
+              </div>
+            </mat-menu>
+          </li>
+          <li><a href="/">FordPro</a></li>
+          <li><a href="/">Iniciar Sessão</a></li>
+          <li>
+            <form class="form-busca" action="/buscar" method="get">
+              <input
+                type="text"
+                id="busca"
+                name="q"
+                placeholder="Pesquisar Veiculos"
+              />
+              <button
+                class="btn-busca"
+                type="submit"
+                aria-label="Buscar"
+              ></button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+      <div class="Perfil"></div>
+      <app-theme-toggle class="theme"></app-theme-toggle>
+    </div>
+  </header>
+</body>

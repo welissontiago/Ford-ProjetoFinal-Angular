@@ -1,7 +1,7 @@
 .example-full-width {
-  max-width: 180px;
+  max-width: 250px;
   width: 100%;
-  max-height: 70px;
+  max-height: 50px;
   height: 100%;
 }
 
@@ -30,4 +30,18 @@
   .mat-mdc-form-field:not(.mat-form-field-disabled):hover
   .mat-mdc-floating-label.mdc-floating-label {
   color: var(--components-color);
+}
+
+@media (max-width: 1150px) {
+  .example-full-width {
+    max-width: 180px;
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .example-full-width {
+    max-width: 170px;
+    max-height: 50px;
+  }
 }

@@ -79,6 +79,12 @@
   display: block;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 @media (max-width: 1350px) {
   .header-menu a {
     font-size: 0.9rem;
@@ -94,6 +100,26 @@
   .form-busca .btn-busca {
     width: 14px;
     height: 14px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .ford-logo-orange {
+    width: 100px;
+    height: 40px;
+  }
+
+  .ford-logo-blue {
+    width: 100px;
+    height: 40px;
+  }
+
+  .Perfil {
+    width: 35px;
+    height: 35px;
+  }
+  .header-right {
+    gap: 20px;
   }
 }
 

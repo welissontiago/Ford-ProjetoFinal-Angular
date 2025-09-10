@@ -1,21 +1,11 @@
 <body>
   <header class="header-bg">
     <div class="header">
-      <a href="./"
-        >@if (themeService.currentTheme() === 'dark') {
-        <img
-          class="ford-logo-orange"
-          src="logo-ford/logo-orange.png"
-          alt="logo da Ford motor Company"
-        />
+      <a href="./">@if (themeService.currentTheme() === 'dark') {
+        <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
         } @else {
-        <img
-          class="ford-logo-blue"
-          src="logo-ford/logo-zul.png"
-          alt="logo da Ford motor Company"
-        />
-        }</a
-      >
+        <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
+        }</a>
       <nav aria-label="primaria">
         <ul class="header-menu">
           <li><a href="/">Veículos</a></li>
@@ -24,11 +14,13 @@
           <li><a href="/">Comprar</a></li>
           <li><a href="/">FordPro</a></li>
           <li><a href="/">Iniciar Sessão</a></li>
-          <li><app-search-filter></app-search-filter></li>
         </ul>
       </nav>
-      <div class="Perfil"></div>
-      <app-theme-toggle class="theme"></app-theme-toggle>
+      <div class="header-right">
+        <li><app-search-filter></app-search-filter></li>
+        <div class="Perfil"></div>
+        <app-theme-toggle class="theme"></app-theme-toggle>
+      </div>
     </div>
   </header>
 </body>

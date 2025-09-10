@@ -1,12 +1,7 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <mat-label>State</mat-label>
-    <input
-      matInput
-      aria-label="State"
-      [matAutocomplete]="auto"
-      [formControl]="stateCtrl"
-    />
+    <mat-label>Veiculos</mat-label>
+    <input matInput aria-label="Veiculos" [matAutocomplete]="auto" [formControl]="stateCtrl" />
     <mat-autocomplete #auto="matAutocomplete">
       @for (state of filteredStates | async; track state) {
       <mat-option [value]="state.name">

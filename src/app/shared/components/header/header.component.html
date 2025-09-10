@@ -1,21 +1,11 @@
 <body>
   <header class="header-bg">
     <div class="header">
-      <a href="./"
-        >@if (themeService.currentTheme() === 'dark') {
-        <img
-          class="ford-logo-orange"
-          src="logo-ford/logo-orange.png"
-          alt="logo da Ford motor Company"
-        />
+      <a href="./">@if (themeService.currentTheme() === 'dark') {
+        <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
         } @else {
-        <img
-          class="ford-logo-blue"
-          src="logo-ford/logo-zul.png"
-          alt="logo da Ford motor Company"
-        />
-        }</a
-      >
+        <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
+        }</a>
       <nav aria-label="primaria">
         <ul class="header-menu">
           <li><a href="/">Veículos</a></li>
@@ -29,7 +19,15 @@
               <div class="row">
                 <div class="column">
                   <span class="menu-title">Serviços</span>
-                  <button mat-menu-item>Ford Pós-Venda</button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon>local_offer</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Ford Pós-Venda</span>
+                      <span class="menu-desc">Mantenha seu veículo sempre novo com o cuidado de quem mais entende do assunto.</span>
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+
+                  </button>
                   <button mat-menu-item>Recall</button>
                   <button mat-menu-item>Ford Protect</button>
                   <button mat-menu-item>Garantia Ford</button>
@@ -59,17 +57,8 @@
           <li><a href="/">Iniciar Sessão</a></li>
           <li>
             <form class="form-busca" action="/buscar" method="get">
-              <input
-                type="text"
-                id="busca"
-                name="q"
-                placeholder="Pesquisar Veiculos"
-              />
-              <button
-                class="btn-busca"
-                type="submit"
-                aria-label="Buscar"
-              ></button>
+              <input type="text" id="busca" name="q" placeholder="Pesquisar Veiculos" />
+              <button class="btn-busca" type="submit" aria-label="Buscar"></button>
             </form>
           </li>
         </ul>

@@ -1,11 +1,21 @@
 <body>
   <header class="header-bg">
     <div class="header">
-      <a href="./">@if (themeService.currentTheme() === 'dark') {
-        <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
+      <a href="./"
+        >@if (themeService.currentTheme() === 'dark') {
+        <img
+          class="ford-logo-orange"
+          src="logo-ford/logo-orange.png"
+          alt="logo da Ford motor Company"
+        />
         } @else {
-        <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
-        }</a>
+        <img
+          class="ford-logo-blue"
+          src="logo-ford/logo-zul.png"
+          alt="logo da Ford motor Company"
+        />
+        }</a
+      >
       <nav aria-label="primaria">
         <ul class="header-menu">
           <li><a href="/">Veículos</a></li>
@@ -20,35 +30,177 @@
                 <div class="column">
                   <span class="menu-title">Serviços</span>
                   <button mat-menu-item class="menu-item">
-                    <mat-icon>local_offer</mat-icon>
+                    <mat-icon class="icon-menu">local_offer</mat-icon>
                     <div class="menu-text">
                       <span class="menu-label">Ford Pós-Venda</span>
-                      <span class="menu-desc">Mantenha seu veículo sempre novo com o cuidado de quem mais entende do assunto.</span>
+                      <span class="menu-desc"
+                        >Mantenha seu veículo sempre novo com o cuidado de quem
+                        mais entende do assunto.</span
+                      >
                       <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
                     </div>
-
                   </button>
-                  <button mat-menu-item>Recall</button>
-                  <button mat-menu-item>Ford Protect</button>
-                  <button mat-menu-item>Garantia Ford</button>
-                  <button mat-menu-item>Peças Ford</button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">contact_phone</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Recall</span>
+                      <span class="menu-desc"
+                        >O Recall Ford é um canal exclusivo para convocar os
+                        proprietários de veículos Ford.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">security</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Ford Protect</span>
+                      <span class="menu-desc"
+                        >Confira o plano Ford Protect que mais combina com você
+                        e fique livre de preocupações.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">verified</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Garantia Ford</span>
+                      <span class="menu-desc"
+                        >Descubra mais sobre a garantia do seu Ford.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">construction</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Peças Ford</span>
+                      <span class="menu-desc"
+                        >Descubra a linha de peças da Ford: mais opções para o
+                        seu veículo, garantindo qualidade e desempenho
+                        excepcionais!</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
                 </div>
                 <div class="column">
                   <span class="menu-title">Meu Ford</span>
-                  <button mat-menu-item>Minhas Experiências Ford</button>
-                  <button mat-menu-item>Tutoriais (Guia 360)</button>
-                  <button mat-menu-item>Serviço Leva e Traz</button>
-                  <button mat-menu-item>Revisões Ford</button>
-                  <button mat-menu-item>Agende seu Serviço</button>
-                  <button mat-menu-item>Manuais</button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">science</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Minhas Experiências Ford</span>
+                      <span class="menu-desc"
+                        >Conheça o universo de soluções.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">play_lesson</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Tutoriais (Guia 360)</span>
+                      <span class="menu-desc"
+                        >Descubra de forma prática e fácil, através de
+                        tutoriais, como utilizar os principais equipamentos do
+                        seu Ford.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">sync_alt</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Serviço Leva e Traz</span>
+                      <span class="menu-desc"
+                        >Encontre a concessionária mais próxima de você e agende
+                        seu Serviço Leva e Traz!</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">edit_square</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Revisões Ford</span>
+                      <span class="menu-desc"
+                        >Seu veículo sempre pronto para você chegar mais
+                        longe.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">calendar_month</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Agende seu Serviço</span>
+                      <span class="menu-desc">Venha agendar o seu serviço</span>
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">menu_book</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Manuais</span>
+                      <span class="menu-desc"
+                        >Aproveite o máximo do seu Ford com todas as informações
+                        em um único lugar</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
                 </div>
                 <div class="column">
                   <span class="menu-title">Tecnologia</span>
-                  <button mat-menu-item>SYNC®</button>
-                  <button mat-menu-item>FordPass™</button>
-                  <button mat-menu-item>Assistência de Emergência</button>
-                  <button mat-menu-item>Applink™</button>
-                  <button mat-menu-item>Atualização SYNC®</button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">record_voice_over</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">SYNC®</span>
+                      <span class="menu-desc"
+                        >O SYNC® permite que você use sua voz para fazer
+                        chamadas, escutar músicas, selecionar aplicativos com o
+                        Ford AppLink™ e muito mais.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">touch_app</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">FordPass™</span>
+                      <span class="menu-desc"
+                        >FordPass. Você e o seu carro sempre conectados para
+                        mais conforto e segurança.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">emergency</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Assistência de Emergência</span>
+                      <span class="menu-desc"
+                        >A Assistência de Emergência está presente em todos os
+                        veículos equipados com SYNC®, sem custo adicional e
+                        válido por toda a vida útil do veículo.</span
+                      >
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
+                  <button mat-menu-item class="menu-item">
+                    <mat-icon class="icon-menu">tap_and_play</mat-icon>
+                    <div class="menu-text">
+                      <span class="menu-label">Applink™</span>
+                      <span class="menu-desc"
+                        >Todos estamos habituados a utilizar aplicativos de
+                        smartphones onde e quando pretendemos. E, no seu Ford,
+                        agora não é necessário deixar de utilizá-los quando se
+                        está atrás do volante.
+                      </span>
+                      <mat-icon class="menu-hover-icon">arrow_forward</mat-icon>
+                    </div>
+                  </button>
                 </div>
               </div>
             </mat-menu>
@@ -57,8 +209,17 @@
           <li><a href="/">Iniciar Sessão</a></li>
           <li>
             <form class="form-busca" action="/buscar" method="get">
-              <input type="text" id="busca" name="q" placeholder="Pesquisar Veiculos" />
-              <button class="btn-busca" type="submit" aria-label="Buscar"></button>
+              <input
+                type="text"
+                id="busca"
+                name="q"
+                placeholder="Pesquisar Veiculos"
+              />
+              <button
+                class="btn-busca"
+                type="submit"
+                aria-label="Buscar"
+              ></button>
             </form>
           </li>
         </ul>

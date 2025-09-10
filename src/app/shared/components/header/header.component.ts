@@ -4,6 +4,8 @@ import { ThemeService } from '../../../core/services/theme.service';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MegamenuComponent } from './megamenu/megamenu.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MegamenuComponent,
+    SearchFilterComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',

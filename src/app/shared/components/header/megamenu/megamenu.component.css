@@ -1,0 +1,106 @@
+.servicos-button {
+  background: none;
+  color: #f2f2f2;
+  font-family: Roboto;
+  margin-top: 0px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-mdc-menu-item:has(.material-icons, mat-icon, [matbuttonicon]):hover {
+  background-color: var(--hover-megamenu);
+}
+
+.mat-mdc-menu-item:has(.material-icons, mat-icon, [matbuttonicon]):hover
+  .icon-menu {
+  color: var(--text-special);
+}
+
+.servicos-button:hover {
+  color: var(--text-a-color-hover);
+}
+
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  max-width: none !important;
+  min-width: auto !important;
+  width: auto !important;
+  background-color: var(--megamenu-bg) !important;
+}
+
+::ng-deep .mat-menu-content {
+  overflow-x: hidden !important;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-label {
+  font-size: 0.875rem;
+  color: var(--text-color-one);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.menu-desc {
+  font-size: 0.775rem;
+  font-family: Roboto, "Helvetica Neue";
+  font-weight: 400;
+  color: var(--text-color-one);
+}
+
+.menu-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 8px;
+  margin-left: 30px;
+}
+
+.menu-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 12px 16px !important;
+  position: relative;
+  border-radius: 8px;
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  align-items: flex-start;
+}
+
+.menu-hover-icon {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.menu-item:hover {
+  background: #f5f5f5;
+}
+
+.menu-item:hover .menu-hover-icon {
+  opacity: 1;
+}
+
+@media (max-width: 1350px) {
+  .servicos-button {
+    font-size: 0.9rem;
+  }
+  .row {
+    gap: 15px;
+  }
+}

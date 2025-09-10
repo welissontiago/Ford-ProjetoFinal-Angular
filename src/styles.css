@@ -11,6 +11,8 @@
 
 :root {
   --body: #1a1a1a;
+  --megamenu-bg: #262626;
+  --hover-megamenu: #4e4f4f;
   --card-background: #323232;
   --components-color: #ff9900;
   --text-a-color-hover: #ff9600;
@@ -40,6 +42,8 @@
 
 html.white-theme {
   --body: #f4f4f4;
+  --megamenu-bg: #ebebf2;
+  --hover-megamenu: #dbdbe1;
   --card-background: #ffffff;
   --components-color: #2563eb;
   --text-a-color-hover: #a9aade;

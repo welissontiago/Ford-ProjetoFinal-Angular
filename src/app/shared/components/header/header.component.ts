@@ -8,6 +8,7 @@ import { MegamenuComponent } from './megamenu/megamenu.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @Component({
   selector: 'app-header',
@@ -27,10 +28,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   public themeService = inject(ThemeService);
+  isMenuOpen = false;
 
   @Output() menuToggle = new EventEmitter<void>();
 
   onMenuClick(): void {
+    this.isMenuOpen = !this.isMenuOpen;
     this.menuToggle.emit();
   }
 }

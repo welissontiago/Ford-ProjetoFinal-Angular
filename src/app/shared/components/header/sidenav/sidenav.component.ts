@@ -10,10 +10,8 @@ import { HeaderComponent } from '../header.component';
 @Component({
   selector: 'app-sidenav',
   imports: [
-    RouterOutlet,
     HeaderComponent,
     MatSidenavModule,
-    MatTreeModule,
     CommonModule,
     MatIconModule,
     MatButtonModule,
@@ -21,4 +19,14 @@ import { HeaderComponent } from '../header.component';
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css',
 })
-export class SidenavComponent {}
+export class SidenavComponent {
+  @ViewChild('sidenav') public sidenav!: MatSidenav;
+
+  public toggle(): void {
+    this.sidenav.toggle();
+  }
+
+  public closeSidenav(): void {
+    this.sidenav.close();
+  }
+}

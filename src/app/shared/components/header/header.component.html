@@ -2,17 +2,26 @@
   <div class="header">
     <div class="header-left-mobile">
       <button mat-icon-button class="hamburger-button" (click)="onMenuClick()">
-        <mat-icon>menu</mat-icon>
+        <mat-icon style="color: white">{{
+          isMenuOpen ? "close" : "menu"
+        }}</mat-icon>
       </button>
       <a href="./">
         @if (themeService.currentTheme() === 'dark') {
-        <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
+        <img
+          class="ford-logo-orange"
+          src="logo-ford/logo-orange.png"
+          alt="logo da Ford motor Company"
+        />
         } @else {
-        <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
+        <img
+          class="ford-logo-blue"
+          src="logo-ford/logo-zul.png"
+          alt="logo da Ford motor Company"
+        />
         }
       </a>
     </div>
-
 
     <nav aria-label="primaria" class="desktop-nav">
       <ul class="header-menu">

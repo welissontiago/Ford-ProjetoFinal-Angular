@@ -8,7 +8,7 @@ import { MegamenuComponent } from './megamenu/megamenu.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +22,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MegamenuComponent,
     SearchFilterComponent,
     MatSidenavModule,
+    MatListModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',

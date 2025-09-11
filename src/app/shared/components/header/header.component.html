@@ -1,43 +1,85 @@
-<header class="header-bg">
-  <div class="header">
-    <div class="header-left-mobile">
-      <button mat-icon-button class="hamburger-button" (click)="onMenuClick()">
-        <mat-icon style="color: white">{{
-          isMenuOpen ? "close" : "menu"
-        }}</mat-icon>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    mode="over"
+    [(opened)]="isMenuOpen"
+    class="mobile-sidenav"
+  >
+    <mat-list role="list">
+      <button class="button-mobile" mat-list-item>
+        <mat-icon matListIcon>directions_car</mat-icon>
+        <span>Veículos</span>
       </button>
-      <a href="./">
-        @if (themeService.currentTheme() === 'dark') {
-        <img
-          class="ford-logo-orange"
-          src="logo-ford/logo-orange.png"
-          alt="logo da Ford motor Company"
-        />
-        } @else {
-        <img
-          class="ford-logo-blue"
-          src="logo-ford/logo-zul.png"
-          alt="logo da Ford motor Company"
-        />
-        }
-      </a>
-    </div>
 
-    <nav aria-label="primaria" class="desktop-nav">
-      <ul class="header-menu">
-        <li><a href="/">Veículos</a></li>
-        <li><app-megamenu></app-megamenu></li>
-        <li><a href="/">Ofertas</a></li>
-        <li><a href="/">Comprar</a></li>
-        <li><a href="/">FordPro</a></li>
-        <li><a href="/">Iniciar Sessão</a></li>
-      </ul>
-    </nav>
+      <button class="button-mobile" mat-list-item>
+        <mat-icon matListIcon>inventory_2</mat-icon>
+        <span>Item 2</span>
+      </button>
 
-    <div class="header-right">
-      <li><app-search-filter></app-search-filter></li>
-      <div class="Perfil"></div>
-      <app-theme-toggle class="theme"></app-theme-toggle>
-    </div>
-  </div>
-</header>
+      <button class="button-mobile" mat-list-item>
+        <mat-icon matListIcon>local_offer</mat-icon>
+        <span>Ofertas</span>
+      </button>
+
+      <button class="button-mobile" mat-list-item>
+        <mat-icon matListIcon>shopping_cart</mat-icon>
+        <span>Comprar</span>
+      </button>
+
+      <button class="button-mobile" mat-list-item>
+        <mat-icon matListIcon>business</mat-icon>
+        <span>FordPro</span>
+      </button>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header class="header-bg">
+      <div class="header">
+        <div class="header-left-mobile">
+          <button
+            mat-icon-button
+            class="hamburger-button"
+            (click)="onMenuClick()"
+          >
+            <mat-icon style="color: white">{{
+              isMenuOpen ? "close" : "menu"
+            }}</mat-icon>
+          </button>
+          <a href="./">
+            @if (themeService.currentTheme() === 'dark') {
+            <img
+              class="ford-logo-orange"
+              src="logo-ford/logo-orange.png"
+              alt="logo da Ford motor Company"
+            />
+            } @else {
+            <img
+              class="ford-logo-blue"
+              src="logo-ford/logo-zul.png"
+              alt="logo da Ford motor Company"
+            />
+            }
+          </a>
+        </div>
+
+        <!-- Menu desktop -->
+        <nav aria-label="primaria" class="desktop-nav">
+          <ul class="header-menu">
+            <li><a href="/">Veículos</a></li>
+            <li><app-megamenu></app-megamenu></li>
+            <li><a href="/">Ofertas</a></li>
+            <li><a href="/">Comprar</a></li>
+            <li><a href="/">FordPro</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right">
+          <li><app-search-filter></app-search-filter></li>
+          <div class="Perfil"></div>
+          <app-theme-toggle class="theme"></app-theme-toggle>
+        </div>
+      </div>
+    </header>
+  </mat-sidenav-content>
+</mat-sidenav-container>

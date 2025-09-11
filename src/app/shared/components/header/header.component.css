@@ -86,7 +86,7 @@
 }
 
 .hamburger-button {
-  display: none; /* Escondido por padrão */
+  display: none;
 }
 
 .sidenav-container {
@@ -95,7 +95,7 @@
 
 .sidenav {
   width: 250px;
-  background-color: var(--header-bg); /* Use a cor de fundo do seu header */
+  background-color: var(--header-bg);
 }
 
 .mat-tree {
@@ -106,6 +106,40 @@
 .mat-tree-node,
 .mat-nested-tree-node {
   color: #f2f2f2;
+}
+
+::ng-deep .mat-mdc-list-base {
+  width: 100% !important;
+}
+
+::ng-deep .mat-mdc-list-base .mdc-list-item__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 20px;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  display: flex !important;
+  align-items: center;
+}
+
+::ng-deep .mat-mdc-list-item:not(.mat-mdc-list-item-interactive) {
+  cursor: pointer !important;
+}
+
+::ng-deep .mat-mdc-list-item:not(.mat-mdc-list-item-interactive):hover {
+  background-color: aqua;
+}
+
+::ng-deep .mat-drawer.mat-drawer-opened.mat-drawer-opened {
+  height: 300px !important;
+  margin-top: 90px;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  gap: 20px;
 }
 
 @media (max-width: 1020px) {

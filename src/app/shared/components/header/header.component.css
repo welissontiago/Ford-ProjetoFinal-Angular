@@ -85,6 +85,48 @@
   gap: 40px;
 }
 
+.hamburger-button {
+  display: none; /* Escondido por padrão */
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: var(--header-bg); /* Use a cor de fundo do seu header */
+}
+
+.mat-tree {
+  background: transparent;
+  color: #f2f2f2;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+  color: #f2f2f2;
+}
+
+@media (max-width: 1020px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger-button.is-active {
+    transform: rotate(90deg);
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 1350px) {
   .header-menu a {
     font-size: 0.9rem;

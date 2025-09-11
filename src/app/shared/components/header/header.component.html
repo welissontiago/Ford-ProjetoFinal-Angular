@@ -1,26 +1,32 @@
-<body>
-  <header class="header-bg">
-    <div class="header">
-      <a href="./">@if (themeService.currentTheme() === 'dark') {
-        <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
-        } @else {
-        <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
-        }</a>
-      <nav aria-label="primaria">
-        <ul class="header-menu">
-          <li><a href="/">Veículos</a></li>
-          <li><app-megamenu></app-megamenu></li>
-          <li><a href="/">Ofertas</a></li>
-          <li><a href="/">Comprar</a></li>
-          <li><a href="/">FordPro</a></li>
-          <li><a href="/">Iniciar Sessão</a></li>
-        </ul>
-      </nav>
-      <div class="header-right">
-        <li><app-search-filter></app-search-filter></li>
-        <div class="Perfil"></div>
-        <app-theme-toggle class="theme"></app-theme-toggle>
-      </div>
+<header class="header-bg">
+  <div class="header">
+    <button mat-icon-button class="hamburger-button" (click)="onMenuClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <a href="./">
+      @if (themeService.currentTheme() === 'dark') {
+      <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
+      } @else {
+      <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
+      }
+    </a>
+
+    <nav aria-label="primaria" class="desktop-nav">
+      <ul class="header-menu">
+        <li><a href="/">Veículos</a></li>
+        <li><app-megamenu></app-megamenu></li>
+        <li><a href="/">Ofertas</a></li>
+        <li><a href="/">Comprar</a></li>
+        <li><a href="/">FordPro</a></li>
+        <li><a href="/">Iniciar Sessão</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <li><app-search-filter></app-search-filter></li>
+      <div class="Perfil"></div>
+      <app-theme-toggle class="theme"></app-theme-toggle>
     </div>
-  </header>
-</body>
+  </div>
+</header>

@@ -103,6 +103,10 @@
   color: #f2f2f2;
 }
 
+::ng-deep .mat-drawer {
+  background-color: var(--megamenu-bg) !important;
+}
+
 .mat-tree-node,
 .mat-nested-tree-node {
   color: #f2f2f2;
@@ -116,7 +120,6 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  margin-left: 20px;
 }
 
 ::ng-deep .mat-drawer-inner-container {
@@ -129,17 +132,42 @@
 }
 
 ::ng-deep .mat-mdc-list-item:not(.mat-mdc-list-item-interactive):hover {
-  background-color: aqua;
+  background-color: var(--hover-megamenu);
+}
+
+::ng-deep
+  .mat-mdc-list-item:not(.mat-mdc-list-item-interactive):hover
+  .mat-icon {
+  color: var(--component-hover);
+}
+
+.button-mobile span {
+  color: var(--text-color-one);
+}
+
+::ng-deep .mat-icon {
+  color: var(--text-special);
+}
+.mat-mdc-menu-item:has(.material-icons, mat-icon, [matbuttonicon]):hover
+  .icon-menu {
+  color: var(--text-special);
 }
 
 ::ng-deep .mat-drawer.mat-drawer-opened.mat-drawer-opened {
-  height: 300px !important;
   margin-top: 90px;
 }
 
 ::ng-deep .mdc-list-item__primary-text {
   display: flex;
   gap: 20px;
+}
+
+::ng-deep .mat-drawer-container {
+  background-color: var(--body) !important;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  height: unset !important;
 }
 
 @media (max-width: 1020px) {

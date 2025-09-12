@@ -9,6 +9,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
+import { MegamenuMobileComponent } from './megamenu-mobile/megamenu-mobile.component';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
     SearchFilterComponent,
     MatSidenavModule,
     MatListModule,
+    MegamenuMobileComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',

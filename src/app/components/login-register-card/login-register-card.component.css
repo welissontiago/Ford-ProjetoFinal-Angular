@@ -10,6 +10,7 @@
   padding: 40px;
   position: relative;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .login-bg::before {
@@ -26,5 +27,6 @@
 @media (max-width: 500px) {
   .login-bg {
     padding: 30px;
+    margin-top: 40px;
   }
 }

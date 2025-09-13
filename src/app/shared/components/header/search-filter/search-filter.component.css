@@ -45,3 +45,9 @@
     max-height: 50px;
   }
 }
+
+@media (max-width: 665px) {
+  .example-full-width {
+    display: none;
+  }
+}

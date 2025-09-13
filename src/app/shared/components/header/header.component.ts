@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MegamenuMobileComponent } from './megamenu-mobile/megamenu-mobile.component';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -31,6 +32,7 @@ import { MegamenuMobileComponent } from './megamenu-mobile/megamenu-mobile.compo
 })
 export class HeaderComponent {
   public themeService = inject(ThemeService);
+  private authService = inject(AuthService);
   isMenuOpen = false;
 
   @Output() menuToggle = new EventEmitter<void>();
@@ -38,5 +40,10 @@ export class HeaderComponent {
   onMenuClick(): void {
     this.isMenuOpen = !this.isMenuOpen;
     this.menuToggle.emit();
+  }
+
+  logout(): void {
+    this.authService.logout();
+    window.location.reload();
   }
 }

@@ -6,9 +6,22 @@
 }
 
 .ford-logo-orange {
-  align-self: baseline;
-  width: 200px;
-  height: 100px;
+  display: flex;
+  align-self: flex-start;
+  width: 130px;
+  height: 60px;
+  margin-left: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+.ford-logo-blue {
+  display: flex;
+  align-self: flex-start;
+  width: 130px;
+  height: 60px;
+  margin-left: 30px;
+  display: block;
   cursor: pointer;
 }
 
@@ -20,16 +33,6 @@
 
 .theme {
   margin-right: 30px;
-}
-
-.ford-logo-blue {
-  display: flex;
-  align-self: flex-start;
-  width: 150px;
-  height: 60px;
-  margin-left: 30px;
-  display: block;
-  cursor: pointer;
 }
 
 .forms-login {

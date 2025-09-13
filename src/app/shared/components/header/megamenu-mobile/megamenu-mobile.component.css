@@ -8,6 +8,18 @@
   margin-left: auto;
 }
 
+.engrenage-icon {
+  color: var(--text-special);
+}
+
+.servicos {
+  color: var(--text-color-one);
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: var(--text-color-one) !important;
+}
+
 .sub-menu-container .mat-list-item {
   padding-left: 40px !important;
   color: #ccc;

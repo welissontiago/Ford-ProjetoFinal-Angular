@@ -1,13 +1,13 @@
 <mat-list-item (click)="toggleServicos()" class="main-dropdown-item">
-  <mat-icon matListItemIcon>miscellaneous_services</mat-icon>
-  <span>Serviços</span>
+  <mat-icon class="engrenage-icon" matListItemIcon>miscellaneous_services</mat-icon>
+  <span class="servicos">Serviços</span>
   <mat-icon class="chevron-icon">{{
     isServicosOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"
-  }}</mat-icon>
+    }}</mat-icon>
 </mat-list-item>
 
 <div class="sub-menu-container" *ngIf="isServicosOpen">
-  <mat-list role="list">
+  <mat-list class="list" role="list">
     <a mat-list-item href="#">Ford Pós-Venda</a>
     <a mat-list-item href="#">Recall</a>
     <a mat-list-item href="#">Ford Protect</a>
@@ -15,16 +15,13 @@
     <a mat-list-item href="#">Peças Ford</a>
     <mat-divider></mat-divider>
 
-    <mat-list-item
-      (click)="toggleAccordion('meuFord')"
-      class="accordion-header"
-    >
+    <mat-list-item (click)="toggleAccordion('meuFord')" class="accordion-header">
       <span>Meu Ford</span>
       <mat-icon class="chevron-icon">{{
         openAccordion === "meuFord"
-          ? "keyboard_arrow_up"
-          : "keyboard_arrow_down"
-      }}</mat-icon>
+        ? "keyboard_arrow_up"
+        : "keyboard_arrow_down"
+        }}</mat-icon>
     </mat-list-item>
     <div class="accordion-content" [class.open]="openAccordion === 'meuFord'">
       <a mat-list-item href="#">Minhas Experiências Ford</a>
@@ -35,21 +32,15 @@
       <a mat-list-item href="#">Manuais</a>
     </div>
 
-    <mat-list-item
-      (click)="toggleAccordion('tecnologia')"
-      class="accordion-header"
-    >
+    <mat-list-item (click)="toggleAccordion('tecnologia')" class="accordion-header">
       <span>Tecnologia</span>
       <mat-icon class="chevron-icon">{{
         openAccordion === "tecnologia"
-          ? "keyboard_arrow_up"
-          : "keyboard_arrow_down"
-      }}</mat-icon>
+        ? "keyboard_arrow_up"
+        : "keyboard_arrow_down"
+        }}</mat-icon>
     </mat-list-item>
-    <div
-      class="accordion-content"
-      [class.open]="openAccordion === 'tecnologia'"
-    >
+    <div class="accordion-content" [class.open]="openAccordion === 'tecnologia'">
       <a mat-list-item href="#">SYNC®</a>
       <a mat-list-item href="#">FordPass™</a>
       <a mat-list-item href="#">Assistência de Emergência</a>

@@ -1,10 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #sidenav
-    mode="over"
-    [(opened)]="isMenuOpen"
-    class="mobile-sidenav"
-  >
+  <mat-sidenav #sidenav mode="over" [(opened)]="isMenuOpen" class="mobile-sidenav">
     <mat-list role="list">
       <button class="button-mobile" mat-list-item>
         <mat-icon matListIcon>directions_car</mat-icon>
@@ -28,34 +23,33 @@
         <span>FordPro</span>
       </button>
     </mat-list>
+
+    <div class="exit-perfil-container">
+      <div class="perfil-mobile"></div>
+      <div>
+        <button mat-button class="exit-button" (click)="logout()">
+          <mat-icon class="logout">logout</mat-icon>
+          <span class="exit">Sair</span>
+        </button>
+      </div>
+    </div>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
     <header class="header-bg">
       <div class="header">
         <div class="header-left-mobile">
-          <button
-            mat-icon-button
-            class="hamburger-button"
-            (click)="onMenuClick()"
-          >
+          <button mat-icon-button class="hamburger-button" (click)="onMenuClick()">
             <mat-icon style="color: white">{{
               isMenuOpen ? "close" : "menu"
-            }}</mat-icon>
+              }}</mat-icon>
           </button>
           <a href="./">
             @if (themeService.currentTheme() === 'dark') {
-            <img
-              class="ford-logo-orange"
-              src="logo-ford/logo-orange.png"
-              alt="logo da Ford motor Company"
-            />
+            <img class="ford-logo-orange" src="logo-ford/logo-orange.png" alt="logo da Ford motor Company" />
             } @else {
-            <img
-              class="ford-logo-blue"
-              src="logo-ford/logo-zul.png"
-              alt="logo da Ford motor Company"
-            />
+            <img class="ford-logo-blue" src="logo-ford/logo-zul.png" alt="logo da Ford motor Company" />
             }
           </a>
         </div>

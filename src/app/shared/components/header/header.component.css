@@ -124,7 +124,6 @@
 
 ::ng-deep .mat-drawer-inner-container {
   display: flex !important;
-  align-items: center;
 }
 
 ::ng-deep .mat-mdc-list-item:not(.mat-mdc-list-item-interactive) {
@@ -155,6 +154,7 @@
 
 ::ng-deep .mat-drawer.mat-drawer-opened.mat-drawer-opened {
   margin-top: 90px;
+  display: flex !important;
 }
 
 ::ng-deep .mdc-list-item__primary-text {
@@ -168,6 +168,52 @@
 
 ::ng-deep .mat-drawer-inner-container {
   height: unset !important;
+  overflow: hidden !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.perfil-mobile {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  background: lightgray url(/img/perfil/rolowimage.jpg) center / cover no-repeat;
+}
+
+.exit-perfil-container {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-left: 16px;
+}
+
+.logout {
+  height: 30px;
+  width: 30px;
+  color: var(--text-color-one);
+}
+
+.exit-button {
+  text-transform: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.exit-button:hover {
+  background-color: var(--hover-megamenu);
+}
+
+.exit {
+  color: var(--text-color-one);
+}
+
+.exit-button:hover .exit {
+  color: var(--text-special);
 }
 
 @media (max-width: 1020px) {
@@ -247,6 +293,12 @@
   }
 
   .header a:after {
+    display: none;
+  }
+}
+
+@media (max-width: 665px) {
+  .Perfil {
     display: none;
   }
 }

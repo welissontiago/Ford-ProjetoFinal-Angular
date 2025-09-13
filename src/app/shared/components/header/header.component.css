@@ -96,6 +96,7 @@
 .sidenav {
   width: 250px;
   background-color: var(--header-bg);
+  z-index: 2;
 }
 
 .mat-tree {
@@ -157,6 +158,10 @@
   display: flex !important;
 }
 
+::ng-deep .mat-drawer-content {
+  z-index: auto !important;
+}
+
 ::ng-deep .mdc-list-item__primary-text {
   display: flex;
   gap: 20px;
@@ -164,6 +169,7 @@
 
 ::ng-deep .mat-drawer-container {
   background-color: var(--body) !important;
+  z-index: auto !important;
 }
 
 ::ng-deep .mat-drawer-inner-container {
@@ -300,5 +306,8 @@
 @media (max-width: 665px) {
   .Perfil {
     display: none;
+  }
+  ::ng-deep .mat-drawer.mat-drawer-opened.mat-drawer-opened {
+    margin-top: 80px;
   }
 }

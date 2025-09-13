@@ -8,5 +8,18 @@
   height: auto;
   z-index: 1;
   object-fit: cover;
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.9;
+}
+
+@media (max-width: 1150px) {
+  .video-bg {
+    top: 90px;
+  }
+}
+
+@media (max-width: 665px) {
+  .video-bg {
+    top: 80px;
+  }
 }

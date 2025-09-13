@@ -1,0 +1,101 @@
+.picape-bg {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.picape-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(70%);
+}
+
+.text-container {
+  position: relative;
+  max-width: 830px;
+  margin: 0 auto;
+  top: -100px;
+  z-index: 2;
+  text-align: center;
+}
+
+.text-container h1 {
+  font-size: 5rem;
+  font-family: Roboto;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  background: var(--text-color-five);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-container p {
+  margin-bottom: 2rem;
+  color: #b6b8b9;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.text-container button {
+  background-color: var(--components-color);
+  color: var(--input-bg);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: 1px solid var(--components-color);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.text-container button:hover {
+  background-color: var(--component-hover);
+}
+
+@media (max-width: 1150px) {
+  .picape-bg {
+    top: 90px;
+  }
+}
+
+@media (max-width: 800px) {
+  .text-container h1 {
+    font-size: 3rem;
+  }
+  .text-container p {
+    font-size: 24px;
+  }
+  .text-container {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-container h1 {
+    font-size: 2rem;
+  }
+  .text-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 665px) {
+  .picape-bg {
+    top: 80px;
+  }
+}

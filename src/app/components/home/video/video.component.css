@@ -1,0 +1,12 @@
+.video-bg {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  max-width: 1980px;
+  max-height: 1100px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+  opacity: 0.7;
+}

@@ -1,5 +1,6 @@
 import { Categoria } from './categoria.model';
 import { Combustivel } from './combustivel.model';
+import { Equipamentos } from './equipamentos.model';
 import { Especificacoes } from './especificacoes.model';
 
 export interface Cars {
@@ -14,7 +15,7 @@ export interface Cars {
   categoria: Categoria;
   ano: number;
   especificacoes: Especificacoes;
-  equipamentos: {};
+  equipamentos: Equipamentos;
   imagem_principal: string;
   galeria: string[];
 }

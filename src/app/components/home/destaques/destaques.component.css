@@ -1,0 +1,25 @@
+.section-destaques h2 {
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.section-destaques h2:after {
+  content: "";
+  width: 118px;
+  height: 6px;
+  background-color: var(--components-color);
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Destaques {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}

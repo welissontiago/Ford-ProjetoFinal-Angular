@@ -24,14 +24,14 @@
     {
       "id": "1",
       "modelo": "SUV 2025",
-      "nome": "Carro X",
+      "nome": "Mustang GT 5.0",
       "cores": ["Vermelho", "Preto", "Branco"],
-      "preco": 120000.0,
-      "combustiveis": ["Gasolina"],
+      "preco": 529000,
+      "combustiveis": "Gasolina",
       "destaque": true,
       "descricao": "Um SUV moderno, confortável e equipado com tecnologia de ponta.",
-      "categoria": "SUV",
-      "ano": 2025,
+      "categoria": "Esportivo",
+      "ano": 2023,
       "especificacoes": {
         "motor": "2.0 Turbo Flex",
         "potencia": "250 cv",
@@ -60,7 +60,91 @@
           "Iluminação ambiente em LED"
         ]
       },
-      "imagem_principal": "",
+      "imagem_principal": "carros/carro-branco-card.png",
+      "galeria": ["", "", ""]
+    },
+    {
+      "id": "2",
+      "modelo": "Picape 2025",
+      "nome": "Ford Maverick",
+      "cores": ["Azul", "Preto", "Cinza"],
+      "preco": 239990,
+      "combustiveis": "Etanol",
+      "destaque": true,
+      "descricao": "Uma picape versátil, robusta e ideal para uso urbano e fora de estrada.",
+      "categoria": "Picape",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "2.0 EcoBoost Turbo Flex",
+        "potencia": "253 cv",
+        "torque": "380 Nm",
+        "aceleracao": "0 a 100 km/h em 7.2s",
+        "suspensao": "Independente na dianteira, eixo rígido na traseira",
+        "velocidade_maxima": "210 km/h",
+        "combustivel": "Gasolina/Etanol",
+        "tracao": "Integral AWD",
+        "aceleracao_0_100": "7.2 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "7 Airbags",
+          "Assistente de permanência em faixa",
+          "Controle eletrônico de estabilidade"
+        ],
+        "tecnologia": [
+          "Central multimídia SYNC com tela de 8\"",
+          "Compatibilidade Android Auto e Apple CarPlay",
+          "Câmera de ré"
+        ],
+        "interior": [
+          "Bancos em tecido premium",
+          "Ar-condicionado digital dual zone",
+          "Porta-objetos inteligentes"
+        ]
+      },
+      "imagem_principal": "carros/carro-verde-card.png",
+      "galeria": []
+    },
+    {
+      "id": "3",
+      "modelo": "SUV Elétrico 2025",
+      "nome": "Mustang Mach-E",
+      "cores": ["Vermelho", "Prata", "Preto"],
+      "preco": 389990,
+      "combustiveis": "Eletrico",
+      "destaque": true,
+      "descricao": "SUV 100% elétrico inspirado no ícone Mustang, unindo performance, autonomia e tecnologia de ponta.",
+      "categoria": "SUV",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "Elétrico Dual Motor",
+        "potencia": "487 cv",
+        "torque": "860 Nm",
+        "aceleracao": "0 a 100 km/h em 3.7s",
+        "suspensao": "Independente nas quatro rodas",
+        "velocidade_maxima": "200 km/h",
+        "combustivel": "Elétrico",
+        "tracao": "Integral AWD",
+        "aceleracao_0_100": "3.7 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "Assistente de frenagem de emergência",
+          "Piloto automático adaptativo",
+          "Alerta de tráfego cruzado"
+        ],
+        "tecnologia": [
+          "Central multimídia vertical de 15,5\"",
+          "Atualizações remotas OTA",
+          "Painel digital configurável"
+        ],
+        "interior": [
+          "Bancos em couro ecológico",
+          "Iluminação ambiente em LED",
+          "Sistema de som premium B&O"
+        ]
+      },
+      "imagem_principal": "carros/carro-amarelo-card.png",
       "galeria": ["", "", ""]
     }
   ]

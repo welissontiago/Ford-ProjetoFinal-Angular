@@ -23,3 +23,23 @@
   gap: 50px;
   flex-wrap: wrap;
 }
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 670px) {
+  .section-destaques h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-destaques h2 {
+    font-size: 2rem;
+  }
+}

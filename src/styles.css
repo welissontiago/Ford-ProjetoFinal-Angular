@@ -14,12 +14,19 @@
   --megamenu-bg: #262626;
   --hover-megamenu: #4e4f4f;
   --card-background: #323232;
+  --card-background-two: #323232;
   --search-bg: #262626;
   --components-border-1: #444545;
   --components-border-2: #5e5e5f;
   --label-1-color: #919293;
   --components-color: #ff9900;
   --components-color-two: #ff9600;
+  --gradient-components-color: linear-gradient(
+    90deg,
+    #ff9900 5.18%,
+    #ff9600 51.45%,
+    rgba(255, 153, 0, 0.7) 98.02%
+  );
   --text-a-color-hover: #ff9600;
   --text-color-one: #b5b7b8;
   --text-color-two: #9ea0a0;
@@ -52,12 +59,19 @@ html.white-theme {
   --megamenu-bg: #ebebf2;
   --hover-megamenu: #dbdbe1;
   --card-background: #ffffff;
+  --card-background-two: #2a4a91;
   --search-bg: #eef1f6;
   --components-border-1: #dbdbe1;
   --components-border-2: #4e4f4f;
   --label-1-color: #94a3b8;
   --components-color: #2563eb;
   --components-color-two: #2a4a91;
+  --gradient-components-color: linear-gradient(
+    90deg,
+    #2563eb 5.18%,
+    #2a4a91 51.45%,
+    rgba(37, 99, 235, 0.7) 98.02%
+  );
   --text-a-color-hover: #a9aade;
   --text-color-one: #4e4f4f;
   --text-color-two: #9ea0a0;

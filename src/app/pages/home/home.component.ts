@@ -3,6 +3,7 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 import { BackgroundImageHomeComponent } from '../../components/home/background-image-home/background-image-home.component';
 import { SearchFilterComponent } from '../../components/home/search-filter/search-filter.component';
 import { DestaquesComponent } from '../../components/home/destaques/destaques.component';
+import { CategoriasComponent } from '../../components/home/categorias/categorias.component';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { DestaquesComponent } from '../../components/home/destaques/destaques.co
     BackgroundImageHomeComponent,
     SearchFilterComponent,
     DestaquesComponent,
+    CategoriasComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

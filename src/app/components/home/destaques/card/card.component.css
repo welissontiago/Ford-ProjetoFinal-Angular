@@ -14,7 +14,9 @@
 }
 
 .lista-destaques img {
-  width: 394px;
+  max-width: 500px;
+  min-width: 250px;
+  width: 100%;
   height: 324px;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
@@ -108,11 +110,9 @@ span {
   .preco-detalhes p {
     font-size: 1rem;
   }
-  .section-destaques h2 {
-    font-size: 2rem;
-  }
   .lista-destaques img {
-    width: 300px;
+    max-width: 320px;
+    width: 100%;
     height: 220px;
   }
   .lista-destaques a:after {
@@ -120,7 +120,7 @@ span {
     display: block;
     width: 0;
     height: 5px;
-    background-color: #ff9600;
+    background-color: var(--components-color);
     position: absolute;
     top: 220px;
     transition: width 0.3s ease-in-out;
@@ -128,6 +128,14 @@ span {
   .preco-detalhes {
     margin-right: 0px;
     gap: 40px;
+  }
+  .btn-detalhes {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+  .lista-destaques:hover {
+    transform: scale(1.05);
   }
 }
 

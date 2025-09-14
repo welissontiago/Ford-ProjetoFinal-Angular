@@ -1,6 +1,8 @@
 <section class="section-destaques" aria-label="Carros em destaques">
   <h2 class="--text-64px color-titles">DESTAQUES DO MÊS</h2>
   <div class="Destaques">
-    <app-card></app-card>
+    <div class="cards-container" *ngIf="featuredCars$ | async as cars">
+      <app-card *ngFor="let car of cars" [car]="car"></app-card>
+    </div>
   </div>
 </section>

@@ -1,10 +1,10 @@
-<div class="lista-destaques">
+<div class="lista-destaques" *ngIf="car">
   <a href="#">
-    <img src="/carros/carro-branco-card.png" alt="carroBranco">
-    <h3 class="color-titles --title-text-24px ">Mustang GT 5.0</h3>
-    <p class="cor-cinza --text-16px ">2023 <span></span> 0km</p>
+    <img [src]="car.imagem_principal" [alt]="car.nome">
+    <h3 class="color-titles --title-text-24px ">{{ car.nome }}</h3>
+    <p class="cor-cinza --text-16px ">{{car.ano}} <span></span> 0km</p>
     <div class="preco-detalhes">
-      <p class="color-titles --title-text-24px">R$ 529.000</p>
+      <p class="color-titles --title-text-24px">{{ car.preco | currency:'BRL' }}</p>
       <button class="btn-detalhes">+ DETALHES</button>
     </div>
   </a>

@@ -14,6 +14,10 @@
   --megamenu-bg: #262626;
   --hover-megamenu: #4e4f4f;
   --card-background: #323232;
+  --search-bg: #262626;
+  --components-border-1: #444545;
+  --components-border-2: #5e5e5f;
+  --label-1-color: #919293;
   --components-color: #ff9900;
   --text-a-color-hover: #ff9600;
   --text-color-one: #b5b7b8;
@@ -46,6 +50,10 @@ html.white-theme {
   --megamenu-bg: #ebebf2;
   --hover-megamenu: #dbdbe1;
   --card-background: #ffffff;
+  --search-bg: #eef1f6;
+  --components-border-1: #dbdbe1;
+  --components-border-2: #4e4f4f;
+  --label-1-color: #94a3b8;
   --components-color: #2563eb;
   --text-a-color-hover: #a9aade;
   --text-color-one: #4e4f4f;

@@ -19,5 +19,49 @@
       "checkboxNewsLetter": false,
       "role": "usuario"
     }
+  ],
+  "cars": [
+    {
+      "id": "1",
+      "modelo": "SUV 2025",
+      "nome": "Carro X",
+      "cores": ["Vermelho", "Preto", "Branco"],
+      "preco": 120000.0,
+      "combustiveis": ["Gasolina"],
+      "destaque": true,
+      "descricao": "Um SUV moderno, confortável e equipado com tecnologia de ponta.",
+      "categoria": "SUV",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "2.0 Turbo Flex",
+        "potencia": "250 cv",
+        "torque": "300 Nm",
+        "aceleracao": "0 a 100 km/h em 7.5s",
+        "suspensao": "Independente nas quatro rodas",
+        "velocidade_maxima": "240 km/h",
+        "combustivel": "Gasolina",
+        "tracao": "Dianteira",
+        "aceleracao_0_100": "7.5 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "Airbags frontais e laterais",
+          "Controle de estabilidade",
+          "Frenagem automática de emergência"
+        ],
+        "tecnologia": [
+          "Central multimídia com tela de 10\"",
+          "Piloto automático adaptativo",
+          "Carregador wireless"
+        ],
+        "interior": [
+          "Bancos em couro",
+          "Ar-condicionado digital dual zone",
+          "Iluminação ambiente em LED"
+        ]
+      },
+      "imagem_principal": "",
+      "galeria": ["", "", ""]
+    }
   ]
 }

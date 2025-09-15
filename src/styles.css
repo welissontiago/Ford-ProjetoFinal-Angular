@@ -36,6 +36,7 @@
   --element-line: #4e4f4f;
   --bg-element-color-one: #262626;
   --text-title: #ffffff;
+  --text-title-two: #e9faff;
   --text-special: #ff9900;
   --component-hover: #ffbd2d;
   --gray-text: #f6f6f6;
@@ -44,6 +45,7 @@
   --input-bg: #262626;
   --input-border: #555556;
   --border-color-two: #515151;
+  --border-color-three: #6e6e6e;
   --header-bg: #1c1c1d;
   --lista-destaques-bg: #333333;
   --gradient-login-register: linear-gradient(
@@ -85,6 +87,7 @@ html.white-theme {
   --element-line: #4e4f4f;
   --bg-element-color-one: #2563eb;
   --text-title: #262626;
+  --text-title-two: #e9faff;
   --text-special: #2563eb;
   --component-hover: #5f86da;
   --gray-text: #4e4f4f;
@@ -93,6 +96,7 @@ html.white-theme {
   --input-bg: #ebebf2;
   --input-border: #555556;
   --border-color-two: #5f86da;
+  --border-color-three: #e6e6e6;
   --header-bg: #044ea7;
   --lista-destaques-bg: #e6eaf0;
   --gradient-login-register: linear-gradient(

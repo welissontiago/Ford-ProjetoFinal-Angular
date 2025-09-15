@@ -2,10 +2,22 @@
   <div class="footer-container">
     <div class="footer-container-menor">
       <div class="logo-footer">
-        <img src="/logo/logo-orange.png" alt="logo-ford">
+        @if (themeService.currentTheme() === 'dark') {
+        <img
+          class="ford-logo-orange"
+          src="logo-ford/logo-orange.png"
+          alt="logo da Ford motor Company"
+        />
+        } @else {
+        <img
+          class="ford-logo-blue"
+          src="logo-ford/logo-zul.png"
+          alt="logo da Ford motor Company"
+        />
+        }
       </div>
       <div class="lista-Veiculos">
-        <h3 class="text-24px">Veiculos</h3>
+        <h3 class="--title-text-24px poppins-bold color-titles">Veiculos</h3>
         <ul>
           <li><a href="#">Picapes</a></li>
           <li><a href="#">SUVs</a></li>
@@ -16,7 +28,7 @@
         </ul>
       </div>
       <div class="lista-Comprar">
-        <h3 class="text-24px">Comprar</h3>
+        <h3 class="--title-text-24px poppins-bold color-titles">Comprar</h3>
         <ul>
           <li><a href="#">Monter o seu</a></li>
           <li><a href="#">Ofertas</a></li>
@@ -27,7 +39,7 @@
         </ul>
       </div>
       <div class="lista-Servicos">
-        <h3 class="text-24px">Serviços</h3>
+        <h3 class="--title-text-24px poppins-bold color-titles">Serviços</h3>
         <ul>
           <li><a href="#">Atualização SYNC®</a></li>
           <li><a href="#">Proprietários</a></li>
@@ -46,7 +58,9 @@
         </ul>
       </div>
       <div class="lista-Sobre">
-        <h3 class="text-24px">Sobre a Ford</h3>
+        <h3 class="--title-text-24px poppins-bold color-titles">
+          Sobre a Ford
+        </h3>
         <ul>
           <li><a href="#">Carreiras</a></li>
           <li><a href="#">Programa de Estágio</a></li>
@@ -55,8 +69,12 @@
           <li><a href="#">Notícias</a></li>
           <li><a href="#">Segurança Veicular</a></li>
           <li><a href="#">Fale Conosco</a></li>
-          <li><a href="#">Relatório de transparência e <br>
-              igualdade salarial</a></li>
+          <li>
+            <a href="#"
+              >Relatório de transparência e <br />
+              igualdade salarial</a
+            >
+          </li>
           <li><a href="#">Cartões de Resgate</a></li>
         </ul>
       </div>

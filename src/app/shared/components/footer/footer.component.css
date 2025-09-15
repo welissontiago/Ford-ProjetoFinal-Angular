@@ -13,7 +13,7 @@
 }
 
 .footer-container a {
-  color: #b6b8b9;
+  color: var(--footer-text-color);
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 600;
@@ -21,7 +21,7 @@
 }
 
 .footer-container a:hover {
-  color: #ff9600;
+  color: var(--components-color);
   transition: width 0.3s ease-in-out;
 }
 
@@ -80,11 +80,29 @@
 
 .links-termos p,
 .links-termos a {
-  color: #bfc1c2;
+  color: var(--footer-text-color);
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-decoration: none;
+}
+
+.ford-logo-orange {
+  display: flex;
+  align-self: flex-start;
+  width: 120px;
+  height: 60px;
+  margin-left: 30px;
+  display: block;
+}
+
+.ford-logo-blue {
+  display: flex;
+  align-self: flex-start;
+  width: 120px;
+  height: 60px;
+  margin-left: 30px;
+  display: block;
 }
 
 @media (max-width: 765px) {

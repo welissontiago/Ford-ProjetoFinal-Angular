@@ -12,7 +12,7 @@
 .beneficios {
   padding-top: 60px;
   padding-bottom: 60px;
-  border-bottom: 2px solid #272727;
+  border-top: 1px solid var(--border-c1);
   background: var(--card-background);
 }
 
@@ -71,8 +71,8 @@
 }
 
 .icone-ford {
-  fill: #efefef;
-  stroke: #272727;
+  fill: var(--icone-beneficios);
+  stroke: var(--stroke-icones-beneficios);
 }
 
 .container-menor:hover .icone-ford {

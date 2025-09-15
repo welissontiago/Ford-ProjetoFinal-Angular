@@ -48,6 +48,12 @@
   --border-color-three: #6e6e6e;
   --header-bg: #1c1c1d;
   --lista-destaques-bg: #333333;
+  --border-c1: #919293;
+  --border-c2: #272727;
+  --bg-color-parceiros: #1a1a1a;
+  --icone-beneficios: #efefef;
+  --stroke-icones-beneficios: #272727;
+  --footer-text-color: #bfc1c2;
   --gradient-login-register: linear-gradient(
     90deg,
     #b47f2f 5.18%,
@@ -99,6 +105,12 @@ html.white-theme {
   --border-color-three: #e6e6e6;
   --header-bg: #044ea7;
   --lista-destaques-bg: #e6eaf0;
+  --border-c1: #b6b8c4;
+  --border-c2: #b6b8c4;
+  --bg-color-parceiros: cornflowerblue;
+  --icone-beneficios: #1c1c1d;
+  --stroke-icones-beneficios: #272727;
+  --footer-text-color: #0f172a;
   --gradient-login-register: linear-gradient(
     90deg,
     #97c4f7 5.18%,

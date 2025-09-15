@@ -4,8 +4,11 @@ import {
   OnDestroy,
   ElementRef,
   NgZone,
+  inject,
+  effect,
 } from '@angular/core';
 import { gsap } from 'gsap';
+import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-parceiros',
@@ -15,8 +18,8 @@ import { gsap } from 'gsap';
   styleUrls: ['./parceiros.component.css'],
 })
 export class ParceirosComponent implements AfterViewInit, OnDestroy {
+  public themeService = inject(ThemeService);
   private brandsColumnsContainer!: HTMLElement;
-  private originalColumnsHTML: string = '';
   private activeTimelines: gsap.core.Timeline[] = [];
   private mediaMatcher = window.matchMedia('(max-width: 700px)');
 
@@ -27,16 +30,19 @@ export class ParceirosComponent implements AfterViewInit, OnDestroy {
     { from: { x: '100%' }, to: { x: '-100%' } },
   ];
 
-  constructor(private el: ElementRef, private zone: NgZone) {}
+  constructor(private el: ElementRef, private zone: NgZone) {
+    effect(() => {
+      this.themeService.currentTheme();
+      setTimeout(() => this.setupAnimations(), 0);
+    });
+  }
 
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
       this.brandsColumnsContainer =
         this.el.nativeElement.querySelector('.brands-columns');
       if (this.brandsColumnsContainer) {
-        this.originalColumnsHTML = this.brandsColumnsContainer.innerHTML;
         this.setupAnimations();
-        // Adiciona o "ouvinte" para mudanças de tela
         this.mediaMatcher.addEventListener('change', this.setupAnimations);
       }
     });
@@ -48,13 +54,17 @@ export class ParceirosComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupAnimations = (): void => {
+    if (!this.brandsColumnsContainer) return;
+
     this.activeTimelines.forEach((tl) => tl.kill());
     this.activeTimelines = [];
-    this.brandsColumnsContainer.innerHTML = this.originalColumnsHTML;
+
     const allColumns: NodeListOf<HTMLElement> =
       this.brandsColumnsContainer.querySelectorAll('.brand-column');
 
     if (this.mediaMatcher.matches && allColumns.length === 3) {
+      allColumns.forEach((col) => (col.style.display = ''));
+
       const logosToMove = allColumns[2].querySelectorAll('.logo');
       logosToMove.forEach((logo, index) => {
         const targetColumnIndex = index % 2;

@@ -1,0 +1,3 @@
+::ng-deep .header {
+  background-color: var(--header-2-color) !important;
+}

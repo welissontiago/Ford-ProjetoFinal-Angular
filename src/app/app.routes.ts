@@ -24,6 +24,15 @@ export const routes: Routes = [
   },
 
   {
+    path: 'inventario',
+    //canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/inventario/inventario.component').then(
+        (m) => m.InventarioComponent
+      ),
+  },
+
+  {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full',

@@ -1,0 +1,27 @@
+.section-bg {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  display: flex;
+}
+
+.bg-titles h1 {
+  color: var(--text-title-three);
+  text-align: center;
+}
+
+.bg-titles span {
+  color: var(--text-special);
+}
+
+.bg-titles p {
+  color: var(--text-color-six);
+  text-align: center;
+}
+
+.bg-titles {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}

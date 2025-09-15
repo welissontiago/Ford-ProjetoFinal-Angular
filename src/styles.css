@@ -33,10 +33,12 @@
   --text-color-three: #f4f4f4;
   --text-color-four: #262626;
   --text-color-five: #dedfe0;
+  --text-color-six: #b6b8b9;
   --element-line: #4e4f4f;
   --bg-element-color-one: #262626;
   --text-title: #ffffff;
   --text-title-two: #e9faff;
+  --text-title-three: #dedfe0;
   --text-special: #ff9900;
   --component-hover: #ffbd2d;
   --gray-text: #f6f6f6;
@@ -60,6 +62,7 @@
     #c17910 51.45%,
     rgba(180, 127, 47, 0.7) 98.02%
   );
+  --header-2-color: #29292d;
 }
 
 html.white-theme {
@@ -90,10 +93,12 @@ html.white-theme {
     #84bcfc 62.04330861568451deg,
     #cbd8e6 310.9051251411438deg
   );
+  --text-color-six: #3b4246;
   --element-line: #4e4f4f;
   --bg-element-color-one: #2563eb;
   --text-title: #262626;
   --text-title-two: #e9faff;
+  --text-title-three: #0f172a;
   --text-special: #2563eb;
   --component-hover: #5f86da;
   --gray-text: #4e4f4f;
@@ -117,6 +122,7 @@ html.white-theme {
     #2563eb 51.45%,
     rgba(162, 200, 242, 0.7) 98.02%
   );
+  --header-2-color: #2a4a91;
 }
 
 html {
@@ -142,6 +148,10 @@ html {
 
 .--text-64px {
   font-size: 4rem;
+}
+
+.--text-32px {
+  font-size: 2rem;
 }
 
 .--text-14px {

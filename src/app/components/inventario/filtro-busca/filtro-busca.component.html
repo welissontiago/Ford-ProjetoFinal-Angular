@@ -1,11 +1,12 @@
 <div class="filtro-bg">
   <h1>FILTROS</h1>
+
   <div class="categorias">
     <h2>Categoria</h2>
     <mat-form-field class="forms-tamanho forms-bg">
       <mat-label class="label-1">Todas as Categorias</mat-label>
-      <mat-select>
-        <mat-option>Todas as Categorias</mat-option>
+      <mat-select [(ngModel)]="categoriaSelecionada" (selectionChange)="aplicarFiltros()">
+        <mat-option [value]="null">Todas as Categorias</mat-option>
         <mat-option value="SUVs">SUVs</mat-option>
         <mat-option value="esportivos">Esportivos</mat-option>
         <mat-option value="picape">Picapes</mat-option>
@@ -17,8 +18,8 @@
     <h2>Ano</h2>
     <mat-form-field class="forms-tamanho">
       <mat-label class="label-1">Todos os Anos</mat-label>
-      <mat-select>
-        <mat-option>Todos os Anos</mat-option>
+      <mat-select [(ngModel)]="anoSelecionado" (selectionChange)="aplicarFiltros()">
+        <mat-option [value]="null">Todos os Anos</mat-option>
         <mat-option value="2025">2025</mat-option>
         <mat-option value="2024">2024</mat-option>
         <mat-option value="2023">2023</mat-option>
@@ -30,8 +31,8 @@
     <h2>Combustivel</h2>
     <mat-form-field class="forms-tamanho">
       <mat-label class="label-1">Todos os tipos</mat-label>
-      <mat-select>
-        <mat-option>Todos os tipos</mat-option>
+      <mat-select [(ngModel)]="combustivelSelecionado" (selectionChange)="aplicarFiltros()">
+        <mat-option [value]="null">Todos os tipos</mat-option>
         <mat-option value="Diesel">Diesel</mat-option>
         <mat-option value="Gasolina">Gasolina</mat-option>
         <mat-option value="Eletrico">Eletrico</mat-option>
@@ -45,12 +46,12 @@
     <h2>Faixa de preço</h2>
     <mat-form-field class="forms-tamanho">
       <mat-label class="label-1">Todos os preços</mat-label>
-      <mat-select>
-        <mat-option>Todos os preços</mat-option>
+      <mat-select [(ngModel)]="faixaPrecoSelecionada" (selectionChange)="aplicarFiltros()">
+        <mat-option [value]="null">Todos os preços</mat-option>
         <mat-option value="preco-1">R$20.000 - R$50.000</mat-option>
-        <mat-option value="preco-2">R$50.0001 - R$99.999</mat-option>
-        <mat-option value="preco-1">R$100.000 - R$200.000</mat-option>
-        <mat-option value="preco-1">R$200.001 - R$800.000</mat-option>
+        <mat-option value="preco-2">R$50.001 - R$99.999</mat-option>
+        <mat-option value="preco-3">R$100.000 - R$200.000</mat-option>
+        <mat-option value="preco-4">R$200.001 - R$800.000</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

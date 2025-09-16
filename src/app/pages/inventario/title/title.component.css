@@ -1,8 +1,11 @@
 .section-bg {
   position: absolute;
-  top: 250px;
+  top: 100px;
   width: 100%;
   display: flex;
+  box-sizing: border-box;
+  background-color: var(--bg-titles-inventario);
+  padding: 180px 20px;
 }
 
 .bg-titles h1 {
@@ -24,4 +27,13 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+}
+
+@media (max-width: 540px) {
+  .bg-titles h1 {
+    font-size: 2.5rem;
+  }
+  .bg-titles p {
+    font-size: 1.3rem;
+  }
 }

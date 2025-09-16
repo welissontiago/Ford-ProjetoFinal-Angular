@@ -1,9 +1,15 @@
 <div class="pesquisa-bg">
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Pesquisar Veiculos</mat-label>
+      <mat-label class="label-pesquisar">Pesquisar Veiculos</mat-label>
       <mat-icon class="icon-search" matSuffix>search</mat-icon>
-      <input type="search" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex: Ford, Fiesta, 2020...">
+      <input
+        type="search"
+        matInput
+        [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher"
+        placeholder="Ex: Ford, Fiesta, 2020..."
+      />
     </mat-form-field>
   </form>
 </div>

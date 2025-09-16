@@ -112,7 +112,7 @@
       "cores": ["Vermelho", "Prata", "Preto"],
       "preco": 389990,
       "combustiveis": "Eletrico",
-      "destaque": true,
+      "destaque": false,
       "descricao": "SUV 100% elétrico inspirado no ícone Mustang, unindo performance, autonomia e tecnologia de ponta.",
       "categoria": "SUV",
       "ano": 2025,
@@ -145,6 +145,132 @@
         ]
       },
       "imagem_principal": "carros/carro-amarelo-card.png",
+      "galeria": ["", "", ""]
+    },
+    {
+      "id": "4",
+      "modelo": "Van 2025",
+      "nome": "Ford Transit Minibus",
+      "cores": ["Branco", "Prata", "Azul"],
+      "preco": 319990,
+      "combustiveis": "Diesel",
+      "destaque": false,
+      "descricao": "Van confortável e espaçosa para transporte de passageiros, ideal para uso comercial e corporativo.",
+      "categoria": "SUV",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "2.2 Diesel Turbo",
+        "potencia": "165 cv",
+        "torque": "390 Nm",
+        "aceleracao": "0 a 100 km/h em 14s",
+        "suspensao": "Independente na dianteira, eixo rígido na traseira",
+        "velocidade_maxima": "160 km/h",
+        "combustivel": "Diesel",
+        "tracao": "Traseira",
+        "aceleracao_0_100": "14 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "Freios ABS com EBD",
+          "Controle eletrônico de estabilidade",
+          "Assistente de partida em rampa"
+        ],
+        "tecnologia": [
+          "Central multimídia com tela de 8\"",
+          "Ar-condicionado dianteiro e traseiro",
+          "Portas USB para passageiros"
+        ],
+        "interior": [
+          "Bancos reclináveis em tecido",
+          "Espaço para até 15 passageiros",
+          "Iluminação interna em LED"
+        ]
+      },
+      "imagem_principal": "carros/Forgao.png",
+      "galeria": ["", "", ""]
+    },
+    {
+      "id": "5",
+      "modelo": "SUV Off-Road 2025",
+      "nome": "Ford Bronco",
+      "cores": ["Verde", "Cinza", "Preto"],
+      "preco": 459990,
+      "combustiveis": "Gasolina",
+      "destaque": false,
+      "descricao": "SUV robusto e off-road, inspirado no clássico Bronco, preparado para qualquer terreno.",
+      "categoria": "SUV",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "2.7 V6 EcoBoost Turbo",
+        "potencia": "330 cv",
+        "torque": "563 Nm",
+        "aceleracao": "0 a 100 km/h em 6.7s",
+        "suspensao": "Off-road reforçada com amortecedores Bilstein",
+        "velocidade_maxima": "210 km/h",
+        "combustivel": "Gasolina",
+        "tracao": "Integral AWD com reduzida",
+        "aceleracao_0_100": "6.7 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "Assistente de descida em rampa",
+          "7 Airbags",
+          "Controle de tração para off-road"
+        ],
+        "tecnologia": [
+          "Painel digital de 12\"",
+          "Central multimídia SYNC 4",
+          "Sistema de som premium Bang & Olufsen"
+        ],
+        "interior": [
+          "Bancos em couro resistentes à água",
+          "Ar-condicionado digital dual zone",
+          "Painéis removíveis para experiência ao ar livre"
+        ]
+      },
+      "imagem_principal": "carros/Bronco.png",
+      "galeria": ["", "", ""]
+    },
+    {
+      "id": "6",
+      "modelo": "SUV Médio 2025",
+      "nome": "Ford Territory",
+      "cores": ["Prata", "Preto", "Branco"],
+      "preco": 199990,
+      "combustiveis": "Gasolina",
+      "destaque": true,
+      "descricao": "SUV médio moderno e tecnológico, ideal para famílias e viagens urbanas ou rodoviárias.",
+      "categoria": "SUV",
+      "ano": 2025,
+      "especificacoes": {
+        "motor": "1.5 EcoBoost Turbo",
+        "potencia": "170 cv",
+        "torque": "260 Nm",
+        "aceleracao": "0 a 100 km/h em 9.8s",
+        "suspensao": "Independente nas quatro rodas",
+        "velocidade_maxima": "190 km/h",
+        "combustivel": "Gasolina",
+        "tracao": "Dianteira",
+        "aceleracao_0_100": "9.8 segundos"
+      },
+      "equipamentos": {
+        "seguranca": [
+          "Controle eletrônico de estabilidade",
+          "Assistente de permanência em faixa",
+          "Alerta de ponto cego"
+        ],
+        "tecnologia": [
+          "Central multimídia com tela de 10\"",
+          "Compatibilidade Android Auto e Apple CarPlay",
+          "Carregador wireless"
+        ],
+        "interior": [
+          "Bancos em couro sintético",
+          "Iluminação ambiente",
+          "Ar-condicionado digital dual zone"
+        ]
+      },
+      "imagem_principal": "carros/Territory.png",
       "galeria": ["", "", ""]
     }
   ]

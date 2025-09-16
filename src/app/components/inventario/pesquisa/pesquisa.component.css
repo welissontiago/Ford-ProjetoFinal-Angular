@@ -21,11 +21,16 @@
 }
 
 ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
-  background-color: var(--bg-titles-inventario);
-  border: 1px solid #a2adb3;
+  background-color: var(--bg-titles-inventario) !important;
+  border: 1px solid #a2adb3 !important;
 }
 
-::ng-deep .mat-icon {
+.label-pesquisar {
+  font-size: 1.5rem;
+  color: #a2adb3;
+}
+
+::ng-deep .icon-search {
   color: #a2adb3;
 }
 

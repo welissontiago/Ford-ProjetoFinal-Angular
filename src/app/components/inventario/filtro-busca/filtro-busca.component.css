@@ -1,0 +1,49 @@
+.filtro-bg h2 {
+  font-size: 1.2rem;
+  color: var(--inventario-titles-color);
+  margin-bottom: 11px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.filtro-bg h1 {
+  font-size: 1.4rem;
+  color: var(--text-title);
+}
+
+.forms-tamanho {
+  max-width: 250px;
+  width: 100%;
+}
+
+.filtro-bg {
+  flex-direction: column;
+  display: flex;
+  box-sizing: border-box;
+  background-color: var(--lista-destaques-bg);
+  border-radius: 5px;
+  padding: 50px 35px 35px 35px;
+}
+
+.label-1 {
+  color: var(--inventario-titles-color);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+::ng-deep
+  .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
+  .mat-mdc-text-field-wrapper {
+  background-color: var(--bg-titles-inventario);
+  border: 1px solid #a2adb3;
+}
+
+::ng-deep
+  .cdk-overlay-pane:not(.mat-mdc-select-panel-above)
+  div.mat-mdc-select-panel {
+  background-color: #333333;
+}
+
+::ng-deep .mat-mdc-option.mdc-list-item:hover {
+  background-color: var(--hover-megamenu) !important;
+}

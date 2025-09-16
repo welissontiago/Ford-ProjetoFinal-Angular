@@ -63,6 +63,8 @@
     rgba(180, 127, 47, 0.7) 98.02%
   );
   --bg-titles-inventario: #29292d;
+  --inventario-titles-color: #bfc1c2;
+  --label-inventario: #ded5c9;
 }
 
 html.white-theme {
@@ -123,6 +125,8 @@ html.white-theme {
     rgba(162, 200, 242, 0.7) 98.02%
   );
   --bg-titles-inventario: #f4f4f4;
+  --inventario-titles-color: #bfc1c2;
+  --label-inventario: #ded5c9;
 }
 
 html {

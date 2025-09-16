@@ -1,0 +1,22 @@
+.container-inventario {
+  max-width: 1444px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.grid-inventario {
+  margin-left: 30px;
+  margin-top: 30px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 320px 320px 320px;
+  gap: 50px;
+}
+
+.qtd-carros {
+  position: absolute;
+  top: -30px;
+  left: 330px;
+}

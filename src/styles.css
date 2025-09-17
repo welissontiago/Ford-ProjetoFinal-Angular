@@ -65,6 +65,8 @@
   --bg-titles-inventario: #29292d;
   --inventario-titles-color: #bfc1c2;
   --label-inventario: #ded5c9;
+  --hover-filter: #333333;
+  --filter-text-label: white;
 }
 
 html.white-theme {
@@ -125,8 +127,10 @@ html.white-theme {
     rgba(162, 200, 242, 0.7) 98.02%
   );
   --bg-titles-inventario: #f4f4f4;
-  --inventario-titles-color: #bfc1c2;
+  --inventario-titles-color: #0f172a;
   --label-inventario: #ded5c9;
+  --hover-filter: #f9fafb;
+  --filter-text-label: #6b7280;
 }
 
 html {

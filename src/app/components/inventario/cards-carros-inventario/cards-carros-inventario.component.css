@@ -15,9 +15,9 @@
 
 .lista-destaques img {
   max-width: 320px;
-  min-width: 250px;
-  width: 100%;
+  min-width: 200px;
   height: 310px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -91,7 +91,31 @@ span {
   visibility: visible;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
+  .lista-destaques a {
+    gap: 7px;
+    padding-bottom: 25px;
+  }
+  .lista-destaques img {
+    max-width: 280px;
+    height: 220px;
+  }
+  .lista-destaques {
+    width: 280px;
+  }
+}
+
+@media (max-width: 665px) {
+  .lista-destaques img {
+    max-width: 280px;
+    height: 220px;
+  }
+  .lista-destaques {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 545px) {
   .preco-detalhes p {
     font-size: 1rem;
   }
@@ -99,33 +123,16 @@ span {
     max-width: 320px;
     height: 220px;
   }
-  .lista-destaques a:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 5px;
-    background-color: var(--components-color);
-    position: absolute;
-    top: 220px;
-    transition: width 0.3s ease-in-out;
-  }
   .preco-detalhes {
     margin-right: 0px;
     gap: 40px;
   }
-  .btn-detalhes {
-    padding: 8px 16px;
-    font-size: 14px;
-    margin-right: 15px;
-  }
   .lista-destaques:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
-}
-
-@media (max-width: 400px) {
   .lista-destaques img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 280px;
+    min-width: 200px;
+    height: 310px;
   }
 }

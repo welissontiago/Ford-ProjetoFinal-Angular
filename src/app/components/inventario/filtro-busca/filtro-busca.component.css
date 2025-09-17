@@ -41,9 +41,37 @@
 ::ng-deep
   .cdk-overlay-pane:not(.mat-mdc-select-panel-above)
   div.mat-mdc-select-panel {
-  background-color: #333333;
+  background-color: var(--hover-filter);
 }
 
 ::ng-deep .mat-mdc-option.mdc-list-item:hover {
   background-color: var(--hover-megamenu) !important;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  color: white !important;
+}
+
+@media (max-width: 885px) {
+  .filtro-bg {
+    flex-direction: row;
+    gap: 20px;
+    padding: 15px 25px 20px 25px;
+  }
+  .forms-tamanho {
+    max-width: 130px;
+  }
+  .filtro-bg h1 {
+    font-size: 0.8rem;
+    display: none;
+  }
+  .filtro-bg h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .filtro-bg {
+    flex-direction: column;
+  }
 }

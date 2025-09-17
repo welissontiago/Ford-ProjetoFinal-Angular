@@ -4,6 +4,7 @@
   margin: 0 auto;
   display: flex;
   position: relative;
+  justify-content: center;
 }
 
 .grid-inventario {
@@ -11,12 +12,70 @@
   margin-top: 30px;
   display: grid;
   width: 100%;
-  grid-template-columns: 320px 320px 320px;
+  grid-template-columns: minmax(200px, 320px) minmax(200px, 320px) minmax(
+      200px,
+      320px
+    );
   gap: 50px;
+  margin-right: 20px;
 }
 
 .qtd-carros {
   position: absolute;
   top: -30px;
   left: 330px;
+}
+
+.inventario-bg {
+  padding: 0px 0px 150px 0px;
+  border-bottom: 1px solid var(--border-c1);
+}
+
+@media (max-width: 1300px) {
+  .grid-inventario {
+    grid-template-columns: minmax(200px, 320px) minmax(200px, 320px);
+    justify-content: center;
+  }
+  .qtd-carros {
+    left: 350px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid-inventario {
+    gap: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 885px) {
+  .container-inventario {
+    flex-direction: column;
+    align-items: center;
+  }
+  .qtd-carros {
+    display: none;
+  }
+}
+
+@media (max-width: 665px) {
+  .grid-inventario {
+    gap: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-inventario {
+    flex-direction: row;
+    align-items: start;
+  }
+  .grid-inventario {
+    grid-template-columns: minmax(200px, 250px);
+  }
+  .qtd-carros {
+    display: block;
+    left: 200px;
+    top: -40px;
+  }
 }

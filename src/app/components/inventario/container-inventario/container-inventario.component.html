@@ -1,12 +1,18 @@
 <section class="inventario-bg">
   <div class="container-inventario">
-    <app-filtro-busca (filtrosMudaram)="aplicarFiltros($event)"></app-filtro-busca>
+    <app-filtro-busca
+      class="filtro"
+      (filtrosMudaram)="aplicarFiltros($event)"
+    ></app-filtro-busca>
 
     <div class="grid-inventario" *ngIf="carsFiltrados$ | async as cars">
       <h1 class="qtd-carros color-titles">
         {{ cars.length }} veículos encontrados
       </h1>
-      <app-cards-carros-inventario *ngFor="let car of cars" [car]="car"></app-cards-carros-inventario>
+      <app-cards-carros-inventario
+        *ngFor="let car of cars"
+        [car]="car"
+      ></app-cards-carros-inventario>
     </div>
   </div>
 </section>

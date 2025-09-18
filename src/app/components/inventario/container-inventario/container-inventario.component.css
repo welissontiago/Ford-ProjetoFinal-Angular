@@ -63,19 +63,22 @@
   .grid-inventario {
     gap: 0px;
   }
+  .filtro {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 600px) {
   .container-inventario {
-    flex-direction: row;
-    align-items: start;
+    flex-direction: column;
   }
   .grid-inventario {
     grid-template-columns: minmax(200px, 250px);
   }
   .qtd-carros {
     display: block;
-    left: 200px;
-    top: -40px;
+    left: 100px;
+    top: 600px;
+    font-size: 1.8rem;
   }
 }

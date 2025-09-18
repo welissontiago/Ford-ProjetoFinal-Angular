@@ -73,5 +73,9 @@
 @media (max-width: 600px) {
   .filtro-bg {
     flex-direction: column;
+    margin-bottom: 100px;
+  }
+  .forms-tamanho {
+    max-width: 300px;
   }
 }

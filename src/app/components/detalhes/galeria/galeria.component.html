@@ -23,26 +23,13 @@
     </button>
 
     <div class="progress-spinner-container">
-      <svg class="w-full h-full" viewBox="0 0 36 36">
-        <path
-          class="text-gray-600"
-          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke-width="3"
-          stroke="currentColor"
-          stroke-opacity="0.5"
-        />
-        <path
-          id="progress-circle"
-          class="progress-ring__circle text-blue-500"
-          [style.strokeDashoffset]="strokeDashoffset"
-          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-          fill="none"
-          stroke-width="3"
-          stroke="currentColor"
-          stroke-linecap="round"
-        />
-      </svg>
+      <mat-progress-spinner
+        [value]="progressValue"
+        mode="determinate"
+        diameter="48"
+        strokeWidth="4"
+        color="primary"
+      ></mat-progress-spinner>
     </div>
   </div>
 

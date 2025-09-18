@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Importe aqui
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -11,20 +12,18 @@ import {
 
 @Component({
   selector: 'app-galeria',
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, MatProgressSpinnerModule], // Adicione aqui
   templateUrl: './galeria.component.html',
   styleUrl: './galeria.component.css',
 })
-export class GaleriaComponent implements OnInit, OnDestroy, AfterViewInit {
+export class GaleriaComponent implements OnInit, OnDestroy {
   @Input() images: string[] = [];
 
   currentIndex = 0;
-  private autoSlide = 10000;
+  progressValue = 0;
+  private autoSlide = 10000; // 10 segundos
   private tempoSlide: any;
-  private progressao: HTMLElement | null = null;
-  private readonly radius = 15.9155;
-  private readonly circunferencia = 2 * Math.PI * this.radius;
-  strokeDashoffset = this.circunferencia;
+  private progressInterval: any;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -32,13 +31,9 @@ export class GaleriaComponent implements OnInit, OnDestroy, AfterViewInit {
     this.resetAutoSlide();
   }
 
-  ngAfterViewInit(): void {
-    this.progressao = document.getElementById('progress-circle');
-    this.startProgressAnimation();
-  }
-
   ngOnDestroy(): void {
     clearInterval(this.tempoSlide);
+    clearInterval(this.progressInterval);
   }
 
   changeImage(index: number): void {
@@ -59,25 +54,20 @@ export class GaleriaComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private resetAutoSlide(): void {
     clearInterval(this.tempoSlide);
+    clearInterval(this.progressInterval);
+    this.progressValue = 0;
+
     this.tempoSlide = setInterval(() => this.nextImage(), this.autoSlide);
     this.startProgressAnimation();
   }
 
   private startProgressAnimation(): void {
-    if (this.progressao) {
-      this.progressao.style.transition = 'none';
-      this.strokeDashoffset = this.circunferencia;
+    const startTime = Date.now();
+    this.progressInterval = setInterval(() => {
+      const elapsedTime = Date.now() - startTime;
+      const progress = (elapsedTime / this.autoSlide) * 100;
+      this.progressValue = Math.min(progress, 100);
       this.cdr.detectChanges();
-
-      setTimeout(() => {
-        if (this.progressao) {
-          this.progressao.style.transition = `stroke-dashoffset ${
-            this.autoSlide / 1000
-          }s linear`;
-          this.strokeDashoffset = 0;
-          this.cdr.detectChanges();
-        }
-      }, 50);
-    }
+    }, 50);
   }
 }

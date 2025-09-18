@@ -33,6 +33,14 @@ export const routes: Routes = [
   },
 
   {
+    path: 'veiculo/:id',
+    loadComponent: () =>
+      import('./pages/detalhes-veiculo/detalhes-veiculo.component').then(
+        (m) => m.DetalhesVeiculoComponent
+      ),
+  },
+
+  {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full',

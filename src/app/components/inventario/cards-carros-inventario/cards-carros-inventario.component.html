@@ -1,6 +1,6 @@
 <div class="lista-destaques" *ngIf="car">
-  <a href="#">
-    <img [src]="car.imagem_principal" [alt]="car.nome" />
+  <a [routerLink]="['/veiculo', car.id]">
+    <img [src]=" car.imagem_principal" [alt]="car.nome" />
     <h3 class="color-titles --title-text-24px">{{ car.nome }}</h3>
     <p class="cor-cinza --text-16px">{{ car.ano }} <span></span> 0km</p>
     <div class="preco-detalhes">

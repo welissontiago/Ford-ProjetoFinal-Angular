@@ -61,7 +61,16 @@
         ]
       },
       "imagem_principal": "carros/carro-branco-card.png",
-      "galeria": ["", "", ""]
+      "galeria": [
+        "/carros/mustang/card-mustang-main.png",
+        "/carros/mustang/fordmustang_bluecar.avif",
+        "/carros/mustang/fordmustang_cadeiras.avif",
+        "/carros/mustang/fordmustang_carros.avif",
+        "/carros/mustang/fordmustang_marcha.avif",
+        "/carros/mustang/fordmustang_phone.avif",
+        "/carros/mustang/fordmustang_volante.avif",
+        "/carros/mustang/fordmustang_cadeiras2.avif"
+      ]
     },
     {
       "id": "2",

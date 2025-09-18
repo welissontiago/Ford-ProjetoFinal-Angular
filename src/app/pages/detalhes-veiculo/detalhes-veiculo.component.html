@@ -1,1 +1,4 @@
-<p>detalhes-veiculo works!</p>
+<div *ngIf="car$ | async as car">
+  <h1>{{ car.nome }}</h1>
+  <app-galeria [images]="car.galeria"></app-galeria>
+</div>

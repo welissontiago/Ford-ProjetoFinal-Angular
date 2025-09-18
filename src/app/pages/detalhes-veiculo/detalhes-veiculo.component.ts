@@ -4,10 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { CarsService } from '../../core/services/cars.service';
 import { Observable } from 'rxjs';
 import { Cars } from '../../core/models/cars.model';
+import { GaleriaComponent } from '../../components/detalhes/galeria/galeria.component';
 
 @Component({
   selector: 'app-detalhes-veiculo',
-  imports: [CommonModule],
+  imports: [CommonModule, GaleriaComponent],
   templateUrl: './detalhes-veiculo.component.html',
   styleUrl: './detalhes-veiculo.component.css',
 })

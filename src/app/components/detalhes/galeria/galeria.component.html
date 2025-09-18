@@ -1,0 +1,59 @@
+<div class="carousel-container" *ngIf="images.length > 0">
+  <div class="main-image-container">
+    <div class="image-viewport">
+      <div
+        id="image-slider"
+        [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+      >
+        <img
+          *ngFor="let image of images"
+          [src]="image"
+          alt="Imagem do veículo"
+          class="slider-image"
+        />
+      </div>
+    </div>
+
+    <button (click)="prevImage()" class="nav-arrow prev-btn">
+      <mat-icon class="arrow-left" matPrefix>arrow_back</mat-icon>
+    </button>
+
+    <button (click)="nextImage()" class="nav-arrow next-btn">
+      <mat-icon class="arrow-right" matPrefix>arrow_forward</mat-icon>
+    </button>
+
+    <div class="progress-spinner-container">
+      <svg class="w-full h-full" viewBox="0 0 36 36">
+        <path
+          class="text-gray-600"
+          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+          fill="none"
+          stroke-width="3"
+          stroke="currentColor"
+          stroke-opacity="0.5"
+        />
+        <path
+          id="progress-circle"
+          class="progress-ring__circle text-blue-500"
+          [style.strokeDashoffset]="strokeDashoffset"
+          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+          fill="none"
+          stroke-width="3"
+          stroke="currentColor"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div class="thumbnail-gallery">
+    <img
+      *ngFor="let image of images; let i = index"
+      [src]="image"
+      [alt]="'Miniatura ' + (i + 1)"
+      (click)="changeImage(i)"
+      class="thumbnail-img"
+      [class.thumbnail-active]="i === currentIndex"
+    />
+  </div>
+</div>

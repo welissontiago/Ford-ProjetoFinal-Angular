@@ -12,7 +12,7 @@ import {
 
 @Component({
   selector: 'app-galeria',
-  imports: [CommonModule, MatIconModule, MatProgressSpinnerModule], // Adicione aqui
+  imports: [CommonModule, MatIconModule, MatProgressSpinnerModule],
   templateUrl: './galeria.component.html',
   styleUrl: './galeria.component.css',
 })
@@ -21,7 +21,7 @@ export class GaleriaComponent implements OnInit, OnDestroy {
 
   currentIndex = 0;
   progressValue = 0;
-  private autoSlide = 10000; // 10 segundos
+  private autoSlide = 10000;
   private tempoSlide: any;
   private progressInterval: any;
 

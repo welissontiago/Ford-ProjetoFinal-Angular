@@ -67,6 +67,7 @@
   --label-inventario: #ded5c9;
   --hover-filter: #333333;
   --filter-text-label: white;
+  --teste-drive-bg: #4f5050;
 }
 
 html.white-theme {
@@ -131,6 +132,7 @@ html.white-theme {
   --label-inventario: #ded5c9;
   --hover-filter: #f9fafb;
   --filter-text-label: #6b7280;
+  --teste-drive-bg: #4f5050;
 }
 
 html {

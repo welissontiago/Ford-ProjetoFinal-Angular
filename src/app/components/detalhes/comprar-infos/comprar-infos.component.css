@@ -1,0 +1,115 @@
+.comprar-bg {
+  background-color: #333333;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.icons-infos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.preco-section {
+  margin-top: 20px;
+}
+
+.car-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.car-icons span {
+  color: var(--label-1-color);
+  font-weight: 500;
+}
+
+.preco-section p {
+  color: var(--text-special);
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.especificacoes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.espec-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.buttons {
+  gap: 16px;
+}
+
+.buttons button {
+  width: 300px;
+  height: 50px;
+}
+
+.button-comprar {
+  background-color: var(--components-color) !important;
+  color: var(--card-background) !important;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-comprar:hover {
+  background-color: var(--component-hover) !important;
+}
+
+.button-proposta {
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-special) !important;
+  background-color: var(--lista-destaques-bg) !important;
+  border: 1px solid var(--text-special);
+}
+
+.button-proposta:hover {
+  background-color: var(--text-special) !important;
+  color: var(--text-color-four) !important;
+}
+
+.button-testedrive {
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-title) !important;
+  background-color: var(--teste-drive-bg) !important;
+}
+
+.especificacoes .espec-item {
+  margin-top: 16px;
+  align-items: center;
+}
+
+.espec-item p {
+  color: var(--label-1-color);
+  font-weight: 600;
+}
+
+.espec-item span {
+  color: var(--text-title-two);
+}

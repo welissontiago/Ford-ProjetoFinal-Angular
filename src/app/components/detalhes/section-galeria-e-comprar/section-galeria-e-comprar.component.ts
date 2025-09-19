@@ -6,10 +6,16 @@ import { Cars } from '../../../core/models/cars.model';
 import { CommonModule } from '@angular/common';
 import { GaleriaComponent } from '../galeria/galeria.component';
 import { ComprarInfosComponent } from '../comprar-infos/comprar-infos.component';
+import { TabsDetalheComponent } from '../tabs-detalhe/tabs-detalhe.component';
 
 @Component({
   selector: 'app-section-galeria-e-comprar',
-  imports: [CommonModule, GaleriaComponent, ComprarInfosComponent],
+  imports: [
+    CommonModule,
+    GaleriaComponent,
+    ComprarInfosComponent,
+    TabsDetalheComponent,
+  ],
   templateUrl: './section-galeria-e-comprar.component.html',
   styleUrl: './section-galeria-e-comprar.component.css',
 })

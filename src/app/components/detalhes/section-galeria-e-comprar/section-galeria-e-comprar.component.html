@@ -1,6 +1,12 @@
-<section class="section-galeria" aria-label="Galeria de imagens do carro e botão de compra a direita">
+<section
+  class="section-galeria"
+  aria-label="Galeria de imagens do carro e botão de compra a direita"
+>
   <div class="flex-layout" *ngIf="car$ | async as car">
     <app-galeria [images]="car.galeria"></app-galeria>
     <app-comprar-infos [car]="car"></app-comprar-infos>
+  </div>
+  <div *ngIf="car$ | async as car">
+    <app-tabs-detalhe [car]="car"></app-tabs-detalhe>
   </div>
 </section>

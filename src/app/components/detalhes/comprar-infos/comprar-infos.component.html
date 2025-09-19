@@ -1,68 +1,97 @@
 <div class="comprar-bg" *ngIf="car">
   <div class="comprar-section">
-    <h1 class="title-car color-titles --text-32px">{{car.nome}}</h1>
+    <h1 class="title-car color-titles --text-32px">{{ car.nome }}</h1>
     <div class="icons-infos">
       <div class="car-icons">
-        <mat-icon style="color: var(--components-color);">calendar_month</mat-icon>
-        <span>{{car.ano}}</span>
+        <mat-icon style="color: var(--components-color)"
+          >calendar_month</mat-icon
+        >
+        <span>{{ car.ano }}</span>
       </div>
       <div class="car-icons">
-        <mat-icon style="color: var(--components-color);">speed</mat-icon>
+        <mat-icon style="color: var(--components-color)">speed</mat-icon>
         <span>0 km</span>
       </div>
     </div>
 
     <div class="preco-section">
-      <h2 class="preco color-titles --text-32px">{{ car.preco | currency : "BRL" }}</h2>
-      <p class="--text-16px">ou {{ car.preco/60 | currency : "BRL" }} em 60x</p>
+      <h2 class="preco color-titles --text-32px">
+        {{ car.preco | currency : "BRL" }}
+      </h2>
+      <p class="--text-16px">
+        ou {{ car.preco / 60 | currency : "BRL" }} em 60x
+      </p>
     </div>
-
 
     <div class="buttons">
       <div>
-        <button class="button-comprar" mat-flat-button aria-label="botão para comprar veículo">
+        <button
+          class="button-comprar"
+          mat-flat-button
+          aria-label="botão para comprar veículo"
+        >
           <mat-icon class="icon-buy" matPrefix>shopping_cart</mat-icon>
           COMPRAR AGORA
         </button>
       </div>
 
       <div>
-        <button class="button-proposta" mat-flat-button aria-label="botão para solicitar uma proposta">
+        <button
+          class="button-proposta"
+          mat-flat-button
+          aria-label="botão para solicitar uma proposta"
+        >
           <mat-icon class="icon-proposta" matPrefix>text_snippet</mat-icon>
           SOLICITAR PROPOSTA
         </button>
       </div>
 
       <div>
-        <button class="button-testedrive" mat-flat-button aria-label="botão para solicitar uma proposta">
+        <button
+          class="button-testedrive"
+          mat-flat-button
+          aria-label="botão para solicitar uma proposta"
+        >
           AGENDAR TEST-DRIVE
         </button>
       </div>
-
     </div>
 
     <div class="especificacoes">
       <h3 class="color-titles --title-text-24px">Especificações</h3>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon style="color: var(--components-color);">electric_bolt</mat-icon>
+          <mat-icon
+            class="icon"
+            style="color: var(--components-color) !important"
+            >electric_bolt</mat-icon
+          >
           <p>Motor</p>
         </div>
-        <span>{{car.especificacoes.motor}}</span>
+        <span>{{ car.especificacoes.motor }}</span>
       </div>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon style="color: var(--components-color);">rocket_launch</mat-icon>
+          <mat-icon
+            class="icon"
+            style="color: var(--components-color) !important"
+            >rocket_launch</mat-icon
+          >
           <p>Potência</p>
         </div>
-        <span>{{car.especificacoes.potencia}}</span>
+        <span>{{ car.especificacoes.potencia }}</span>
       </div>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon style="color: var(--components-color);">local_gas_station</mat-icon>
+          <mat-icon
+            class="icon"
+            style="color: var(--components-color) !important"
+            >local_gas_station</mat-icon
+          >
           <p>Combustível</p>
         </div>
-        <span>{{car.combustiveis}}</span>
+        <span>{{ car.combustiveis }}</span>
       </div>
     </div>
   </div>
+</div>

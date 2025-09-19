@@ -1,8 +1,9 @@
 .comprar-bg {
-  background-color: #333333;
+  background-color: var(--lista-destaques-bg);
   box-sizing: border-box;
   padding: 40px;
   border-radius: 5px;
+  margin-right: 20px;
 }
 
 .icons-infos {
@@ -15,6 +16,14 @@
 
 .preco-section {
   margin-top: 20px;
+}
+
+.especificacoes span {
+  color: var(--text-color-six) !important;
+}
+
+.icon-buy {
+  color: var(--search-bg) !important;
 }
 
 .car-icons {
@@ -84,12 +93,16 @@
   cursor: pointer;
   color: var(--text-special) !important;
   background-color: var(--lista-destaques-bg) !important;
-  border: 1px solid var(--text-special);
+  border: 1px solid var(--text-special) !important;
 }
 
 .button-proposta:hover {
   background-color: var(--text-special) !important;
   color: var(--text-color-four) !important;
+}
+
+.button-proposta:hover .icon-proposta {
+  color: black;
 }
 
 .button-testedrive {
@@ -112,4 +125,103 @@
 
 .espec-item span {
   color: var(--text-title-two);
+}
+
+@media (max-width: 1175px) {
+  .comprar-bg {
+    padding: 30px;
+  }
+  .buttons button {
+    width: 250px;
+  }
+  .comprar-section h1 {
+    font-size: 1.5rem;
+  }
+  .preco-section h2 {
+    font-size: 1.5rem;
+  }
+  .preco-section p {
+    font-size: 0.775rem;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 1000px) {
+  .especificacoes h3 {
+    font-size: 1.3rem;
+  }
+  .icon-left p {
+    font-size: 0.875rem;
+  }
+  .icon {
+    font-size: 20px;
+  }
+  .espec-item span {
+    font-size: 0.875rem;
+  }
+  .buttons button {
+    width: 220px;
+  }
+  .especificacoes {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .buttons button {
+    width: 370px;
+  }
+  .especificacoes h3 {
+    font-size: 2rem;
+  }
+  .comprar-section h1 {
+    font-size: 2.5rem;
+  }
+  .preco-section h2 {
+    font-size: 2.5rem;
+  }
+  .preco-section p {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .icon {
+    font-size: 25px;
+  }
+  .espec-item span {
+    font-size: 1rem;
+  }
+  .icon-left p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .especificacoes h3 {
+    font-size: 1.3rem;
+  }
+  .icon-left p {
+    font-size: 0.875rem;
+  }
+  .icon {
+    font-size: 20px;
+  }
+  .espec-item span {
+    font-size: 0.875rem;
+  }
+  .buttons button {
+    width: 250px;
+  }
+  .comprar-section h1 {
+    font-size: 1.5rem;
+  }
+  .preco-section h2 {
+    font-size: 1.5rem;
+  }
+  .preco-section p {
+    font-size: 0.775rem;
+    font-weight: 400;
+  }
+  .comprar-bg {
+    padding: 50px;
+  }
 }

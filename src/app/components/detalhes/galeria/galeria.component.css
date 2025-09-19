@@ -70,10 +70,15 @@
 .thumbnail-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 10px;
 }
 
-@media (min-width: 640px) {
+.arrow-left,
+.arrow-right {
+  color: white !important;
+}
+
+@media (min-width: 850px) {
   .thumbnail-gallery {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -97,4 +102,16 @@
   border-color: #3b82f6;
   opacity: 1;
   transform: scale(1.08);
+}
+
+@media (max-width: 750px) {
+  .thumbnail-gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .thumbnail-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,5 +1,39 @@
+.section-galeria {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1300px;
+}
+
 .flex-layout {
   display: flex;
   justify-content: center;
   gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1175px) {
+  .flex-layout {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 750px) {
+  .flex-layout {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .flex-layout {
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;
+  }
 }

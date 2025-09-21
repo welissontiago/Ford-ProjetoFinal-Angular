@@ -2,7 +2,7 @@
   <mat-tab-group class="tabs">
     <mat-tab label="Descrição">
       <h1 class="--title-text-24px color-titles">descrição</h1>
-      <span>{{ car.descricao }}</span>
+      <span class="description">{{ car.descricao }}</span>
     </mat-tab>
     <mat-tab label="Especificações">
       <h1 class="--title-text-24px color-titles">Espeficações técnicas</h1>
@@ -124,7 +124,24 @@
         </app-card-equipamentos>
       </div>
     </mat-tab>
-    <mat-tab label="História"> Content 3 </mat-tab>
-    <mat-tab label="Concessionárias"> Content 3 </mat-tab>
+    <mat-tab label="História">
+      <h1 class="--title-text-24px color-titles">História</h1>
+      <span class="description">{{ car.historia }}</span>
+    </mat-tab>
+    <mat-tab label="Concessionárias">
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">location_on</mat-icon>
+        Concessionárias
+      </ng-template>
+      <h1 class="--text-32px color-titles">Concessionarias proximas</h1>
+      <form class="example-form">
+        <mat-form-field class="full-width">
+          <mat-label>Digite o cep: </mat-label>
+          <input matInput placeholder="Ex. 00000-000">
+        </mat-form-field>
+      </form>
+    </mat-tab>
   </mat-tab-group>
+
+  <div class="line"></div>
 </div>

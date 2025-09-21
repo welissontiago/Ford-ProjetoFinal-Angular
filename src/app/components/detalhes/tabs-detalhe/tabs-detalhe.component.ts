@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CardEspecificacoesComponent } from './card-especificacoes/card-especificacoes.component';
 import { CardEquipamentosComponent } from './card-equipamentos/card-equipamentos.component';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-tabs-detalhe',
@@ -14,6 +15,7 @@ import { CardEquipamentosComponent } from './card-equipamentos/card-equipamentos
     MatTabsModule,
     CardEspecificacoesComponent,
     CardEquipamentosComponent,
+    MatInputModule,
   ],
   templateUrl: './tabs-detalhe.component.html',
   styleUrl: './tabs-detalhe.component.css',

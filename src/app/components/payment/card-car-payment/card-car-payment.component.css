@@ -1,0 +1,43 @@
+.card-bg {
+  max-width: 450px;
+  min-width: 250px;
+  background-color: var(--bg-card-cars);
+  border: 1px solid var(--border-payment-card);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titles-init {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icon-bg {
+  background-color: var(--bg-icon);
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 7px;
+}
+
+.image-card img {
+  max-height: 250px;
+  width: 100%;
+}
+
+.mini-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.mini-details p {
+  background: var(--bg-icon);
+  padding: 8px;
+  border-radius: 50px;
+}

@@ -1,0 +1,9 @@
+.pagamento {
+  position: absolute;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1300px;
+  display: inline-block;
+}

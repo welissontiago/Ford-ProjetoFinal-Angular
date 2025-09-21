@@ -34,9 +34,19 @@ export const routes: Routes = [
 
   {
     path: 'veiculo/:id',
+    //canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/detalhes-veiculo/detalhes-veiculo.component').then(
         (m) => m.DetalhesVeiculoComponent
+      ),
+  },
+
+  {
+    path: 'pagamento/:id',
+    //canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/pagamento/pagamento.component').then(
+        (m) => m.PagamentoComponent
       ),
   },
 

@@ -1,0 +1,56 @@
+<div class="card-bg">
+  <div class="titles-init">
+    <div class="icon-bg">
+      <img src="/icons/car-white-icon.svg" alt="icone de veiculo">
+    </div>
+    <div class="text-column">
+      <h1 class="poppins-semibold --title-text-24px color-titles">Seu Veículo</h1>
+      <p class="color-titles --text-14px">Configuração atual</p>
+    </div>
+  </div>
+  <div class="image-card">
+    <img [src]="car.imagem_principal" [alt]="car.nome">
+  </div>
+  <div class="mini-details">
+    <h2 class="poppins-semibold --title-text-24px color-titles">{{car.nome}}</h2>
+    <p class="--text-16px color-titles">{{car.ano}}</p>
+  </div>
+  <div class="car-especs">
+    <div class="icon-title">
+      <mat-icon aria-label="Icone de informações importantes" fontIcon="error"></mat-icon>
+      <h3>Especificações</h3>
+    </div>
+    <div class="especs-bg">
+      <div class="column-1">
+        <div class="motor">
+          <h4>Motor:</h4>
+          <p>{{car.especificacoes.motor}}</p>
+        </div>
+        <div class="velocidade">
+          <h4>0-100 km/h:</h4>
+          <p>{{car.especificacoes.aceleracao_0_100}}</p>
+        </div>
+      </div>
+
+      <div class="column-2">
+        <div class="potencia">
+          <h4>Potência:</h4>
+          <p>{{car.especificacoes.potencia}}</p>
+        </div>
+        <div class="velocidade-max">
+          <h4>Vel. Max:</h4>
+          <p>{{car.especificacoes.velocidade_maxima}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inicial-price">
+    <p>Preço base:</p>
+    <span>{{car.preco | currency : "BRL"}}</span>
+  </div>
+  <div class="linha"></div>
+  <div class="final-price">
+    <p>Preço base:</p>
+    <span>{{car.preco | currency : "BRL"}}</span>
+  </div>
+</div>

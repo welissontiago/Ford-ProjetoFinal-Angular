@@ -3,9 +3,7 @@
     <h1 class="title-car color-titles --text-32px">{{ car.nome }}</h1>
     <div class="icons-infos">
       <div class="car-icons">
-        <mat-icon style="color: var(--components-color)"
-          >calendar_month</mat-icon
-        >
+        <mat-icon style="color: var(--components-color)">calendar_month</mat-icon>
         <span>{{ car.ano }}</span>
       </div>
       <div class="car-icons">
@@ -25,33 +23,21 @@
 
     <div class="buttons">
       <div>
-        <button
-          class="button-comprar"
-          mat-flat-button
-          aria-label="botão para comprar veículo"
-        >
+        <button class="button-comprar" mat-flat-button aria-label="botão para comprar veículo" [routerLink]="['/pagamento', car.id]">
           <mat-icon class="icon-buy" matPrefix>shopping_cart</mat-icon>
           COMPRAR AGORA
         </button>
       </div>
 
       <div>
-        <button
-          class="button-proposta"
-          mat-flat-button
-          aria-label="botão para solicitar uma proposta"
-        >
+        <button class="button-proposta" mat-flat-button aria-label="botão para solicitar uma proposta">
           <mat-icon class="icon-proposta" matPrefix>text_snippet</mat-icon>
           SOLICITAR PROPOSTA
         </button>
       </div>
 
       <div>
-        <button
-          class="button-testedrive"
-          mat-flat-button
-          aria-label="botão para solicitar uma proposta"
-        >
+        <button class="button-testedrive" mat-flat-button aria-label="botão para solicitar uma proposta">
           AGENDAR TEST-DRIVE
         </button>
       </div>
@@ -61,33 +47,21 @@
       <h3 class="color-titles --title-text-24px">Especificações</h3>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon
-            class="icon"
-            style="color: var(--components-color) !important"
-            >electric_bolt</mat-icon
-          >
+          <mat-icon class="icon" style="color: var(--components-color) !important">electric_bolt</mat-icon>
           <p>Motor</p>
         </div>
         <span>{{ car.especificacoes.motor }}</span>
       </div>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon
-            class="icon"
-            style="color: var(--components-color) !important"
-            >rocket_launch</mat-icon
-          >
+          <mat-icon class="icon" style="color: var(--components-color) !important">rocket_launch</mat-icon>
           <p>Potência</p>
         </div>
         <span>{{ car.especificacoes.potencia }}</span>
       </div>
       <div class="espec-item">
         <div class="icon-left">
-          <mat-icon
-            class="icon"
-            style="color: var(--components-color) !important"
-            >local_gas_station</mat-icon
-          >
+          <mat-icon class="icon" style="color: var(--components-color) !important">local_gas_station</mat-icon>
           <p>Combustível</p>
         </div>
         <span>{{ car.combustiveis }}</span>

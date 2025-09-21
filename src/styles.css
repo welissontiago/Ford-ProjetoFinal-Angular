@@ -68,6 +68,9 @@
   --hover-filter: #333333;
   --filter-text-label: white;
   --teste-drive-bg: #4f5050;
+  --bg-card-cars: #333333;
+  --border-payment-card: #4a4947;
+  --bg-icon: #2a2828;
 }
 
 html.white-theme {
@@ -133,6 +136,8 @@ html.white-theme {
   --hover-filter: #f9fafb;
   --filter-text-label: #6b7280;
   --teste-drive-bg: #a9aade;
+  --bg-card-cars: #e6eaf0;
+  --border-payment-card: #dbdbe1;
 }
 
 html {

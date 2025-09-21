@@ -1,0 +1,5 @@
+.card-equipamentos-bg {
+  background-color: var(--lista-destaques-bg);
+  padding: 30px;
+  box-sizing: border-box;
+}

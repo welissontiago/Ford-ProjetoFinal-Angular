@@ -32,6 +32,7 @@
       "descricao": "O Ford Mustang GT 5.0 é um ícone americano que combina desempenho bruto com um design musculoso e atemporal. No coração dessa máquina está o lendário motor Coyote V8 de 5.0 litros, que entrega uma potência impressionante e um ronco inconfundível, característico dos muscle cars. A aceleração é visceral, garantindo uma experiência de condução emocionante tanto nas ruas quanto nas pistas. \n Em termos de design, o Mustang GT 5.0 mantém as linhas clássicas que o tornaram famoso, mas com toques modernos que o deixam ainda mais agressivo e aerodinâmico. Seu interior é focado no motorista, com materiais de qualidade e tecnologia intuitiva, oferecendo conforto e conectividade para o dia a dia. \n Para os entusiastas da performance, o Mustang GT 5.0 oferece opções de transmissão manual ou automática de última geração, suspensão ajustada para otimizar a dirigibilidade e sistemas de freio de alta performance. É um carro que proporciona uma conexão autêntica com a estrada, seja em um passeio tranquilo ou em uma pilotagem mais esportiva",
       "categoria": "Esportivo",
       "ano": 2023,
+      "historia": "O Ford Mustang é um dos carros mais icônicos e reconhecidos do mundo, com uma história rica que remonta a mais de cinco décadas. Lançado pela primeira vez em 1964, o Mustang rapidamente se tornou um símbolo da cultura automotiva americana, representando liberdade, desempenho e estilo. O modelo original foi projetado para ser acessível e atraente para uma ampla gama de consumidores, especialmente os jovens, e sua combinação de design esportivo e preço competitivo ajudou a estabelecer o segmento dos 'pony cars'. \n Ao longo dos anos, o Mustang passou por várias gerações e atualizações, cada uma trazendo inovações tecnológicas e melhorias de desempenho. Desde os motores V8 potentes até as versões mais recentes com tecnologia avançada, o Mustang sempre manteve seu apelo como um carro divertido de dirigir. \n O Mustang também teve um impacto significativo na cultura popular, aparecendo em inúmeros filmes, programas de TV e músicas, solidificando seu status como um ícone cultural. Hoje, o Ford Mustang continua a ser um dos carros esportivos mais populares do mundo, combinando tradição com inovação para atrair tanto entusiastas de longa data quanto novos fãs.",
       "especificacoes": {
         "motor": "2.0 Turbo Flex",
         "potencia": "250 cv",
@@ -83,6 +84,7 @@
       "descricao": "Uma picape versátil, robusta e ideal para uso urbano e fora de estrada.",
       "categoria": "Picape",
       "ano": 2025,
+      "historia": "O Ford Maverick é uma picape compacta que foi introduzida pela Ford em 2021, marcando o retorno da marca ao segmento de picapes pequenas após um hiato de várias décadas. Projetada para atender às necessidades dos consumidores modernos, o Maverick combina a praticidade e a funcionalidade de uma picape com o conforto e a eficiência de um veículo urbano. Com um design robusto e contemporâneo, o Maverick apresenta linhas aerodinâmicas e uma postura imponente, destacando-se tanto na cidade quanto em terrenos mais desafiadores. \n O interior do Maverick é focado no conforto e na tecnologia, oferecendo uma cabine espaçosa com materiais de alta qualidade e uma série de recursos tecnológicos, incluindo uma central multimídia avançada e conectividade para dispositivos móveis. A versatilidade é um dos pontos fortes do Maverick, com uma caçamba funcional que pode ser adaptada para diferentes usos, desde transporte de cargas até atividades recreativas. \n O Ford Maverick está disponível com opções de motorização eficientes, incluindo um motor híbrido que proporciona excelente economia de combustível sem comprometer o desempenho. Com sua combinação única de estilo, funcionalidade e inovação, o Ford Maverick se posiciona como uma escolha atraente para aqueles que buscam uma picape prática e moderna.",
       "especificacoes": {
         "motor": "2.0 EcoBoost Turbo Flex",
         "potencia": "253 cv",
@@ -112,7 +114,15 @@
         ]
       },
       "imagem_principal": "carros/carro-verde-card.png",
-      "galeria": []
+      "galeria": [
+        "/carros/maverick/ford-maverick-carregando.jpeg",
+        "/carros/maverick/ford-maverick-fora.jpeg",
+        "/carros/maverick/ford-maverick-lateral.jpeg",
+        "/carros/maverick/ford-maverick-lateralinteira.jpeg",
+        "/carros/maverick/ford-maverick-radio.jpeg",
+        "/carros/maverick/ford-maverick-sensor.jpeg",
+        "/carros/maverick/ford-maverick-volante.jpeg"
+      ]
     },
     {
       "id": "3",
@@ -125,6 +135,7 @@
       "descricao": "SUV 100% elétrico inspirado no ícone Mustang, unindo performance, autonomia e tecnologia de ponta.",
       "categoria": "SUV",
       "ano": 2025,
+      "historia": "O Ford Mustang Mach-E representa uma nova era para a icônica linha Mustang, trazendo a emoção e o desempenho característicos da marca para o mundo dos veículos elétricos. Lançado em 2020, o Mach-E foi desenvolvido para oferecer uma experiência de condução dinâmica, combinando a potência instantânea dos motores elétricos com um design moderno e aerodinâmico. Com várias opções de bateria e tração, o Mach-E atende a diferentes necessidades, desde trajetos urbanos até aventuras mais longas, tudo isso com zero emissões. Seu interior é equipado com tecnologia avançada, incluindo uma central multimídia de última geração e recursos de assistência ao motorista, garantindo conforto e segurança. O Mustang Mach-E não é apenas um SUV elétrico; é uma declaração de que o futuro da mobilidade pode ser emocionante e sustentável.",
       "especificacoes": {
         "motor": "Elétrico Dual Motor",
         "potencia": "487 cv",
@@ -154,7 +165,15 @@
         ]
       },
       "imagem_principal": "carros/carro-amarelo-card.png",
-      "galeria": ["", "", ""]
+      "galeria": [
+        "/carros/mustangMechE/MechE-banco.jpeg",
+        "/carros/mustangMechE/mechE-capu.jpeg",
+        "/carros/mustangMechE/mechE-dentro.jpeg",
+        "/carros/mustangMechE/mechE-esportivo.jpeg",
+        "/carros/mustangMechE/mechE-fora.jpeg",
+        "/carros/mustangMechE/MechE-marcha.jpeg",
+        "/carros/mustangMechE/mechE-traseira.jpeg"
+      ]
     },
     {
       "id": "4",
@@ -167,6 +186,7 @@
       "descricao": "Van confortável e espaçosa para transporte de passageiros, ideal para uso comercial e corporativo.",
       "categoria": "SUV",
       "ano": 2025,
+      "historia": "A Ford Transit Minibus é uma van projetada para atender às necessidades de transporte de passageiros, oferecendo uma combinação de espaço, conforto e versatilidade. Parte da renomada linha Ford Transit, a Minibus é ideal para empresas, instituições educacionais e serviços de transporte que exigem um veículo confiável e eficiente. Com capacidade para acomodar até 15 passageiros, a Transit Minibus é equipada com assentos confortáveis e um interior espaçoso, garantindo uma viagem agradável para todos os ocupantes. \n O design exterior da Transit Minibus é funcional e robusto, refletindo a durabilidade e a praticidade que são marcas registradas da Ford. A van também oferece uma série de recursos tecnológicos e de segurança, incluindo sistemas avançados de assistência ao motorista, conectividade para dispositivos móveis e opções de entretenimento a bordo. \n A Ford Transit Minibus é movida por um motor diesel eficiente, proporcionando um equilíbrio ideal entre desempenho e economia de combustível. Com sua combinação de capacidade, conforto e tecnologia, a Transit Minibus se destaca como uma escolha confiável para quem precisa de um veículo de transporte de passageiros versátil e bem equipado.",
       "especificacoes": {
         "motor": "2.2 Diesel Turbo",
         "potencia": "165 cv",
@@ -196,7 +216,7 @@
         ]
       },
       "imagem_principal": "carros/Forgao.png",
-      "galeria": ["", "", ""]
+      "galeria": ["/carros/forgao/ford-transit.jpg"]
     },
     {
       "id": "5",
@@ -209,6 +229,7 @@
       "descricao": "SUV robusto e off-road, inspirado no clássico Bronco, preparado para qualquer terreno.",
       "categoria": "SUV",
       "ano": 2025,
+      "historia": "O Ford Bronco é um SUV icônico que foi originalmente lançado na década de 1960, rapidamente se tornando um símbolo de aventura e liberdade ao ar livre. Após um hiato de várias décadas, o Bronco foi reintroduzido em 2020, trazendo de volta seu espírito aventureiro com um design moderno e capacidades off-road aprimoradas. O novo Bronco mantém as linhas robustas e angulares que caracterizaram o modelo original, mas incorpora tecnologias e recursos contemporâneos para atender às demandas dos entusiastas de veículos off-road. \n Equipado com motores potentes e uma suspensão reforçada, o Bronco é projetado para enfrentar terrenos desafiadores, desde trilhas acidentadas até dunas de areia. Seu sistema de tração nas quatro rodas avançado e modos de condução personalizáveis permitem que os motoristas adaptem o veículo às condições do terreno, garantindo desempenho e controle excepcionais. \n O interior do Bronco é focado no conforto e na funcionalidade, com materiais duráveis e tecnologia intuitiva, incluindo uma central multimídia com conectividade para dispositivos móveis. Com sua combinação de herança clássica e inovação moderna, o Ford Bronco continua a ser uma escolha popular para aqueles que buscam aventura e exploração fora das estradas convencionais.",
       "especificacoes": {
         "motor": "2.7 V6 EcoBoost Turbo",
         "potencia": "330 cv",
@@ -238,7 +259,15 @@
         ]
       },
       "imagem_principal": "carros/Bronco.png",
-      "galeria": ["", "", ""]
+      "galeria": [
+        "/carros/bronco/bronco-areia.avif",
+        "/carros/bronco/bronco-cara.avif",
+        "/carros/bronco/bronco-cima.avif",
+        "/carros/bronco/bronco-dentro.avif",
+        "/carros/bronco/bronco-marcha.jpeg",
+        "/carros/bronco/bronco-praia.avif",
+        "/carros/bronco/bronco-volante.avif"
+      ]
     },
     {
       "id": "6",
@@ -251,6 +280,7 @@
       "descricao": "SUV médio moderno e tecnológico, ideal para famílias e viagens urbanas ou rodoviárias.",
       "categoria": "SUV",
       "ano": 2025,
+      "historia": "O Ford Territory é um SUV médio que foi introduzido pela Ford para atender à crescente demanda por veículos versáteis e familiares no segmento de utilitários esportivos. Lançado inicialmente em mercados como China e Austrália, o Territory rapidamente ganhou popularidade devido ao seu design moderno, tecnologia avançada e conforto. Com um foco claro em praticidade e funcionalidade, o Ford Territory é ideal para famílias que buscam um veículo espaçoso, seguro e eficiente para uso diário, bem como para viagens mais longas. \n O design do Territory combina linhas elegantes com uma postura robusta, refletindo a identidade da Ford enquanto oferece uma presença imponente na estrada. O interior é cuidadosamente projetado para maximizar o espaço e o conforto dos ocupantes, com materiais de alta qualidade e uma série de recursos tecnológicos, incluindo uma central multimídia intuitiva e conectividade para dispositivos móveis. \n Equipado com motores eficientes e uma suspensão ajustada para proporcionar uma condução suave, o Ford Territory oferece um equilíbrio ideal entre desempenho e economia de combustível. Com sua combinação de estilo, tecnologia e praticidade, o Ford Territory se destaca como uma escolha atraente para aqueles que procuram um SUV médio confiável e bem equipado.",
       "especificacoes": {
         "motor": "1.5 EcoBoost Turbo",
         "potencia": "170 cv",
@@ -280,7 +310,12 @@
         ]
       },
       "imagem_principal": "carros/Territory.png",
-      "galeria": ["", "", ""]
+      "galeria": [
+        "/carros/territory/territory-banco.avif",
+        "/carros/territory/territory-fora.avif",
+        "/carros/territory/territory-rodas.avif",
+        "/carros/territory/territory-tela.jpg"
+      ]
     }
   ]
 }

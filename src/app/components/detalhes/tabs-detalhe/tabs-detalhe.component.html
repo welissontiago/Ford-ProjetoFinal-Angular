@@ -1,10 +1,98 @@
 <div class="nav-tabs">
-  <mat-tab-group>
-    <mat-tab label="First">
-      <h1>descrição</h1>
+  <mat-tab-group class="tabs">
+    <mat-tab label="Descrição">
+      <h1 class="--title-text-24px color-titles">descrição</h1>
       <span>{{ car.descricao }}</span>
     </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Especificações">
+      <h1 class="--title-text-24px color-titles">Espeficações técnicas</h1>
+      <div class="espec-grid">
+        <div class="grid-colum-1">
+          <app-card-especificacoes class="card-1">
+            <mat-icon card-icon>electric_bolt</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Motor</span>
+              <span class="valor">{{car.especificacoes.motor}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-1">
+          <app-card-especificacoes class="card-2">
+            <mat-icon style="color: #60A5FA !important;" card-icon>manufacturing</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Torque</span>
+              <span class="valor">{{car.especificacoes.torque}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-1">
+          <app-card-especificacoes class="card-3">
+            <mat-icon style="color: #FACC15 !important;" card-icon>speed</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Velocidade Máxima</span>
+              <span class="valor">{{car.especificacoes.velocidade_maxima}} km/h</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+
+        <div class="grid-colum-1">
+          <app-card-especificacoes class="card-4">
+            <mat-icon style="color: #4ADE80 !important;" card-icon>plumbing</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Suspensão</span>
+              <span class="valor">{{car.especificacoes.suspensao}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-2">
+          <app-card-especificacoes class="card-5">
+            <mat-icon style="color: #39FF14 !important;" card-icon>fitness_center</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Potência</span>
+              <span class="valor">{{car.especificacoes.potencia}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-2">
+          <app-card-especificacoes class="card-6">
+            <mat-icon style="color: #7781DF !important;" card-icon>local_gas_station</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Combustível</span>
+              <span class="valor">{{car.combustiveis}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-2">
+          <app-card-especificacoes class="card-7">
+            <mat-icon style="color: #4ADE80 !important;" card-icon>settings</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Tração</span>
+              <span class="valor">{{car.especificacoes.tracao}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+        <div class="grid-colum-2">
+          <app-card-especificacoes class="card-8">
+            <mat-icon style="color: #EF4643 !important;" card-icon>timelapse</mat-icon>
+            <div card-content class="content-container">
+              <span class="titulo">Aceleração 0-100</span>
+              <span class="valor">{{car.especificacoes.aceleracao_0_100}}</span>
+            </div>
+          </app-card-especificacoes>
+        </div>
+
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Equipamentos"> Content 3 </mat-tab>
+    <mat-tab label="História"> Content 3 </mat-tab>
+    <mat-tab label="Concessionárias"> Content 3 </mat-tab>
   </mat-tab-group>
 </div>

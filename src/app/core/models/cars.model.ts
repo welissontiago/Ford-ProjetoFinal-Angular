@@ -14,6 +14,7 @@ export interface Cars {
   descricao: string;
   categoria: Categoria;
   ano: number;
+  historia: string;
   especificacoes: Especificacoes;
   equipamentos: Equipamentos;
   imagem_principal: string;

@@ -1,0 +1,16 @@
+.card-especificacoes {
+  background-color: var(--lista-destaques-bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+@media (max-width: 570px) {
+  .card-especificacoes {
+    padding: 15px;
+    height: 120px;
+  }
+}

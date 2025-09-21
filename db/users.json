@@ -46,19 +46,40 @@
       },
       "equipamentos": {
         "seguranca": [
-          "Airbags frontais e laterais",
-          "Controle de estabilidade",
-          "Frenagem automática de emergência"
+          "07 Airbags – 02 dianteiros, 02 laterais dianteiros, 02 cortinas e 01 joelho do passageiro",
+          "Alarme de segurança com imobilizador e sensores de inclinação",
+          "Alerta de colisão frontal",
+          "Assistente de frenagem autônoma (AEB) com detecção de pedestre",
+          "Assistente de Partida em Rampas (HLA)",
+          "Assistente de permanência e centralização em faixa",
+          "Assistente de manobras evasivas",
+          "Cintos de segurança traseiros de 3 pontos",
+          "Espelho retrovisor interno eletrocrômico"
         ],
         "tecnologia": [
-          "Central multimídia com tela de 10\"",
-          "Piloto automático adaptativo",
-          "Carregador wireless"
+          "Ar-condicionado automático digital de duas zonas",
+          "Câmera de ré",
+          "Carregador de celular por indução",
+          "Chave com sensor de presença: Acesso Inteligente e Partida sem chave (Ford Power)",
+          "Freio de mão eletrônico",
+          "Função Auto Hold",
+          "Painel de Instrumentos digital de 12.4\"",
+          "Sensores traseiros de estacionamento",
+          "Vidros elétricos com abertura e fechamento com um toque para cima/baixo"
         ],
         "interior": [
-          "Bancos em couro",
-          "Ar-condicionado digital dual zone",
-          "Iluminação ambiente em LED"
+          "Ajuste de altura e profundidade do volante",
+          "Banco traseiro rebatível",
+          "Bancos dianteiros aquecidos e refrigerados com ajustes elétricos",
+          "Bancos parcialmente revestidos em couro com costuras contrastantes",
+          "Console central com porta-objetos e descansa braço integrado",
+          "Emblema interno Mustang",
+          "Iluminação interna ambiente configurável",
+          "Luz de leitura",
+          "Painel de instrumentos digital e tela touch screen integrados",
+          "Para-sol com espelho e luzes de cortesia (motorista / passageiro)",
+          "Tapetes de carpete com costuras contrastantes",
+          "Volante aquecido e revestido em couro"
         ]
       },
       "imagem_principal": "carros/carro-branco-card.png",

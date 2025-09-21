@@ -73,6 +73,51 @@
   font-weight: 600;
 }
 
+.equipamentos-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.list {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+.list p {
+  color: var(--text-title);
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.list .mat-icon {
+  height: 34px !important;
+  width: 34px !important;
+}
+
+.card ul {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 1150px) {
   .nav-tabs {
     margin-top: -70px;
@@ -97,6 +142,12 @@
   }
   .titulo {
     font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 665px) {
+  .card {
+    align-items: center;
   }
 }
 

@@ -1,5 +1,5 @@
 export interface Equipamentos {
   seguranca: string[];
-  conforto: string[];
+  tecnologia: string[];
   interior: string[];
 }

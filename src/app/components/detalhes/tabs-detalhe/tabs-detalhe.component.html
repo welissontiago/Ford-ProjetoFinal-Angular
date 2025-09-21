@@ -91,7 +91,39 @@
       </div>
 
     </mat-tab>
-    <mat-tab label="Equipamentos"> Content 3 </mat-tab>
+
+    <mat-tab label="Equipamentos">
+      <h1 class="--text-32px color-titles">Equipamentos</h1>
+      <div class="equipamentos-container">
+        <app-card-equipamentos class="card">
+          <h2 class="--title-text-24px color-titles" card-title>Segurança</h2>
+          <ul itens>
+            <li class="list" *ngFor="let item of car.equipamentos.seguranca">
+              <mat-icon>check</mat-icon>
+              <p>{{ item }}</p>
+            </li>
+          </ul>
+        </app-card-equipamentos>
+        <app-card-equipamentos class="card">
+          <h2 class="--title-text-24px color-titles" card-title>Tecnologia</h2>
+          <ul itens>
+            <li class="list" *ngFor="let item of car.equipamentos.tecnologia">
+              <mat-icon>check</mat-icon>
+              <p>{{ item }}</p>
+            </li>
+          </ul>
+        </app-card-equipamentos>
+        <app-card-equipamentos class="card">
+          <h2 class="--title-text-24px color-titles" card-title>Interior</h2>
+          <ul itens>
+            <li class="list" *ngFor="let item of car.equipamentos.interior">
+              <mat-icon>check</mat-icon>
+              <p>{{ item }}</p>
+            </li>
+          </ul>
+        </app-card-equipamentos>
+      </div>
+    </mat-tab>
     <mat-tab label="História"> Content 3 </mat-tab>
     <mat-tab label="Concessionárias"> Content 3 </mat-tab>
   </mat-tab-group>

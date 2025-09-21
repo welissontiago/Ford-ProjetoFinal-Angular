@@ -135,8 +135,11 @@
   }
 }
 
-@media (max-width: 417px) {
+@media (max-width: 465px) {
   .footer-container a {
-    font-size: 0.7rem;
+    font-size: 0.865rem;
+  }
+  .footer-container-menor {
+    padding: 0px 10px;
   }
 }

@@ -25,7 +25,26 @@
       "id": "1",
       "modelo": "SUV 2025",
       "nome": "Mustang GT 5.0",
-      "cores": ["Vermelho", "Preto", "Branco"],
+      "cores": [
+        {
+          "nome": "Branco Cristal",
+          "precoAdicional": 2500,
+          "codigoCor": "#F0F0F0",
+          "imagem": "/carros/carro-branco-card.png"
+        },
+        {
+          "nome": "Vermelho Sangue",
+          "precoAdicional": 3000,
+          "codigoCor": "#FF0000",
+          "imagem": "/carros/mustang/mustang-vermelho.png"
+        },
+        {
+          "nome": "Azul Safira",
+          "precoAdicional": 2000,
+          "codigoCor": "#0000FF",
+          "imagem": "/carros/mustang/mustang-azul.png"
+        }
+      ],
       "preco": 529000,
       "combustiveis": "Gasolina",
       "destaque": true,

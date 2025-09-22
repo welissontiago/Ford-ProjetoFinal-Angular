@@ -1,5 +1,6 @@
 import { Categoria } from './categoria.model';
 import { Combustivel } from './combustivel.model';
+import { Cores } from './cores.model';
 import { Equipamentos } from './equipamentos.model';
 import { Especificacoes } from './especificacoes.model';
 
@@ -7,7 +8,7 @@ export interface Cars {
   id?: number;
   modelo: string;
   nome: string;
-  cores: string[];
+  cores: Cores[];
   preco: number;
   combustiveis: Combustivel;
   destaque: boolean;

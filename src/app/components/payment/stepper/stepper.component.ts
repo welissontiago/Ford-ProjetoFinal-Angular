@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { Cores } from '../../../core/models/cores.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-stepper',
@@ -15,6 +16,7 @@ import { Cores } from '../../../core/models/cores.model';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    CommonModule,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css'

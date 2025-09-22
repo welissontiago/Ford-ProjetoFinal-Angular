@@ -1,0 +1,73 @@
+<button matButton="elevated" (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button>
+
+
+<mat-stepper labelPosition="bottom" linear #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup"  [editable]="isEditable">
+      <ng-template matStepLabel>Personalização</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl">
+      </mat-form-field>
+      <div>
+        <button matButton matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Forma de Pagamento</ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Voltar</button>
+        <button matButton matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+    <mat-step [stepControl]="threeFormGroup" [editable]="isEditable">
+    <form [formGroup]="threeFormGroup">
+      <ng-template matStepLabel>Dados Pessoais</ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="threeCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Voltar</button>
+        <button matButton matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+
+    <mat-step [stepControl]="fourFormGroup" [editable]="isEditable">
+    <form [formGroup]="fourFormGroup">
+      <ng-template matStepLabel>Dados Bancários</ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="fourCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Voltar</button>
+        <button matButton matStepperNext>Próximo</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Confirmação</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button matButton matStepperPrevious>Voltar</button>
+      <button matButton (click)="stepper.reset()">Próximo</button>
+    </div>
+  </mat-step>
+</mat-stepper>

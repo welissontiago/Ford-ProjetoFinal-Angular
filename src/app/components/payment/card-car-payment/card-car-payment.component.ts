@@ -12,21 +12,22 @@ import { Cores } from '../../../core/models/cores.model';
 })
 export class CardCarPaymentComponent implements OnChanges {
   @Input() car!: Cars;
+  @Input() corSelecionada?: Cores;
 
-  corSelecionada!: Cores;
   precoTotal: number = 0;
   imagemExibida: string = '';
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['car'] && this.car) {
-      if (this.car.cores && this.car.cores.length > 0) {
-        this.selecionarCor(this.car.cores[0]);
-      }
+    if (changes['car'] && this.car && this.car.cores && this.car.cores.length > 0 && !this.corSelecionada) {
+      this.selecionarCor(this.car.cores[0]);
+    }
+    if (changes['corSelecionada'] && this.corSelecionada) {
+      this.imagemExibida = this.corSelecionada.imagem;
+      this.calcularPrecoTotal();
     }
   }
 
   selecionarCor(cor: Cores): void {
-    this.corSelecionada = cor;
     this.imagemExibida = cor.imagem;
     this.calcularPrecoTotal();
   }

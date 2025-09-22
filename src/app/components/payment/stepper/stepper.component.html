@@ -1,22 +1,19 @@
-<button matButton="elevated" (click)="isEditable = !isEditable">
-  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
-</button>
-
-
-<mat-stepper labelPosition="bottom" linear #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup"  [editable]="isEditable">
-      <ng-template matStepLabel>Personalização</ng-template>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl">
-      </mat-form-field>
-      <div>
-        <button matButton matStepperNext>Próximo</button>
+<mat-stepper labelPosition="bottom" linear="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Escolha a cor do veículo</ng-template>
+      <div class="cores-disponiveis">
+        <div *ngFor="let cor of cores" class="cor-opcao" [class.selected]="corSelecionada?.nome === cor.nome"
+          (click)="selecionarCor(cor)">
+          <div class="circle" [style.backgroundColor]="cor.codigoCor"></div>
+          <span>{{ cor.nome }}</span>
+        </div>
       </div>
+      <button mat-button matStepperNext [disabled]="!corSelecionada">Próximo</button>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+
+  <mat-step [stepControl]="secondFormGroup" >
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Forma de Pagamento</ng-template>
       <mat-form-field>
@@ -32,7 +29,7 @@
   </mat-step>
 
 
-    <mat-step [stepControl]="threeFormGroup" [editable]="isEditable">
+    <mat-step [stepControl]="threeFormGroup" >
     <form [formGroup]="threeFormGroup">
       <ng-template matStepLabel>Dados Pessoais</ng-template>
       <mat-form-field>
@@ -47,7 +44,7 @@
     </form>
   </mat-step>
 
-    <mat-step [stepControl]="fourFormGroup" [editable]="isEditable">
+    <mat-step [stepControl]="fourFormGroup" >
     <form [formGroup]="fourFormGroup">
       <ng-template matStepLabel>Dados Bancários</ng-template>
       <mat-form-field>

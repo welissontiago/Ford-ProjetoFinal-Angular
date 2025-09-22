@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
+import { Cores } from '../../../core/models/cores.model';
 
 @Component({
   selector: 'app-stepper',
@@ -18,12 +19,16 @@ import { MatStepperModule } from '@angular/material/stepper';
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css'
 })
-export class StepperComponent {
+export class StepperComponent implements OnChanges{
+
+  @Input() cores: Cores[] = [];
+  @Input() corSelecionada?: Cores;
+  @Output() corSelecionadaChange = new EventEmitter<Cores>();
 
   private _formBuilder = inject(FormBuilder);
 
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    corCtrl: [null as Cores | null, Validators.required],
   });
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
@@ -35,5 +40,16 @@ export class StepperComponent {
     fourCtrl: ['', Validators.required],
   });
   isEditable = true;
+
+  selecionarCor(cor: Cores) {
+  this.corSelecionadaChange.emit(cor);
+  this.firstFormGroup.controls.corCtrl.setValue(cor);
+}
+
+ngOnChanges(changes: SimpleChanges) {
+    if (changes['corSelecionada'] && this.corSelecionada) {
+      this.firstFormGroup.controls.corCtrl.setValue(this.corSelecionada);
+    }
+  }
 
 }

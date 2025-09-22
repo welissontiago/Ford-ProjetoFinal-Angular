@@ -1,0 +1,25 @@
+.cores-disponiveis {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cor-opcao {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: border 0.2s;
+}
+.cor-opcao.selected {
+  border: 2px solid #1976d2;
+  background: #e3f2fd;
+}
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+}

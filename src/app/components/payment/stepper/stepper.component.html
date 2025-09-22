@@ -1,25 +1,55 @@
 <mat-stepper labelPosition="bottom" linear="true" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
+  <ng-template matStepperIcon="number" let-index="index">
+    <ng-container [ngSwitch]="index">
+      <mat-icon *ngSwitchCase="0">palette</mat-icon>
+      <mat-icon *ngSwitchCase="1">payment</mat-icon>
+      <mat-icon *ngSwitchCase="2">person</mat-icon>
+      <mat-icon *ngSwitchCase="3">account_balance</mat-icon>
+      <mat-icon *ngSwitchCase="4">check_circle</mat-icon>
+      <mat-icon *ngSwitchDefault>radio_button_unchecked</mat-icon>
+    </ng-container>
+  </ng-template>
+
+  <mat-step [state]="'personalizacaoIcon'" [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Escolha a cor do veículo</ng-template>
+      <ng-template matStepLabel> Personalização</ng-template>
+      <h1 class="title color-titles poppins-semibold --title-text-24px">
+        Personalize seu veículo
+      </h1>
       <div class="cores-disponiveis">
-        <div *ngFor="let cor of cores" class="cor-opcao" [class.selected]="corSelecionada?.nome === cor.nome"
-          (click)="selecionarCor(cor)">
+        <div
+          *ngFor="let cor of cores"
+          class="cor-opcao"
+          [class.selected]="corSelecionada?.nome === cor.nome"
+          (click)="selecionarCor(cor)"
+        >
           <div class="circle" [style.backgroundColor]="cor.codigoCor"></div>
-          <span>{{ cor.nome }}</span>
+          <span> {{ cor.nome }}</span>
+          <p>+ {{ cor.precoAdicional | currency : "BRL" }}</p>
         </div>
       </div>
-      <button mat-button matStepperNext [disabled]="!corSelecionada">Próximo</button>
+      <button
+        class="next-btn"
+        mat-button
+        matStepperNext
+        [disabled]="!corSelecionada"
+      >
+        Próximo
+      </button>
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="secondFormGroup" >
+  <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Forma de Pagamento</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
+        <input
+          matInput
+          formControlName="secondCtrl"
+          placeholder="Ex. 1 Main St, New York, NY"
+          required
+        />
       </mat-form-field>
       <div>
         <button matButton matStepperPrevious>Voltar</button>
@@ -28,14 +58,17 @@
     </form>
   </mat-step>
 
-
-    <mat-step [stepControl]="threeFormGroup" >
+  <mat-step [stepControl]="threeFormGroup">
     <form [formGroup]="threeFormGroup">
       <ng-template matStepLabel>Dados Pessoais</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
-        <input matInput formControlName="threeCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
+        <input
+          matInput
+          formControlName="threeCtrl"
+          placeholder="Ex. 1 Main St, New York, NY"
+          required
+        />
       </mat-form-field>
       <div>
         <button matButton matStepperPrevious>Voltar</button>
@@ -44,13 +77,17 @@
     </form>
   </mat-step>
 
-    <mat-step [stepControl]="fourFormGroup" >
+  <mat-step [stepControl]="fourFormGroup">
     <form [formGroup]="fourFormGroup">
       <ng-template matStepLabel>Dados Bancários</ng-template>
       <mat-form-field>
         <mat-label>Address</mat-label>
-        <input matInput formControlName="fourCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
+        <input
+          matInput
+          formControlName="fourCtrl"
+          placeholder="Ex. 1 Main St, New York, NY"
+          required
+        />
       </mat-form-field>
       <div>
         <button matButton matStepperPrevious>Voltar</button>

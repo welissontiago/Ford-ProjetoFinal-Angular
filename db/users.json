@@ -43,6 +43,12 @@
           "precoAdicional": 2000,
           "codigoCor": "#0000FF",
           "imagem": "/carros/mustang/mustang-azul.png"
+        },
+        {
+          "nome": "Vantablack",
+          "precoAdicional": 3000,
+          "codigoCor": "#000000",
+          "imagem": "/carros/mustang/mustang-preto.png"
         }
       ],
       "preco": 529000,

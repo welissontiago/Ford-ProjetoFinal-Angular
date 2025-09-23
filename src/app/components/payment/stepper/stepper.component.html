@@ -105,10 +105,28 @@
 
       <div
         *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'"
-        [formGroup]="financingForm"
+        formGroupName="financingDetails"
         class="financing-form"
-      ></div>
-
+      >
+        <mat-form-field>
+          <mat-label>Valor de Entrada</mat-label>
+          <input
+            matInput
+            formControlName="downPayment"
+            type="number"
+            placeholder="Ex: 50000"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Número de Parcelas</mat-label>
+          <input
+            matInput
+            formControlName="installments"
+            type="number"
+            placeholder="Ex: 60"
+          />
+        </mat-form-field>
+      </div>
       <div>
         <button mat-button matStepperPrevious>Voltar</button>
         <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">

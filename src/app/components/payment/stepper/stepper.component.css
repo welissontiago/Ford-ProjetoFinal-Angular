@@ -97,22 +97,11 @@
   gap: 20px;
 }
 
-.payment-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  border: 1px solid var(--border-payment-card);
-  padding: 60px 10px;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
 .icons {
   background-color: #2a2828 !important;
   padding: 20px;
   border-radius: 5px;
+  color: #94a0b8;
 }
 
 .payment-options h2 {
@@ -167,4 +156,33 @@
 
 .secondforms-title p {
   color: var(--text-color-two);
+}
+
+.payment-card {
+  border: 1px solid var(--border-payment-card);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  padding: 60px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.payment-card:hover {
+  border-color: #a0a0a0;
+}
+
+.payment-card.selected {
+  border-color: var(--components-color);
+  box-shadow: 0 4px 8px rgba(0, 68, 148, 0.2);
+}
+
+.payment-card.selected .icons {
+  color: var(--components-color) !important;
 }

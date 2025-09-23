@@ -10,9 +10,9 @@
     </ng-container>
   </ng-template>
 
-  <mat-step [state]="'personalizacaoIcon'" [stepControl]="firstFormGroup">
+  <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel> Personalização</ng-template>
+      <ng-template matStepLabel>Personalização</ng-template>
       <h1 class="title color-titles poppins-semibold --title-text-24px">
         Personalize seu veículo
       </h1>
@@ -24,7 +24,7 @@
           (click)="selecionarCor(cor)"
         >
           <div class="circle" [style.backgroundColor]="cor.codigoCor"></div>
-          <span> {{ cor.nome }}</span>
+          <span>{{ cor.nome }}</span>
           <p>+ {{ cor.precoAdicional | currency : "BRL" }}</p>
         </div>
       </div>
@@ -32,7 +32,7 @@
         class="next-btn"
         mat-button
         matStepperNext
-        [disabled]="!corSelecionada"
+        [disabled]="!firstFormGroup.valid"
       >
         Próximo
       </button>
@@ -49,24 +49,44 @@
       </div>
 
       <div class="payment-options">
-        <div class="payment-card">
-          <mat-icon class="icons" style="color: #94a0b8">credit_card</mat-icon>
+        <div
+          class="payment-card"
+          (click)="secondFormGroup.controls['paymentMethod'].setValue('card')"
+          [class.selected]="
+            secondFormGroup.controls['paymentMethod'].value === 'card'
+          "
+        >
+          <mat-icon class="icons">credit_card</mat-icon>
           <h2>Cartão/Transferência</h2>
           <p class="pay-type">Pagamento tradicional</p>
           <span>{{ precoFinal | currency : "BRL" }}</span>
           <p class="pay-last">Seguro e confiável</p>
         </div>
 
-        <div class="payment-card">
-          <mat-icon class="icons" style="color: #94a0b8">pix</mat-icon>
+        <div
+          class="payment-card"
+          (click)="secondFormGroup.controls['paymentMethod'].setValue('pix')"
+          [class.selected]="
+            secondFormGroup.controls['paymentMethod'].value === 'pix'
+          "
+        >
+          <mat-icon class="icons">pix</mat-icon>
           <h2>PIX</h2>
           <p class="pay-type">Pagamento com desconto</p>
           <span>{{ precoFinalComDesconto | currency : "BRL" }}</span>
           <p class="pay-pix">5% de desconto</p>
         </div>
 
-        <div class="payment-card">
-          <mat-icon class="icons" style="color: #94a0b8">payments</mat-icon>
+        <div
+          class="payment-card"
+          (click)="
+            secondFormGroup.controls['paymentMethod'].setValue('financing')
+          "
+          [class.selected]="
+            secondFormGroup.controls['paymentMethod'].value === 'financing'
+          "
+        >
+          <mat-icon class="icons">payments</mat-icon>
           <h2>Financiamento</h2>
           <p class="pay-type">Até 60x</p>
           <span>{{ precoFinal / 60 | currency : "BRL" }} / mês</span>
@@ -74,18 +94,26 @@
         </div>
       </div>
 
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input
-          matInput
-          formControlName="secondCtrl"
-          placeholder="Ex. 1 Main St, New York, NY"
-          required
-        />
-      </mat-form-field>
+      <mat-error
+        *ngIf="
+          secondFormGroup.controls['paymentMethod'].hasError('required') &&
+          secondFormGroup.controls['paymentMethod'].touched
+        "
+      >
+        Por favor, selecione uma forma de pagamento.
+      </mat-error>
+
+      <div
+        *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'"
+        [formGroup]="financingForm"
+        class="financing-form"
+      ></div>
+
       <div>
-        <button matButton matStepperPrevious>Voltar</button>
-        <button matButton matStepperNext>Próximo</button>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">
+          Próximo
+        </button>
       </div>
     </form>
   </mat-step>
@@ -94,17 +122,17 @@
     <form [formGroup]="threeFormGroup">
       <ng-template matStepLabel>Dados Pessoais</ng-template>
       <mat-form-field>
-        <mat-label>Address</mat-label>
+        <mat-label>Seu Nome Completo</mat-label>
         <input
           matInput
           formControlName="threeCtrl"
-          placeholder="Ex. 1 Main St, New York, NY"
+          placeholder="Ex. José da Silva"
           required
         />
       </mat-form-field>
       <div>
-        <button matButton matStepperPrevious>Voltar</button>
-        <button matButton matStepperNext>Próximo</button>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button matStepperNext>Próximo</button>
       </div>
     </form>
   </mat-step>
@@ -113,27 +141,27 @@
     <form [formGroup]="fourFormGroup">
       <ng-template matStepLabel>Dados Bancários</ng-template>
       <mat-form-field>
-        <mat-label>Address</mat-label>
+        <mat-label>Sua Agência e Conta</mat-label>
         <input
           matInput
           formControlName="fourCtrl"
-          placeholder="Ex. 1 Main St, New York, NY"
+          placeholder="Ex. Ag 0001, C/C 12345-6"
           required
         />
       </mat-form-field>
       <div>
-        <button matButton matStepperPrevious>Voltar</button>
-        <button matButton matStepperNext>Próximo</button>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-button matStepperNext>Próximo</button>
       </div>
     </form>
   </mat-step>
 
   <mat-step>
     <ng-template matStepLabel>Confirmação</ng-template>
-    <p>You are now done.</p>
+    <p>Você finalizou o processo. Revise os dados e confirme sua compra!</p>
     <div>
-      <button matButton matStepperPrevious>Voltar</button>
-      <button matButton (click)="stepper.reset()">Próximo</button>
+      <button mat-button matStepperPrevious>Voltar</button>
+      <button mat-button (click)="stepper.reset()">Finalizar Compra</button>
     </div>
   </mat-step>
 </mat-stepper>

@@ -20,6 +20,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { Cores } from '../../../core/models/cores.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { Cars } from '../../../core/models/cars.model';
 
 @Component({
   selector: 'app-stepper',
@@ -38,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class StepperComponent implements OnChanges {
   @Input() cores: Cores[] = [];
+  @Input() car!: Cars;
   @Input() corSelecionada?: Cores;
   @Output() corSelecionadaChange = new EventEmitter<Cores>();
 
@@ -66,5 +68,11 @@ export class StepperComponent implements OnChanges {
     if (changes['corSelecionada'] && this.corSelecionada) {
       this.firstFormGroup.controls.corCtrl.setValue(this.corSelecionada);
     }
+  }
+
+  get precoFinal(): number {
+    if (!this.car) return 0;
+    const adicional = this.corSelecionada?.precoAdicional ?? 0;
+    return this.car.preco + adicional;
   }
 }

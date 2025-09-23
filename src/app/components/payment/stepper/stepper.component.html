@@ -42,6 +42,17 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Forma de Pagamento</ng-template>
+
+      <div class="flex-item">
+        <mat-icon style="color: #60a5fa !important">credit_card</mat-icon>
+        <div class="content-container">
+          <h1>Cartão/Transferência</h1>
+          <p>Pagamento tradicional</p>
+          <span>{{ precoFinal | currency : "BRL" }}</span>
+          <p>Seguro e confiável</p>
+        </div>
+      </div>
+
       <mat-form-field>
         <mat-label>Address</mat-label>
         <input

@@ -43,13 +43,34 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Forma de Pagamento</ng-template>
 
-      <div class="flex-item">
-        <mat-icon style="color: #60a5fa !important">credit_card</mat-icon>
-        <div class="content-container">
-          <h1>Cartão/Transferência</h1>
-          <p>Pagamento tradicional</p>
+      <div class="secondforms-title">
+        <h1>Forma de Pagamento</h1>
+        <p>Escolha como deseja pagar pelo seu veículo</p>
+      </div>
+
+      <div class="payment-options">
+        <div class="payment-card">
+          <mat-icon class="icons" style="color: #94a0b8">credit_card</mat-icon>
+          <h2>Cartão/Transferência</h2>
+          <p class="pay-type">Pagamento tradicional</p>
           <span>{{ precoFinal | currency : "BRL" }}</span>
-          <p>Seguro e confiável</p>
+          <p class="pay-last">Seguro e confiável</p>
+        </div>
+
+        <div class="payment-card">
+          <mat-icon class="icons" style="color: #94a0b8">pix</mat-icon>
+          <h2>PIX</h2>
+          <p class="pay-type">Pagamento com desconto</p>
+          <span>{{ precoFinalComDesconto | currency : "BRL" }}</span>
+          <p class="pay-pix">5% de desconto</p>
+        </div>
+
+        <div class="payment-card">
+          <mat-icon class="icons" style="color: #94a0b8">payments</mat-icon>
+          <h2>Financiamento</h2>
+          <p class="pay-type">Até 60x</p>
+          <span>{{ precoFinal / 60 | currency : "BRL" }} / mês</span>
+          <p class="pay-last">Parcele em até 60x</p>
         </div>
       </div>
 

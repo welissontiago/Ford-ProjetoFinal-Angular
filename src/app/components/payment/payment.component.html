@@ -1,10 +1,16 @@
 <section class="pagamento" aria-label="sessão de realizar pagamento">
   <div class="payment-grid" *ngIf="car$ | async as car">
-    <app-card-car-payment [car]="car" [corSelecionada]="corSelecionada"></app-card-car-payment>
+    <app-card-car-payment
+      [car]="car"
+      [corSelecionada]="corSelecionada"
+    ></app-card-car-payment>
     <app-stepper
+      *ngIf="car"
+      [car]="car"
       [cores]="car.cores"
       [corSelecionada]="corSelecionada"
-      (corSelecionadaChange)="onCorSelecionada($event)">
+      (corSelecionadaChange)="onCorSelecionada($event)"
+    >
     </app-stepper>
   </div>
 </section>

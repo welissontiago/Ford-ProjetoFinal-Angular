@@ -75,4 +75,8 @@ export class StepperComponent implements OnChanges {
     const adicional = this.corSelecionada?.precoAdicional ?? 0;
     return this.car.preco + adicional;
   }
+
+  get precoFinalComDesconto(): number {
+    return this.precoFinal * 0.95;
+  }
 }

@@ -17,23 +17,13 @@
         Personalize seu veículo
       </h1>
       <div class="cores-disponiveis">
-        <div
-          *ngFor="let cor of cores"
-          class="cor-opcao"
-          [class.selected]="corSelecionada?.nome === cor.nome"
-          (click)="selecionarCor(cor)"
-        >
+        <div *ngFor="let cor of cores" class="cor-opcao" [class.selected]="corSelecionada?.nome === cor.nome" (click)="selecionarCor(cor)">
           <div class="circle" [style.backgroundColor]="cor.codigoCor"></div>
           <span>{{ cor.nome }}</span>
           <p>+ {{ cor.precoAdicional | currency : "BRL" }}</p>
         </div>
       </div>
-      <button
-        class="next-btn"
-        mat-button
-        matStepperNext
-        [disabled]="!firstFormGroup.valid"
-      >
+      <button class="next-btn" mat-button matStepperNext [disabled]="!firstFormGroup.valid">
         Próximo
       </button>
     </form>
@@ -49,13 +39,9 @@
       </div>
 
       <div class="payment-options">
-        <div
-          class="payment-card"
-          (click)="secondFormGroup.controls['paymentMethod'].setValue('card')"
-          [class.selected]="
+        <div class="payment-card" (click)="secondFormGroup.controls['paymentMethod'].setValue('card')" [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'card'
-          "
-        >
+          ">
           <mat-icon class="icons">credit_card</mat-icon>
           <h2>Cartão/Transferência</h2>
           <p class="pay-type">Pagamento tradicional</p>
@@ -63,13 +49,9 @@
           <p class="pay-last">Seguro e confiável</p>
         </div>
 
-        <div
-          class="payment-card"
-          (click)="secondFormGroup.controls['paymentMethod'].setValue('pix')"
-          [class.selected]="
+        <div class="payment-card" (click)="secondFormGroup.controls['paymentMethod'].setValue('pix')" [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'pix'
-          "
-        >
+          ">
           <mat-icon class="icons">pix</mat-icon>
           <h2>PIX</h2>
           <p class="pay-type">Pagamento com desconto</p>
@@ -77,15 +59,11 @@
           <p class="pay-pix">5% de desconto</p>
         </div>
 
-        <div
-          class="payment-card"
-          (click)="
+        <div class="payment-card" (click)="
             secondFormGroup.controls['paymentMethod'].setValue('financing')
-          "
-          [class.selected]="
+          " [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'financing'
-          "
-        >
+          ">
           <mat-icon class="icons">payments</mat-icon>
           <h2>Financiamento</h2>
           <p class="pay-type">Até 60x</p>
@@ -94,38 +72,41 @@
         </div>
       </div>
 
-      <mat-error
-        *ngIf="
+      <mat-error *ngIf="
           secondFormGroup.controls['paymentMethod'].hasError('required') &&
           secondFormGroup.controls['paymentMethod'].touched
-        "
-      >
+        ">
         Por favor, selecione uma forma de pagamento.
       </mat-error>
 
-      <div
-        *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'"
-        formGroupName="financingDetails"
-        class="financing-form"
-      >
-        <mat-form-field>
-          <mat-label>Valor de Entrada</mat-label>
-          <input
-            matInput
-            formControlName="downPayment"
-            type="number"
-            placeholder="Ex: 50000"
-          />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Número de Parcelas</mat-label>
-          <input
-            matInput
-            formControlName="installments"
-            type="number"
-            placeholder="Ex: 60"
-          />
-        </mat-form-field>
+      <div *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'" formGroupName="financingDetails" class="financing-form">
+        <div class="flex-bg">
+          <div class="title-second-inputs">
+            <mat-icon class="icons-second-input">calculate</mat-icon>
+            <h1>Configurar Financiamento</h1>
+          </div>
+
+          <div class="flex-container">
+            <div class="first-input-secondgroup">
+              <h2>Valor de entrada</h2>
+              <mat-form-field class="container-inputs">
+                <mat-label class="label">Digite o valor da entrada</mat-label>
+                <input class="inputs" matInput formControlName="downPayment" type="number" placeholder="Ex: 50000" />
+              </mat-form-field>
+              <p>Valor minimo de 15%, valor recomendado de 20% do valor total</p>
+            </div>
+
+            <div class="second-input-secondgroup">
+              <h2>Número de Parcelas</h2>
+              <mat-form-field class="container-inputs">
+                <mat-label class="label">Número de Parcelas</mat-label>
+                <input matInput formControlName="installments" type="number" placeholder="Ex: 60" />
+              </mat-form-field>
+              <p>Taxas preferenciais para até 60 parcelas</p>
+            </div>
+          </div>
+
+        </div>
       </div>
       <div>
         <button mat-button matStepperPrevious>Voltar</button>
@@ -141,12 +122,7 @@
       <ng-template matStepLabel>Dados Pessoais</ng-template>
       <mat-form-field>
         <mat-label>Seu Nome Completo</mat-label>
-        <input
-          matInput
-          formControlName="threeCtrl"
-          placeholder="Ex. José da Silva"
-          required
-        />
+        <input matInput formControlName="threeCtrl" placeholder="Ex. José da Silva" required />
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Voltar</button>
@@ -160,12 +136,7 @@
       <ng-template matStepLabel>Dados Bancários</ng-template>
       <mat-form-field>
         <mat-label>Sua Agência e Conta</mat-label>
-        <input
-          matInput
-          formControlName="fourCtrl"
-          placeholder="Ex. Ag 0001, C/C 12345-6"
-          required
-        />
+        <input matInput formControlName="fourCtrl" placeholder="Ex. Ag 0001, C/C 12345-6" required />
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Voltar</button>

@@ -1,6 +1,6 @@
 .pagamento {
   position: absolute;
-  top: 550px;
+  top: 620px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -8,7 +8,7 @@
   display: inline-block;
 }
 
-.payment-grid{
+.payment-grid {
   display: flex;
   gap: 30px;
 }

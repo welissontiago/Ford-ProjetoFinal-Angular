@@ -186,3 +186,67 @@
 .payment-card.selected .icons {
   color: var(--components-color) !important;
 }
+.title-second-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.title-second-inputs h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.flex-bg {
+  background-color: var(--bg-element-color-one);
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid var(--components-border-2);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.first-input-secondgroup {
+  max-width: 300px;
+}
+
+.first-input-secondgroup p,
+.second-input-secondgroup p {
+  font-size: 0.875rem;
+  margin-top: 8px;
+  color: var(--text-color-two);
+  font-weight: 300;
+}
+
+.first-input-secondgroup h2,
+.second-input-secondgroup h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+  color: var(--text-title);
+}
+
+.container-inputs {
+  max-width: 250px;
+  width: 100%;
+  height: 50px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--bg-card-cars);
+  border: 1px solid var(--components-border-2);
+}
+
+.label {
+  color: var(--label-1-color) !important;
+  font-weight: 600;
+}

@@ -1,8 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Cars } from '../../../core/models/cars.model';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { Cores } from '../../../core/models/cores.model';
+import { Subscription } from 'rxjs';
+import { PaymentService } from '../../../core/services/payment.service';
 
 @Component({
   selector: 'app-card-car-payment',
@@ -15,7 +17,26 @@ export class CardCarPaymentComponent implements OnChanges {
   @Input() corSelecionada?: Cores;
 
   precoTotal: number = 0;
+  precoFinal: number = 0;
   imagemExibida: string = '';
+  paymentMethod: string | null = null;
+  private paymentSubscription!: Subscription;
+  private paymentService = inject(PaymentService);
+
+  ngOnInit(): void {
+    this.paymentSubscription = this.paymentService.currentPaymentData.subscribe(
+      (data) => {
+        this.paymentMethod = data.paymentMethod;
+        this.calcularPrecoTotal();
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.paymentSubscription) {
+      this.paymentSubscription.unsubscribe();
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['car'] && this.car && this.car.cores && this.car.cores.length > 0 && !this.corSelecionada) {
@@ -35,6 +56,12 @@ export class CardCarPaymentComponent implements OnChanges {
   private calcularPrecoTotal(): void {
     if (this.car && this.corSelecionada) {
       this.precoTotal = this.car.preco + this.corSelecionada.precoAdicional;
+      this.precoFinal = this.precoTotal;
+
+      if (this.paymentMethod === 'pix') {
+        this.precoFinal *= 0.95; 
+      }
     }
   }
+
 }

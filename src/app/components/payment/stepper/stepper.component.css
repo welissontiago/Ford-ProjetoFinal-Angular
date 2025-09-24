@@ -201,7 +201,7 @@
 }
 
 .flex-bg {
-  background-color: var(--bg-element-color-one);
+  background-color: var(--bg-icon);
   box-sizing: border-box;
   padding: 25px;
   border-radius: 5px;
@@ -249,4 +249,36 @@
 .label {
   color: var(--label-1-color) !important;
   font-weight: 600;
+}
+
+.buttons-nav{
+  display: flex;
+  justify-content: space-between;
+    margin-top: 25px;
+}
+
+.voltar{
+  background: var(--bg-card-cars);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--border-payment-card);
+  color: var(--text-color-one);
+}
+
+.proximo.disabled{
+  display: none;
+}
+
+.proximo{
+  background: var(--components-color);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid var(--border-payment-card);
+  color: var(--text-color-four);
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: var(--text-color-six);
 }

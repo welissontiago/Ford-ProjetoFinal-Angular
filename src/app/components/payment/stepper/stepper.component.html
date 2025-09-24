@@ -108,13 +108,18 @@
 
         </div>
       </div>
-      <div>
-        <button mat-button matStepperPrevious>Voltar</button>
-        <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">
+      
+    </form>
+    <div class="buttons-nav">
+        <button class="voltar" mat-button matStepperPrevious>
+          <mat-icon style="color: var(--text-title);">arrow_back</mat-icon>
+          Voltar
+        </button>
+        <button class="proximo" mat-button matStepperNext [disabled]="!secondFormGroup.valid" 
+        [ngClass]="{ 'disabled': !secondFormGroup.valid }">
           Próximo
         </button>
       </div>
-    </form>
   </mat-step>
 
   <mat-step [stepControl]="threeFormGroup">

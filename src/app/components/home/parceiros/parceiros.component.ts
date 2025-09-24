@@ -62,12 +62,12 @@ export class ParceirosComponent implements AfterViewInit, OnDestroy {
     const allColumns: NodeListOf<HTMLElement> =
       this.brandsColumnsContainer.querySelectorAll('.brand-column');
 
-    if (this.mediaMatcher.matches && allColumns.length === 2) {
+    if (this.mediaMatcher.matches && allColumns.length === 3) {
       allColumns.forEach((col) => (col.style.display = ''));
 
       const logosToMove = allColumns[2].querySelectorAll('.logo');
       logosToMove.forEach((logo, index) => {
-        const targetColumnIndex = index % 3;
+        const targetColumnIndex = index % 2;
         allColumns[targetColumnIndex]
           .querySelector('.logo-slot')
           ?.appendChild(logo);

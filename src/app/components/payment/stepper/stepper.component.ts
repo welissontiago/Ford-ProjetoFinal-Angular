@@ -25,6 +25,9 @@ import { Cores } from '../../../core/models/cores.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Cars } from '../../../core/models/cars.model';
+import { Validacoes } from '../../../core/validators/cpf.validator';
+import { HttpClient } from '@angular/common/http';
+
 import {
   PaymentService,
   PaymentData,
@@ -54,6 +57,7 @@ export class StepperComponent implements OnChanges, OnInit {
 
   private _formBuilder = inject(FormBuilder);
   private paymentService = inject(PaymentService);
+  private http = inject(HttpClient);
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -101,13 +105,51 @@ export class StepperComponent implements OnChanges, OnInit {
         this.paymentService.updatePaymentData(newData);
       }
     });
+
     this.threeFormGroup = this._formBuilder.group({
-      threeCtrl: ['', Validators.required],
+      nome_completo: ['', [Validators.required, Validators.minLength(3)]],
+      cpf: [
+        '',
+        Validators.compose([Validators.required, Validacoes.ValidaCpf]),
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      telefone: ['', [Validators.required, Validacoes.ValidaTelefone]],
+      rg: ['', Validators.required],
+      renda: ['', Validators.required],
+      cep: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[0-9]{5}-?[0-9]{3}$/),
+          Validacoes.cepExiste(this.http),
+        ],
+      ],
+      endereco: [''],
+      cidade: [''],
     });
+    this.threeFormGroup.get('cep')?.valueChanges.subscribe((cep: string) => {
+      const apenasNumeros = cep?.replace(/\D/g, '');
+      if (apenasNumeros && apenasNumeros.length === 8) {
+        this.http
+          .get<any>(`https://viacep.com.br/ws/${apenasNumeros}/json/`)
+          .subscribe((res) => {
+            if (!res.erro) {
+              this.threeFormGroup.patchValue({
+                endereco: res.logradouro,
+                cidade: res.localidade,
+              });
+            } else {
+              this.threeFormGroup.patchValue({ endereco: '', cidade: '' });
+            }
+          });
+      }
+    });
+
     this.fourFormGroup = this._formBuilder.group({
       fourCtrl: ['', Validators.required],
     });
   }
+
   minDownPaymentValidator(): (
     control: AbstractControl
   ) => ValidationErrors | null {

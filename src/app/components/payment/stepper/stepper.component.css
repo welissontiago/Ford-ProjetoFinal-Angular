@@ -251,13 +251,13 @@
   font-weight: 600;
 }
 
-.buttons-nav{
+.buttons-nav {
   display: flex;
   justify-content: space-between;
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
-.voltar{
+.voltar {
   background: var(--bg-card-cars);
   padding: 20px;
   box-sizing: border-box;
@@ -266,11 +266,11 @@
   color: var(--text-color-one);
 }
 
-.proximo.disabled{
+.proximo.disabled {
   display: none;
 }
 
-.proximo{
+.proximo {
   background: var(--components-color);
   padding: 20px;
   box-sizing: border-box;
@@ -279,6 +279,41 @@
   color: var(--text-color-four);
 }
 
-::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input{
+::ng-deep
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
   color: var(--text-color-six);
+}
+
+.grid-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.grid-list h3 {
+  font-size: 1rem;
+  color: var(--text-title);
+  margin-bottom: 8px;
+  margin-top: 30px;
+}
+
+.renda span {
+  color: var(--text-color-five);
+}
+
+.threeformtitle {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.column-1,
+column-2 {
+  max-width: 250px;
+  width: 100%;
+}
+
+::ng-deep .mdc-text-field--filled {
+  width: 250px !important;
 }

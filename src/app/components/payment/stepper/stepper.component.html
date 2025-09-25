@@ -17,13 +17,23 @@
         Personalize seu veículo
       </h1>
       <div class="cores-disponiveis">
-        <div *ngFor="let cor of cores" class="cor-opcao" [class.selected]="corSelecionada?.nome === cor.nome" (click)="selecionarCor(cor)">
+        <div
+          *ngFor="let cor of cores"
+          class="cor-opcao"
+          [class.selected]="corSelecionada?.nome === cor.nome"
+          (click)="selecionarCor(cor)"
+        >
           <div class="circle" [style.backgroundColor]="cor.codigoCor"></div>
           <span>{{ cor.nome }}</span>
           <p>+ {{ cor.precoAdicional | currency : "BRL" }}</p>
         </div>
       </div>
-      <button class="next-btn" mat-button matStepperNext [disabled]="!firstFormGroup.valid">
+      <button
+        class="next-btn"
+        mat-button
+        matStepperNext
+        [disabled]="!firstFormGroup.valid"
+      >
         Próximo
       </button>
     </form>
@@ -39,19 +49,27 @@
       </div>
 
       <div class="payment-options">
-        <div class="payment-card" (click)="secondFormGroup.controls['paymentMethod'].setValue('card')" [class.selected]="
+        <div
+          class="payment-card"
+          (click)="secondFormGroup.controls['paymentMethod'].setValue('card')"
+          [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'card'
-          ">
+          "
+        >
           <mat-icon class="icons">credit_card</mat-icon>
-          <h2>Cartão/Transferência</h2>
+          <h2 style="font-size: 1.35rem">Cartão/Transferência</h2>
           <p class="pay-type">Pagamento tradicional</p>
           <span>{{ precoFinal | currency : "BRL" }}</span>
           <p class="pay-last">Seguro e confiável</p>
         </div>
 
-        <div class="payment-card" (click)="secondFormGroup.controls['paymentMethod'].setValue('pix')" [class.selected]="
+        <div
+          class="payment-card"
+          (click)="secondFormGroup.controls['paymentMethod'].setValue('pix')"
+          [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'pix'
-          ">
+          "
+        >
           <mat-icon class="icons">pix</mat-icon>
           <h2>PIX</h2>
           <p class="pay-type">Pagamento com desconto</p>
@@ -59,11 +77,15 @@
           <p class="pay-pix">5% de desconto</p>
         </div>
 
-        <div class="payment-card" (click)="
+        <div
+          class="payment-card"
+          (click)="
             secondFormGroup.controls['paymentMethod'].setValue('financing')
-          " [class.selected]="
+          "
+          [class.selected]="
             secondFormGroup.controls['paymentMethod'].value === 'financing'
-          ">
+          "
+        >
           <mat-icon class="icons">payments</mat-icon>
           <h2>Financiamento</h2>
           <p class="pay-type">Até 60x</p>
@@ -72,14 +94,20 @@
         </div>
       </div>
 
-      <mat-error *ngIf="
+      <mat-error
+        *ngIf="
           secondFormGroup.controls['paymentMethod'].hasError('required') &&
           secondFormGroup.controls['paymentMethod'].touched
-        ">
+        "
+      >
         Por favor, selecione uma forma de pagamento.
       </mat-error>
 
-      <div *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'" formGroupName="financingDetails" class="financing-form">
+      <div
+        *ngIf="secondFormGroup.get('paymentMethod')?.value === 'financing'"
+        formGroupName="financingDetails"
+        class="financing-form"
+      >
         <div class="flex-bg">
           <div class="title-second-inputs">
             <mat-icon class="icons-second-input">calculate</mat-icon>
@@ -91,7 +119,13 @@
               <h2>Valor de entrada</h2>
               <mat-form-field class="container-inputs">
                 <mat-label class="label">Digite o valor da entrada</mat-label>
-                <input class="inputs" matInput formControlName="downPayment" type="number" placeholder="Ex: 50000" />
+                <input
+                  class="inputs"
+                  matInput
+                  formControlName="downPayment"
+                  type="number"
+                  placeholder="Ex: 50000"
+                />
               </mat-form-field>
               <p>
                 Valor minimo de 15%, valor recomendado de 20% do valor total
@@ -122,7 +156,13 @@
         <mat-icon style="color: var(--text-title)">arrow_back</mat-icon>
         Voltar
       </button>
-      <button class="proximo" mat-button matStepperNext [disabled]="!secondFormGroup.valid" [ngClass]="{ disabled: !secondFormGroup.valid }">
+      <button
+        class="proximo"
+        mat-button
+        matStepperNext
+        [disabled]="!secondFormGroup.valid"
+        [ngClass]="{ disabled: !secondFormGroup.valid }"
+      >
         Próximo
       </button>
     </div>
@@ -135,7 +175,10 @@
         <h1 class="poppins-semibold --title-text-24px color-titles">
           Dados Pessoais
         </h1>
-        <p class="poppins-regular --text-16px" style="color: var(--text-color-two)">
+        <p
+          class="poppins-regular --text-16px"
+          style="color: var(--text-color-two)"
+        >
           Precisamos dessas informações para finalizar a compra
         </p>
       </div>
@@ -146,21 +189,32 @@
             <h3>Nome completo*</h3>
             <mat-form-field>
               <mat-label>Seu Nome Completo</mat-label>
-              <input matInput formControlName="nome_completo" placeholder="Ex. Uelisson Silva" required />
+              <input
+                matInput
+                formControlName="nome_completo"
+                placeholder="Ex. Uelisson Silva"
+                required
+              />
             </mat-form-field>
-            <mat-error *ngIf="
+            <mat-error
+              *ngIf="
                 threeFormGroup.get('nome_completo')?.invalid &&
                 (threeFormGroup.get('nome_completo')?.touched ||
                   threeFormGroup.get('nome_completo')?.dirty)
-              ">
-              <span *ngIf="
+              "
+            >
+              <span
+                *ngIf="
                   threeFormGroup.get('nome_completo')?.hasError('required')
-                ">
+                "
+              >
                 Por favor, digite um nome!
               </span>
-              <span *ngIf="
+              <span
+                *ngIf="
                   threeFormGroup.get('nome_completo')?.hasError('minlength')
-                ">
+                "
+              >
                 O nome deve conter ao menos 3 caracteres.
               </span>
             </mat-error>
@@ -171,14 +225,21 @@
             <div>
               <mat-form-field>
                 <mat-label>Digite seu email</mat-label>
-                <input matInput placeholder="email@example.com" formControlName="email" required />
+                <input
+                  matInput
+                  placeholder="email@example.com"
+                  formControlName="email"
+                  required
+                />
               </mat-form-field>
 
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('email')?.invalid &&
                   (threeFormGroup.get('email')?.touched ||
                     threeFormGroup.get('email')?.dirty)
-                ">
+                "
+              >
                 <span *ngIf="threeFormGroup.get('email')?.hasError('required')">
                   Por favor, digite um email!
                 </span>
@@ -194,14 +255,22 @@
             <div>
               <mat-form-field>
                 <mat-label>Digite o seu Rg</mat-label>
-                <input matInput type="number" placeholder="00.000.000-0" formControlName="rg" required />
+                <input
+                  matInput
+                  type="number"
+                  placeholder="00.000.000-0"
+                  formControlName="rg"
+                  required
+                />
               </mat-form-field>
 
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('rg')?.invalid &&
                   (threeFormGroup.get('rg')?.touched ||
                     threeFormGroup.get('rg')?.dirty)
-                ">
+                "
+              >
                 <span *ngIf="threeFormGroup.get('rg')?.hasError('required')">
                   Por favor, digite seu rg!
                 </span>
@@ -216,18 +285,27 @@
             <div>
               <mat-form-field>
                 <mat-label>Digite o seu cpf</mat-label>
-                <input matInput placeholder="000.000.000-00" formControlName="cpf" required />
+                <input
+                  matInput
+                  placeholder="000.000.000-00"
+                  formControlName="cpf"
+                  required
+                />
               </mat-form-field>
 
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('cpf')?.invalid &&
                   (threeFormGroup.get('cpf')?.touched ||
                     threeFormGroup.get('cpf')?.dirty)
-                ">
+                "
+              >
                 <span *ngIf="threeFormGroup.get('cpf')?.hasError('required')">
                   Por favor, digite seu cpf!
                 </span>
-                <span *ngIf="threeFormGroup.get('cpf')?.hasError('cpfInvalido')">
+                <span
+                  *ngIf="threeFormGroup.get('cpf')?.hasError('cpfInvalido')"
+                >
                   digite um cpf valido.
                 </span>
               </mat-error>
@@ -239,20 +317,32 @@
             <div>
               <mat-form-field>
                 <mat-label>Digite o seu telefone</mat-label>
-                <input matInput appPhoneMask placeholder="(71) 99999-9999" formControlName="telefone" required />
+                <input
+                  matInput
+                  appPhoneMask
+                  placeholder="(71) 99999-9999"
+                  formControlName="telefone"
+                  required
+                />
               </mat-form-field>
 
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('telefone')?.invalid &&
                   (threeFormGroup.get('telefone')?.touched ||
                     threeFormGroup.get('telefone')?.dirty)
-                ">
-                <span *ngIf="threeFormGroup.get('telefone')?.hasError('required')">
+                "
+              >
+                <span
+                  *ngIf="threeFormGroup.get('telefone')?.hasError('required')"
+                >
                   Por favor, digite seu telefone!
                 </span>
-                <span *ngIf="
+                <span
+                  *ngIf="
                     threeFormGroup.get('telefone')?.hasError('telefoneInvalido')
-                  ">
+                  "
+                >
                   Por favor, digite um telefone valido.
                 </span>
               </mat-error>
@@ -263,16 +353,25 @@
             <h3>Renda Mensal*</h3>
             <div>
               <mat-form-field>
-                <input matInput type="number" class="example-right-align" placeholder="0" formControlName="renda" required />
+                <input
+                  matInput
+                  type="number"
+                  class="example-right-align"
+                  placeholder="0"
+                  formControlName="renda"
+                  required
+                />
                 <span matTextPrefix>R$&nbsp;</span>
                 <span matTextSuffix>,00</span>
               </mat-form-field>
 
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('renda')?.invalid &&
                   (threeFormGroup.get('renda')?.touched ||
                     threeFormGroup.get('renda')?.dirty)
-                ">
+                "
+              >
                 <span *ngIf="threeFormGroup.get('renda')?.hasError('required')">
                   Por favor, digite seu rg!
                 </span>
@@ -282,25 +381,37 @@
         </div>
       </div>
       <div class="adress-forms">
-        <h4 class="color-titles --text-16px poppins-medium ">Endereço de Enrega</h4>
+        <h4 class="color-titles --text-16px poppins-semibold">
+          Endereço de Entrega
+        </h4>
         <div class="adress-flex-container">
           <div class="cep">
             <h3>Cep*</h3>
             <div>
               <mat-form-field>
-                <input matInput appCepMask placeholder="000000-000" formControlName="cep" required />
+                <input
+                  matInput
+                  appCepMask
+                  placeholder="00000-000"
+                  formControlName="cep"
+                  required
+                />
               </mat-form-field>
-              <mat-error *ngIf="
+              <mat-error
+                *ngIf="
                   threeFormGroup.get('cep')?.invalid &&
                   (threeFormGroup.get('cep')?.touched ||
                     threeFormGroup.get('cep')?.dirty)
-                ">
+                "
+              >
                 <span *ngIf="threeFormGroup.get('cep')?.hasError('required')">
                   Por favor, digite seu cep!
                 </span>
-                <span *ngIf="
+                <span
+                  *ngIf="
                     threeFormGroup.get('cep')?.hasError('cepNaoEncontrado')
-                  ">
+                  "
+                >
                   digite um cep valido.
                 </span>
               </mat-error>
@@ -311,7 +422,12 @@
             <h3>Endereço*</h3>
             <div>
               <mat-form-field>
-                <input matInput placeholder="Rua, número, complemento" formControlName="endereco" required />
+                <input
+                  matInput
+                  placeholder="Rua, número, complemento"
+                  formControlName="endereco"
+                  required
+                />
               </mat-form-field>
             </div>
           </div>
@@ -320,12 +436,16 @@
             <h3>Cidade*</h3>
             <div>
               <mat-form-field>
-                <input matInput placeholder="Sua cidade" formControlName="cidade" required />
+                <input
+                  matInput
+                  placeholder="Sua cidade"
+                  formControlName="cidade"
+                  required
+                />
               </mat-form-field>
             </div>
           </div>
         </div>
-
       </div>
     </form>
 
@@ -334,22 +454,229 @@
         <mat-icon style="color: var(--text-title)">arrow_back</mat-icon>
         Voltar
       </button>
-      <button class="proximo" mat-button matStepperNext [disabled]="!threeFormGroup.valid" [ngClass]="{ disabled: !threeFormGroup.valid }">
+      <button
+        class="proximo"
+        mat-button
+        matStepperNext
+        [disabled]="!threeFormGroup.valid"
+        [ngClass]="{ disabled: !threeFormGroup.valid }"
+      >
         Próximo
       </button>
     </div>
   </mat-step>
 
-  <mat-step [stepControl]="fourFormGroup">
-    <form [formGroup]="fourFormGroup">
+  <mat-step [stepControl]="paymentFormGroup">
+    <form [formGroup]="paymentFormGroup">
       <ng-template matStepLabel>Dados Bancários</ng-template>
-      <mat-form-field>
-        <mat-label>Sua Agência e Conta</mat-label>
-        <input matInput formControlName="fourCtrl" placeholder="Ex. Ag 0001, C/C 12345-6" required />
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Voltar</button>
-        <button mat-button matStepperNext>Próximo</button>
+
+      <div class="title-payment-forms">
+        <h1>Dados Bancários</h1>
+        <p>Precisamos dessas informações para finalizar a compra</p>
+      </div>
+
+      <div class="warning-payment-forms-bg">
+        <mat-icon class="icons-payment-forms" style="color: var(--text-title)"
+          >security</mat-icon
+        >
+        <div class="warning-coments">
+          <h2>Segurança Garantida</h2>
+          <p>
+            Seus dados bancários estão protegidos por criptografia de ponta a
+            ponta e nunca serão compartilhados ou armazenas em nossos
+            servidores. Utilizamos o mais alto padrão de segurança em nossa
+            indústria.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-container-payment-forms">
+        <div class="column-one-payment-forms">
+          <div class="banco payments-forms">
+            <h2>Banco*</h2>
+            <mat-form-field>
+              <mat-label>seu banco</mat-label>
+              <input
+                matInput
+                formControlName="banco"
+                placeholder="Nome do banco"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('banco')?.invalid &&
+                (paymentFormGroup.get('banco')?.touched ||
+                  paymentFormGroup.get('banco')?.dirty)
+              "
+            >
+              <span *ngIf="paymentFormGroup.get('banco')?.hasError('required')">
+                Por favor, digite o numero do banco!
+              </span>
+            </mat-error>
+          </div>
+
+          <div class="agencia payments-forms">
+            <h2>Agência*</h2>
+            <mat-form-field>
+              <mat-label>Sua Agência e Conta</mat-label>
+              <input
+                matInput
+                formControlName="agencia"
+                placeholder="0000"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('agencia')?.invalid &&
+                (paymentFormGroup.get('agencia')?.touched ||
+                  paymentFormGroup.get('agencia')?.dirty)
+              "
+            >
+              <span
+                *ngIf="paymentFormGroup.get('agencia')?.hasError('required')"
+              >
+                Por favor, digite o numero da agência!
+              </span>
+            </mat-error>
+          </div>
+
+          <div class="account payments-forms">
+            <h2>Número da conta*</h2>
+            <mat-form-field>
+              <mat-label>Numero da conta</mat-label>
+              <input
+                matInput
+                formControlName="numeroDaConta"
+                placeholder="0000-0"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('numeroDaConta')?.invalid &&
+                (paymentFormGroup.get('numeroDaConta')?.touched ||
+                  paymentFormGroup.get('numeroDaConta')?.dirty)
+              "
+            >
+              <span
+                *ngIf="
+                  paymentFormGroup.get('numeroDaConta')?.hasError('required')
+                "
+              >
+                Por favor, digite o numero da Conta!
+              </span>
+            </mat-error>
+          </div>
+        </div>
+
+        <div class="column-two-payment-forms">
+          <div class="digito payments-forms">
+            <h2>Digito*</h2>
+            <mat-form-field>
+              <mat-label>Digito da conta</mat-label>
+              <input
+                matInput
+                formControlName="digito"
+                placeholder="000"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('digito')?.invalid &&
+                (paymentFormGroup.get('digito')?.touched ||
+                  paymentFormGroup.get('digito')?.dirty)
+              "
+            >
+              <span
+                *ngIf="paymentFormGroup.get('digito')?.hasError('required')"
+              >
+                Por favor, digite o digito da Conta!
+              </span>
+            </mat-error>
+          </div>
+
+          <div class="titular payments-forms">
+            <h2>Nome do Titular*</h2>
+            <mat-form-field>
+              <mat-label>Digite o nome</mat-label>
+              <input
+                matInput
+                formControlName="nomeDoTitular"
+                placeholder="Digite seu nome"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('nomeDoTitular')?.invalid &&
+                (paymentFormGroup.get('nomeDoTitular')?.touched ||
+                  paymentFormGroup.get('nomeDoTitular')?.dirty)
+              "
+            >
+              <span
+                *ngIf="
+                  paymentFormGroup.get('nomeDoTitular')?.hasError('required')
+                "
+              >
+                Por favor, digite o nome do titular da Conta!
+              </span>
+            </mat-error>
+          </div>
+
+          <div class="account payments-forms">
+            <h2>CPF do titular*</h2>
+            <mat-form-field>
+              <mat-label>Digite o cpf</mat-label>
+              <input
+                matInput
+                formControlName="cpfDoTitular"
+                placeholder="Digite seu nome"
+                required
+              />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                paymentFormGroup.get('cpfDoTitular')?.invalid &&
+                (paymentFormGroup.get('cpfDoTitular')?.touched ||
+                  paymentFormGroup.get('cpfDoTitular')?.dirty)
+              "
+            >
+              <span
+                *ngIf="
+                  paymentFormGroup.get('cpfDoTitular')?.hasError('required')
+                "
+              >
+                Por favor, digite seu cpf!
+              </span>
+              <span
+                *ngIf="
+                  paymentFormGroup.get('cpfDoTitular')?.hasError('cpfInvalido')
+                "
+              >
+                digite um cpf valido.
+              </span>
+            </mat-error>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons-nav">
+        <button class="voltar" mat-button matStepperPrevious>
+          <mat-icon style="color: var(--text-title)">arrow_back</mat-icon>
+          Voltar
+        </button>
+        <button
+          class="proximo"
+          mat-button
+          matStepperNext
+          [disabled]="!paymentFormGroup.valid"
+          [ngClass]="{ disabled: !paymentFormGroup.valid }"
+        >
+          Próximo
+        </button>
       </div>
     </form>
   </mat-step>

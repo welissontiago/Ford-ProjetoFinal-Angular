@@ -69,7 +69,7 @@ export class StepperComponent implements OnChanges, OnInit {
   secondFormGroup!: FormGroup;
   financingForm!: FormGroup;
   threeFormGroup!: FormGroup;
-  fourFormGroup!: FormGroup;
+  paymentFormGroup!: FormGroup;
 
   isEditable = true;
 
@@ -148,8 +148,19 @@ export class StepperComponent implements OnChanges, OnInit {
       }
     });
 
-    this.fourFormGroup = this._formBuilder.group({
-      fourCtrl: ['', Validators.required],
+    this.paymentFormGroup = this._formBuilder.group({
+      banco: ['', Validators.required],
+      digito: [
+        '',
+        [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
+      ],
+      agencia: ['', Validators.required],
+      nomeDoTitular: ['', Validators.required],
+      numeroDaConta: ['', Validators.required],
+      cpfDoTitular: [
+        '',
+        Validators.compose([Validators.required, Validacoes.ValidaCpf]),
+      ],
     });
   }
 

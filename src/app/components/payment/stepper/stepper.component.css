@@ -104,10 +104,10 @@
 }
 
 .icons {
-  background-color: #2a2828 !important;
+  background-color: var(--bg-icon) !important;
   padding: 20px;
   border-radius: 5px;
-  color: #94a0b8;
+  color: var(--icons-color-payment);
 }
 
 .payment-options h2 {
@@ -368,4 +368,98 @@ column-2 {
 
 .city mat-form-field {
   width: 120px;
+}
+
+.title-payment-forms {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.title-payment-forms h1 {
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--text-title);
+  font-size: 1.5rem;
+}
+
+.title-payment-forms p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-color-one);
+}
+
+.warning-payment-forms-bg {
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.icons-payment-forms {
+  padding: 20px;
+  border-radius: 5px;
+  color: #94a0b8;
+}
+
+.warning-coments h2 {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-title);
+  margin-bottom: 5px;
+}
+
+.warning-coments p {
+  color: var(--icons-color-payment);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.warning-payment-forms-bg {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  background-color: var(--input-bg);
+  padding: 30px 20px;
+  border-radius: 7px;
+}
+
+.flex-container-payment-forms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.payments-forms h2 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: var(--text-title);
+  margin-top: 25px;
+}
+
+.payments-forms mat-form-field {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.payments-forms mat-error {
+  display: block;
+  max-width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
+  height: 15px;
+}
+
+::ng-deep
+  .payments-forms
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: var(--search-bg) !important;
 }

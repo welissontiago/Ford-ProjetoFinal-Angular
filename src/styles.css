@@ -71,6 +71,7 @@
   --bg-card-cars: #333333;
   --border-payment-card: #4a4947;
   --bg-icon: #2a2828;
+  --icons-color-payment: #94a0b8;
 }
 
 html.white-theme {
@@ -138,7 +139,8 @@ html.white-theme {
   --teste-drive-bg: #a9aade;
   --bg-card-cars: #e6eaf0;
   --border-payment-card: #dbdbe1;
-  --bg-icon: #a9aade;
+  --bg-icon: #94a0b8;
+  --icons-color-payment: #2a2828;
 }
 
 html {

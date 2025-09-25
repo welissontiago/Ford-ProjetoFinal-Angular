@@ -687,6 +687,8 @@
   <mat-step>
     <ng-template matStepLabel>Confirmação</ng-template>
 
+    <ng-template matStepLabel>Confirmação</ng-template>
+
     <div class="confirm-payment-title">
       <h1>Confirmação da Compra</h1>
       <p>Revise todos os detalhes antes de finalizar a compra</p>
@@ -696,7 +698,7 @@
       <div class="cards-infos-title">
         <div class="image">
           <img
-            src="imagemselecionada"
+            [src]="corSelecionada?.imagem"
             [alt]="'Imagem do ' + car.nome + ' na cor ' + corSelecionada?.nome"
           />
         </div>
@@ -715,28 +717,49 @@
 
       <div class="pagamento">
         <h2>Forma de Pagamento:</h2>
-        <p>Pix ou Transferência ou financiamento</p>
+        <p *ngIf="paymentMethod === 'pix'">Pix</p>
+        <p *ngIf="paymentMethod === 'card'">Cartão/Transferência</p>
+        <p *ngIf="paymentMethod === 'financing'">Financiamento</p>
       </div>
 
       <div class="line-divisor"></div>
 
-      <div class="desconto">
-        <h2>Valor do desconto: ou Entrada:</h2>
-        <p>Valor da entrada ou do desconto</p>
-      </div>
+      <ng-container [ngSwitch]="paymentMethod">
+        <div *ngSwitchCase="'pix'" class="desconto">
+          <h2>Valor do desconto:</h2>
+          <p>{{ precoFinal - precoFinalComDesconto | currency : "BRL" }}</p>
+        </div>
+
+        <div *ngSwitchCase="'financing'" class="desconto">
+          <h2>Entrada:</h2>
+          <p>{{ downPayment | currency : "BRL" }}</p>
+        </div>
+      </ng-container>
 
       <div class="line-divisor"></div>
 
-      <div class="descontoAplicadoOuParcelas">
-        <h2>Desconto Aplicado: ou Parcelas:</h2>
-        <p>60x de R$ 9.150,00 ou 5% de desconto</p>
-      </div>
+      <ng-container [ngSwitch]="paymentMethod">
+        <div *ngSwitchCase="'pix'" class="descontoAplicadoOuParcelas">
+          <h2>Desconto Aplicado:</h2>
+          <p>5% de desconto</p>
+        </div>
+
+        <div *ngSwitchCase="'financing'" class="descontoAplicadoOuParcelas">
+          <h2>Parcelas:</h2>
+          <p>{{ installments }}x de {{ valorParcela | currency : "BRL" }}</p>
+        </div>
+      </ng-container>
 
       <div class="line-divisor"></div>
 
       <div class="total">
         <h2>Total:</h2>
-        <p>Valor Total aqui</p>
+        <p *ngIf="paymentMethod === 'pix'">
+          {{ precoFinalComDesconto | currency : "BRL" }}
+        </p>
+        <p *ngIf="paymentMethod !== 'pix'">
+          {{ precoFinal | currency : "BRL" }}
+        </p>
       </div>
     </div>
 

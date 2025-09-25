@@ -1,3 +1,5 @@
+// welissontiago/ford-projetofinal-angular/Ford-ProjetoFinal-Angular-50f59993e58eb5bfe9a345055ffab61b185ada38/src/app/components/payment/stepper/stepper.component.ts
+
 import {
   Component,
   EventEmitter,
@@ -35,7 +37,6 @@ import {
 import { PhoneMaskDirective } from '../../../core/directives/phone-mask.directive';
 import { CepMaskDirective } from '../../../core/directives/cep-mask.directive';
 import { MatSelectModule } from '@angular/material/select';
-import { CardCarPaymentComponent } from '../card-car-payment/card-car-payment.component';
 
 @Component({
   selector: 'app-stepper',
@@ -139,7 +140,7 @@ export class StepperComponent implements OnChanges, OnInit {
           .subscribe((res) => {
             if (!res.erro) {
               this.threeFormGroup.patchValue({
-                endereco: res.logradouro,
+                endereco: res.logouro,
                 cidade: res.localidade,
               });
             } else {
@@ -219,5 +220,17 @@ export class StepperComponent implements OnChanges, OnInit {
       return (this.precoFinal - entrada) / parcelas;
     }
     return 0;
+  }
+
+  get paymentMethod() {
+    return this.secondFormGroup.get('paymentMethod')?.value;
+  }
+
+  get downPayment() {
+    return this.financingForm.get('downPayment')?.value;
+  }
+
+  get installments() {
+    return this.financingForm.get('installments')?.value;
   }
 }

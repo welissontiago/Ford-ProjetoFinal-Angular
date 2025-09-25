@@ -10,6 +10,7 @@
   flex-direction: column;
   gap: 8px;
   border: 1px solid var(--border-payment-card);
+  transition: transform 0.3s ease;
 }
 
 .circle {
@@ -24,6 +25,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+}
+
+.cor-opcao:hover {
+  border-color: #a0a0a0;
+  transform: scale(1.05);
 }
 
 .cor-opcao.selected {
@@ -168,7 +174,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-
+  transition: transform 0.3s ease;
   padding: 60px 10px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -176,6 +182,7 @@
 
 .payment-card:hover {
   border-color: #a0a0a0;
+  transform: scale(1.05);
 }
 
 .payment-card.selected {

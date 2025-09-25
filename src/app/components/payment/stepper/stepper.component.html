@@ -100,9 +100,16 @@
 
             <div class="second-input-secondgroup">
               <h2>Número de Parcelas</h2>
+
               <mat-form-field class="container-inputs">
-                <mat-label class="label">Número de Parcelas</mat-label>
-                <input matInput formControlName="installments" type="number" placeholder="Ex: 60" />
+                <mat-label class="label-1">Número de Parcelas</mat-label>
+                <mat-select formControlName="installments">
+                  <mat-option value="12">12</mat-option>
+                  <mat-option value="24">24</mat-option>
+                  <mat-option value="36">36</mat-option>
+                  <mat-option value="48">48</mat-option>
+                  <mat-option value="60">60</mat-option>
+                </mat-select>
               </mat-form-field>
               <p>Taxas preferenciais para até 60 parcelas</p>
             </div>

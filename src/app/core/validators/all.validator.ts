@@ -48,12 +48,12 @@ export class Validacoes {
 
   static ValidaTelefone(controle: AbstractControl): ValidationErrors | null {
     const tel = controle.value;
-    const exp = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
-
-    if (tel && !exp.test(tel)) {
-      return { telefoneInvalido: true };
+    if (tel) {
+      const apenasNumeros = tel.replace(/\D/g, '');
+      if (apenasNumeros.length < 10 || apenasNumeros.length > 11) {
+        return { telefoneInvalido: true };
+      }
     }
-
     return null;
   }
 

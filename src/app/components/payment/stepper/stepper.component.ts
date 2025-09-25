@@ -25,13 +25,15 @@ import { Cores } from '../../../core/models/cores.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Cars } from '../../../core/models/cars.model';
-import { Validacoes } from '../../../core/validators/cpf.validator';
+import { Validacoes } from '../../../core/validators/all.validator';
 import { HttpClient } from '@angular/common/http';
 
 import {
   PaymentService,
   PaymentData,
 } from '../../../core/services/payment.service';
+import { PhoneMaskDirective } from '../../../core/directives/phone-mask.directive';
+import { CepMaskDirective } from '../../../core/directives/cep-mask.directive';
 
 @Component({
   selector: 'app-stepper',
@@ -45,6 +47,8 @@ import {
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    PhoneMaskDirective,
+    CepMaskDirective,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
@@ -118,11 +122,8 @@ export class StepperComponent implements OnChanges, OnInit {
       renda: ['', Validators.required],
       cep: [
         '',
-        [
-          Validators.required,
-          Validators.pattern(/^[0-9]{5}-?[0-9]{3}$/),
-          Validacoes.cepExiste(this.http),
-        ],
+        [Validators.required, Validators.pattern(/^[0-9]{5}-?[0-9]{3}$/)],
+        [Validacoes.cepExiste(this.http)],
       ],
       endereco: [''],
       cidade: [''],

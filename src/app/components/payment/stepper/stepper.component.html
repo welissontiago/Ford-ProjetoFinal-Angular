@@ -466,7 +466,10 @@
     </div>
   </mat-step>
 
-  <mat-step [stepControl]="paymentFormGroup">
+  <mat-step
+    *ngIf="secondFormGroup.get('paymentMethod')?.value !== 'pix'"
+    [stepControl]="paymentFormGroup"
+  >
     <form [formGroup]="paymentFormGroup">
       <ng-template matStepLabel>Dados Bancários</ng-template>
 
@@ -683,7 +686,60 @@
 
   <mat-step>
     <ng-template matStepLabel>Confirmação</ng-template>
-    <p>Você finalizou o processo. Revise os dados e confirme sua compra!</p>
+
+    <div class="confirm-payment-title">
+      <h1>Confirmação da Compra</h1>
+      <p>Revise todos os detalhes antes de finalizar a compra</p>
+    </div>
+
+    <div class="confirm-payment-bg-card">
+      <div class="cards-infos-title">
+        <div class="image">
+          <img
+            src="imagemselecionada"
+            [alt]="'Imagem do ' + car.nome + ' na cor ' + corSelecionada?.nome"
+          />
+        </div>
+        <div>
+          <h2>{{ car.nome }}</h2>
+          <p>{{ corSelecionada?.nome }}</p>
+        </div>
+      </div>
+
+      <div class="preco-base">
+        <h2>Preço base do veículo:</h2>
+        <p>{{ car.preco | currency : "BRL" }}</p>
+      </div>
+
+      <div class="line-divisor"></div>
+
+      <div class="pagamento">
+        <h2>Forma de Pagamento:</h2>
+        <p>Pix ou Transferência ou financiamento</p>
+      </div>
+
+      <div class="line-divisor"></div>
+
+      <div class="desconto">
+        <h2>Valor do desconto: ou Entrada:</h2>
+        <p>Valor da entrada ou do desconto</p>
+      </div>
+
+      <div class="line-divisor"></div>
+
+      <div class="descontoAplicadoOuParcelas">
+        <h2>Desconto Aplicado: ou Parcelas:</h2>
+        <p>60x de R$ 9.150,00 ou 5% de desconto</p>
+      </div>
+
+      <div class="line-divisor"></div>
+
+      <div class="total">
+        <h2>Total:</h2>
+        <p>Valor Total aqui</p>
+      </div>
+    </div>
+
     <div>
       <button mat-button matStepperPrevious>Voltar</button>
       <button mat-button (click)="stepper.reset()">Finalizar Compra</button>

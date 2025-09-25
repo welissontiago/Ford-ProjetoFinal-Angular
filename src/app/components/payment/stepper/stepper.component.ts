@@ -35,6 +35,7 @@ import {
 import { PhoneMaskDirective } from '../../../core/directives/phone-mask.directive';
 import { CepMaskDirective } from '../../../core/directives/cep-mask.directive';
 import { MatSelectModule } from '@angular/material/select';
+import { CardCarPaymentComponent } from '../card-car-payment/card-car-payment.component';
 
 @Component({
   selector: 'app-stepper',

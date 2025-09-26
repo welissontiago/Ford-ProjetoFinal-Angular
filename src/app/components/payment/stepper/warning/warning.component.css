@@ -1,0 +1,39 @@
+.aviso-container-bg{
+    box-sizing: border-box;
+    padding: 25px;
+    background-color: #FFFBEB;
+    border-radius: 5px;
+    border: 1px solid #FDE68A;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+.icon{
+    font-size: 15px;
+    color: #A0400E;
+}
+
+.container-flex{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    
+}
+
+.container-flex h1{
+    font-size: 1.5rem;
+    color: #A0400E;
+    margin-bottom: 10px;
+}
+
+.text{
+    color: #A0400E;
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 14px; 
+    letter-spacing: 0.2px
+}

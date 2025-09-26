@@ -568,8 +568,9 @@
           </p>
         </div>
       </div>
-
     </div>
+
+    <app-warning></app-warning>
 
     <div class="buttons-nav">
       <button class="voltar" mat-button matStepperPrevious>Voltar</button>
@@ -577,6 +578,7 @@
       <button style="color: var(--input-bg);" *ngIf="paymentMethod === 'pix'" class="proximo" mat-button (click)="stepper.reset()">gerar pix
         <mat-icon style="color: var(--megamenu-bg)">qr_code</mat-icon>
       </button>
+      
     </div>
   </mat-step>
 </mat-stepper>

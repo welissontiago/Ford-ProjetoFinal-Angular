@@ -37,6 +37,7 @@ import {
 import { PhoneMaskDirective } from '../../../core/directives/phone-mask.directive';
 import { CepMaskDirective } from '../../../core/directives/cep-mask.directive';
 import { MatSelectModule } from '@angular/material/select';
+import { WarningComponent } from "./warning/warning.component";
 
 @Component({
   selector: 'app-stepper',
@@ -53,7 +54,8 @@ import { MatSelectModule } from '@angular/material/select';
     PhoneMaskDirective,
     CepMaskDirective,
     MatSelectModule,
-  ],
+    WarningComponent
+],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
 })

@@ -463,3 +463,83 @@ column-2 {
   .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: var(--search-bg) !important;
 }
+
+.confirm-payment-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.confirm-payment-title h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--text-title);
+}
+
+.confirm-payment-title p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--text-color-one);
+}
+
+.confirm-payment-bg-card {
+  box-sizing: border-box;
+  padding: 25px;
+  background-color: var(--search-bg);
+  margin-top: 45px;
+  border-radius: 5px;
+  border: 1px solid var(--border-payment-card);
+}
+
+.cards-infos-title {
+  display: flex;
+  gap: 20px;
+}
+
+.cards-infos-title img {
+  max-width: 100px;
+  max-height: 70px;
+  border-radius: 5px;
+}
+
+.cards-infos-content p {
+  color: var(--text-color-one);
+}
+
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 10;
+}
+
+.infos h2 {
+  font-size: 0.875rem;
+  color: var(--text-color-one);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.infos p {
+  font-size: 0.875rem;
+  color: var(--text-title);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.line-divisor {
+  height: 1px;
+  width: 100%;
+  background-color: var(--teste-drive-bg);
+  margin-top: 15px;
+}
+
+.total p {
+  font-size: 1.5rem;
+  color: var(--text-special);
+  font-weight: 600;
+}

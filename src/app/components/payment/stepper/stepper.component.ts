@@ -1,5 +1,3 @@
-// welissontiago/ford-projetofinal-angular/Ford-ProjetoFinal-Angular-50f59993e58eb5bfe9a345055ffab61b185ada38/src/app/components/payment/stepper/stepper.component.ts
-
 import {
   Component,
   EventEmitter,
@@ -7,6 +5,7 @@ import {
   Input,
   OnChanges,
   OnInit,
+  ViewChild,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -22,7 +21,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatStepperModule } from '@angular/material/stepper';
+import { MatStepperModule, MatStepper } from '@angular/material/stepper';
 import { Cores } from '../../../core/models/cores.model';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -37,7 +36,12 @@ import {
 import { PhoneMaskDirective } from '../../../core/directives/phone-mask.directive';
 import { CepMaskDirective } from '../../../core/directives/cep-mask.directive';
 import { MatSelectModule } from '@angular/material/select';
-import { WarningComponent } from "./warning/warning.component";
+import { WarningComponent } from './warning/warning.component';
+import { PurchaseService } from '../../../core/services/purchase.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { Router } from '@angular/router';
+import { Purchase } from '../../../core/models/purchase.model';
+import { User } from '../../../core/models/user.model';
 
 @Component({
   selector: 'app-stepper',
@@ -54,8 +58,8 @@ import { WarningComponent } from "./warning/warning.component";
     PhoneMaskDirective,
     CepMaskDirective,
     MatSelectModule,
-    WarningComponent
-],
+    WarningComponent,
+  ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
 })
@@ -65,9 +69,15 @@ export class StepperComponent implements OnChanges, OnInit {
   @Input() corSelecionada?: Cores;
   @Output() corSelecionadaChange = new EventEmitter<Cores>();
 
+  @ViewChild(MatStepper) stepper!: MatStepper;
+
   private _formBuilder = inject(FormBuilder);
   private paymentService = inject(PaymentService);
   private http = inject(HttpClient);
+  private purchaseService = inject(PurchaseService);
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  private currentUser: User | null = null;
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -78,6 +88,7 @@ export class StepperComponent implements OnChanges, OnInit {
   isEditable = true;
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getCurrentUser();
     this.firstFormGroup = this._formBuilder.group({
       corCtrl: [this.corSelecionada, Validators.required],
     });
@@ -151,6 +162,13 @@ export class StepperComponent implements OnChanges, OnInit {
           });
       }
     });
+    if (this.currentUser) {
+      this.threeFormGroup.patchValue({
+        nome_completo: this.currentUser.name,
+        email: this.currentUser.email,
+        telefone: this.currentUser.phone,
+      });
+    }
 
     this.paymentFormGroup = this._formBuilder.group({
       banco: ['', Validators.required],
@@ -222,6 +240,41 @@ export class StepperComponent implements OnChanges, OnInit {
       return (this.precoFinal - entrada) / parcelas;
     }
     return 0;
+  }
+
+  finalizePurchase(): void {
+    const currentUser: User | null = this.authService.getCurrentUser();
+
+    if (!currentUser) {
+      console.error('Usuário não está logado!');
+      return;
+    }
+
+    if (
+      !this.car ||
+      !this.corSelecionada ||
+      !this.paymentService.getPaymentData()
+    ) {
+      console.error('Dados da compra incompletos!');
+      return;
+    }
+
+    const purchaseData: Omit<Purchase, 'id'> = {
+      user: currentUser,
+      car: this.car,
+      selectedColor: this.corSelecionada,
+      payment: this.paymentService.getPaymentData(),
+      purchaseDate: new Date(),
+    };
+
+    this.purchaseService.savePurchase(purchaseData).subscribe({
+      next: () => {
+        console.log('Compra finalizada com sucesso!');
+        this.router.navigate(['/home']);
+        this.stepper.reset();
+      },
+      error: (err) => console.error('Erro ao finalizar a compra:', err),
+    });
   }
 
   get paymentMethod() {

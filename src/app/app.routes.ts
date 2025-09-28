@@ -18,14 +18,14 @@ export const routes: Routes = [
 
   {
     path: 'home',
-    //canActivate: [authGuard],
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
 
   {
     path: 'inventario',
-    //canActivate: [authGuard],
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/inventario/inventario.component').then(
         (m) => m.InventarioComponent
@@ -34,7 +34,7 @@ export const routes: Routes = [
 
   {
     path: 'veiculo/:id',
-    //canActivate: [authGuard],
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/detalhes-veiculo/detalhes-veiculo.component').then(
         (m) => m.DetalhesVeiculoComponent
@@ -43,7 +43,7 @@ export const routes: Routes = [
 
   {
     path: 'pagamento/:id',
-    //canActivate: [authGuard],
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/pagamento/pagamento.component').then(
         (m) => m.PagamentoComponent

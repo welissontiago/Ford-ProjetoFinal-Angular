@@ -1,0 +1,36 @@
+<div id="character-container">
+  <img *ngIf="!isChatOpen" id="character" [src]="characterGif" alt="Personagem" (click)="openChat()" />
+
+  <div class="pai-chat" *ngIf="isChatOpen" [ngClass]="animationClass">
+    <div class="chatbot-bg">
+      <div class="nina-name">
+        <img src="/nina/Vector (1).svg" alt="estrelas" />
+        <p>Nina</p>
+      </div>
+      <div class="container-edit" (click)="resetChat()">
+        <img src="/nina/Vector (2).svg" alt="pincel" />
+        <p>Novo chat</p>
+      </div>
+    </div>
+    <div class="filho-bg">
+      <div class="chatbox" #chatbox>
+        <div *ngFor="let msg of messages" class="message" [ngClass]="msg.sender === 'user' ? 'user-message' : 'bot-message'">
+          {{ msg.text }}
+        </div>
+        <div *ngIf="isLoading" class="message bot-message">
+          <span class="loading-dots">
+            <span>.</span><span>.</span><span>.</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="chat-enviar">
+        <input type="text" [(ngModel)]="userInput" (keypress)="onKeyPress($event)" placeholder="Digite sua pergunta..." />
+        <svg (click)="sendMessage()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#838a95" viewBox="0 0 16 16">
+          <path d="M15.854.146a.5.5 0 0 0-.53-.11l-15 6a.5.5 0 0 0-.058.916L5.5 9.5l2.548 5.097a.5.5 0 0 0 .916-.058l6-15a.5.5 0 0 0-.11-.53zM6.832 10.68 6.03 9.5l7.938-3.175-7.136 4.355z" />
+        </svg>
+      </div>
+    </div>
+    <button class="event-button" (click)="closeChat()">X</button>
+  </div>
+</div>

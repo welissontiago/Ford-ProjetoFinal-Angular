@@ -1,0 +1,213 @@
+.pai-chat {
+  position: relative;
+  background: #22262e;
+  width: 397px;
+  height: 543px;
+  border-radius: 6px;
+  flex-direction: column;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  transform: translateY(-60px);
+  left: 20%;
+  margin-bottom: 50px;
+  user-select: none;
+}
+
+#emoji-cursor {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.filho-bg {
+  background: #0e1116;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.chatbot-bg {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nina-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 23px;
+  margin-top: 11px;
+}
+
+.nina-name p {
+  color: #dddfe5;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-edit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #2d323b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  margin-right: 15px;
+}
+
+.container-edit p {
+  margin: 0px;
+  color: #5d626d;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#chatbox {
+  height: 360px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: #2d323b;
+  color: #dddfe5;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #15171d;
+  color: #838a95;
+  align-self: flex-start;
+}
+
+#sendBtn {
+  cursor: pointer;
+}
+
+.chat-enviar {
+  position: relative;
+  width: fit-content;
+}
+
+.chat-enviar input {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: #15171d;
+  width: 326px;
+  border: none;
+  padding: 15px 20px;
+  user-select: none;
+  color: white;
+}
+
+.chat-enviar input::placeholder {
+  margin-left: 20px;
+  color: #3f4144;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.chat-enviar svg {
+  position: absolute;
+  right: 20px;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.event-button {
+  border-radius: 50%;
+  background-color: #5d626d;
+  border: none;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 15px;
+  left: -10%;
+  bottom: -10%;
+  cursor: pointer;
+}
+
+.event-button:hover {
+  background-color: #838a95;
+}
+
+#character-container {
+  position: fixed;
+  bottom: 80px;
+  left: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  z-index: 10;
+}
+
+#character {
+  width: 100px;
+  height: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+#close-btn.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-60px) scale(1);
+  }
+}
+
+@keyframes modalOut {
+  from {
+    opacity: 1;
+    transform: translateY(-60px) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+}
+
+.modal-enter {
+  animation: modalIn 0.6s ease forwards;
+}
+
+.modal-exit {
+  animation: modalOut 0.5s ease forwards;
+}

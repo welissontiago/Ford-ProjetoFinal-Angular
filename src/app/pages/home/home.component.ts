@@ -7,6 +7,7 @@ import { CategoriasComponent } from '../../components/home/categorias/categorias
 import { ParceirosComponent } from '../../components/home/parceiros/parceiros.component';
 import { BeneficiosComponent } from '../../components/home/beneficios/beneficios.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { ChatbotComponent } from '../../shared/components/chatbot/chatbot.component';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
     ParceirosComponent,
     BeneficiosComponent,
     FooterComponent,
+    ChatbotComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

@@ -85,7 +85,7 @@ export class ChatbotService {
 
   public async sendMessage(userQuestion: string): Promise<string> {
     try {
-      const model = this.ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const model = this.ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
       const chat = model.startChat({ history: this.chatHistory });
 
       const result = await chat.sendMessage(userQuestion);

@@ -33,9 +33,9 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   animationClass = '';
 
   characterGif = '/nina/ezgif.com-crop (1).gif';
-  private entryGif = '/nina/Animao_de_Personagem_Ps_Modal-ezgif.com-cut.gif';
-  private exitGif =
-    '/nina/Animao_de_Sada_de_Personagem_Fofo-ezgif.com-optimize.gif';
+  private entryGif =
+    ' /nina/Animao_de_Sada_de_Personagem_Fofo-ezgif.com-optimize.gif';
+  private exitGif = '/nina/Animao_de_Personagem_Ps_Modal-ezgif.com-cut.gif';
   private loopGif = '/nina/ezgif.combomeraang-reverse (1).gif';
 
   ngOnInit() {
@@ -62,22 +62,23 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   }
 
   openChat() {
-    this.isChatOpen = true;
-    this.animationClass = 'modal-enter';
     this.characterGif = this.entryGif;
     setTimeout(() => {
+      this.isChatOpen = true;
+      this.animationClass = 'modal-enter';
       this.characterGif = this.loopGif;
-    }, 2500);
+    }, 4000);
   }
 
   closeChat() {
     this.animationClass = 'modal-exit';
-    this.characterGif = this.exitGif;
-
     setTimeout(() => {
       this.isChatOpen = false;
-      this.characterGif = '/nina/ezgif.com-crop (1).gif';
-    }, 2500);
+      this.characterGif = this.exitGif;
+      setTimeout(() => {
+        this.characterGif = '/nina/ezgif.com-crop (1).gif';
+      }, 2500);
+    }, 500);
   }
 
   resetChat() {

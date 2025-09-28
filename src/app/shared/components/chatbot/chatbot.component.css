@@ -29,6 +29,7 @@
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
+  height: 88%;
 }
 
 .chatbot-bg {
@@ -71,13 +72,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#chatbox {
+.chatbox {
   height: 360px;
   overflow-y: auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-left: 10px;
 }
 
 .message {
@@ -210,4 +212,10 @@
 
 .modal-exit {
   animation: modalOut 0.5s ease forwards;
+}
+
+@media (max-width: 800px) {
+  #character-container {
+    display: none;
+  }
 }

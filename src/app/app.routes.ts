@@ -1,15 +1,18 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { loggedInGuard } from './core/guards/logged-in.guard';
 // import { adminGuard } from './core/guards/admin.guard';
 
 export const routes: Routes = [
   {
     path: 'login',
+    canActivate: [loggedInGuard],
     loadComponent: () =>
       import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'register',
+    canActivate: [loggedInGuard],
     loadComponent: () =>
       import('./pages/register/register.component').then(
         (m) => m.RegisterComponent

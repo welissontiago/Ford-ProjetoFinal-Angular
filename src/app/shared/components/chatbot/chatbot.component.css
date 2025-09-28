@@ -214,7 +214,7 @@
   animation: modalOut 0.5s ease forwards;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1020px) {
   #character-container {
     display: none;
   }

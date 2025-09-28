@@ -1,14 +1,24 @@
 <div class="pix-modal-container">
-  <h1 mat-dialog-title>Pague com PIX</h1>
+  <img class="img" src="/logo-ford/logo-zul.png" alt="logo da Ford">
   <div mat-dialog-content>
-    <p>Escaneie o QR Code abaixo para efetuar o pagamento.</p>
-    <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    <p class="color-titles title">Abra o app do seu banco, escaneie o qr code ou cole o código gerado</p>
+    <div class="qr-code">
+      <qrcode class="qr" [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
     <div class="timer">
-      <p>Tempo restante: {{ displayTime }}</p>
+      <p class="color-titles">Tempo de expiração: {{ displayTime }}</p>
+    </div>
+    <div class="informations">
+      <h1>Destinatário</h1>
+      <p>Mercado Pagado Pagamentos LTDA</p>
+      <p>CNPJ: 00.000.000/0000-00</p>
+      <h2>Identificador</h2>
+      <p>00000000000000000000000000000000000</p>
+      <h3>Pagamento 100% Seguro</h3>
     </div>
   </div>
-  <div mat-dialog-actions>
-    <button mat-button (click)="close()">Cancelar</button>
-    <button mat-raised-button color="primary" (click)="simularPagamento()">Simular Pagamento</button>
+  <div class="buttons" mat-dialog-actions>
+    <button class="cancel" mat-button (click)="close()">Cancelar</button>
+    <button class="simular" mat-raised-button color="primary" (click)="simularPagamento()">Pagamento Completo</button>
   </div>
 </div>

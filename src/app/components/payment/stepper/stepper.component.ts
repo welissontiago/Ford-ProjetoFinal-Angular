@@ -62,8 +62,6 @@ import { MatDialog } from '@angular/material/dialog';
     CepMaskDirective,
     MatSelectModule,
     WarningComponent,
-    SuccessModalComponent,
-    EnterPixComponent,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
@@ -250,7 +248,8 @@ export class StepperComponent implements OnChanges, OnInit {
 
   openPixModal(): void {
     const dialogRef = this.dialog.open(EnterPixComponent, {
-      width: '700px',
+      width: '600px',
+      height: '750px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

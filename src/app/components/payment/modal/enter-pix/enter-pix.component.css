@@ -1,9 +1,74 @@
 .pix-modal-container {
   text-align: center;
+  background-color: var(--hover-filter);
+}
+
+.img {
+  width: 166px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.title {
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .timer {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel,
+.simular {
+  box-sizing: border-box;
+  padding: 15px;
+  color: var(--text-title);
+  background-color: var(--components-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel:hover,
+.simular:hover {
+  background-color: var(--component-hover);
+}
+
+.informations {
+  margin-top: 15px;
+}
+
+.informations p,
+h1,
+h2 {
+  color: var(--text-title);
+}
+
+.informations h1,
+h2 {
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 26px;
+}
+
+.informations h3 {
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-special);
+  line-height: normal;
+  margin-top: 40px;
 }

@@ -42,6 +42,9 @@ import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { Purchase } from '../../../core/models/purchase.model';
 import { User } from '../../../core/models/user.model';
+import { SuccessModalComponent } from '../modal/success-modal/success-modal.component';
+import { EnterPixComponent } from '../modal/enter-pix/enter-pix.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-stepper',
@@ -59,6 +62,8 @@ import { User } from '../../../core/models/user.model';
     CepMaskDirective,
     MatSelectModule,
     WarningComponent,
+    SuccessModalComponent,
+    EnterPixComponent,
   ],
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css',
@@ -78,6 +83,7 @@ export class StepperComponent implements OnChanges, OnInit {
   private authService = inject(AuthService);
   private router = inject(Router);
   private currentUser: User | null = null;
+  public dialog = inject(MatDialog);
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -242,9 +248,31 @@ export class StepperComponent implements OnChanges, OnInit {
     return 0;
   }
 
+  openPixModal(): void {
+    const dialogRef = this.dialog.open(EnterPixComponent, {
+      width: '700px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'success') {
+        this.openSuccessModal();
+      }
+    });
+  }
+
+  openSuccessModal(): void {
+    const dialogRef = this.dialog.open(SuccessModalComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.router.navigate(['/home']);
+      this.stepper.reset();
+    });
+  }
+
   finalizePurchase(): void {
     const currentUser: User | null = this.authService.getCurrentUser();
-
     if (!currentUser) {
       console.error('Usuário não está logado!');
       return;

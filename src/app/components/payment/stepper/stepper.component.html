@@ -575,7 +575,7 @@
     <div class="buttons-nav">
       <button class="voltar" mat-button matStepperPrevious>Voltar</button>
       <button *ngIf="paymentMethod !== 'pix'" class="proximo" mat-button (click)="finalizePurchase()">Finalizar Compra</button>
-      <button style="color: var(--input-bg);" *ngIf="paymentMethod === 'pix'" class="proximo" mat-button (click)="stepper.reset()">gerar pix
+      <button style="color: var(--input-bg);" *ngIf="paymentMethod === 'pix'" class="proximo" mat-button (click)="openPixModal()">gerar pix
         <mat-icon style="color: var(--megamenu-bg)">qr_code</mat-icon>
       </button>
 

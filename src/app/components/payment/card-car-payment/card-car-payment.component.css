@@ -37,7 +37,7 @@
 }
 
 .mini-details p {
-  background: var(--bg-icon);
+  background: var(--specs-bg);
   padding: 8px;
   border-radius: 50px;
 }
@@ -61,7 +61,7 @@
 }
 
 .car-especs {
-  background-color: var(--bg-icon);
+  background-color: var(--specs-bg);
   margin-top: 18px;
   box-sizing: border-box;
   padding: 20px;
@@ -153,9 +153,9 @@
   font-weight: 700;
 }
 
-@media (max-width: 1115px){
-  .card-bg{
-     max-width: 100%; 
+@media (max-width: 1115px) {
+  .card-bg {
+    max-width: 100%;
     min-width: 250px;
   }
 }

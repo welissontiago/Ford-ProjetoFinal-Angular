@@ -28,7 +28,7 @@
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--components-color-two);
+  background: var(--gradient-buttons);
   margin-bottom: 40px;
   font-weight: 600;
 }

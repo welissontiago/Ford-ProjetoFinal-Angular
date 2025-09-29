@@ -7,7 +7,7 @@ import { CdkStepLabel } from "@angular/cdk/stepper";
   selector: 'app-success-modal',
   templateUrl: './success-modal.component.html',
   styleUrls: ['./success-modal.component.css'],
-  imports: [CdkStepLabel],
+  imports:[],
 })
 export class SuccessModalComponent implements AfterViewInit {
   @ViewChild('dotlottieCanvas') dotlottieCanvas!: ElementRef<HTMLCanvasElement>;

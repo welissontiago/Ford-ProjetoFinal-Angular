@@ -23,24 +23,25 @@
 .buttons {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .cancel,
 .simular {
   box-sizing: border-box;
   padding: 15px;
-  color: var(--text-title);
-  background-color: var(--components-color);
+  color: var(--text-color-four);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
   border-radius: 5px;
   cursor: pointer;
+  background: var(--gradient-buttons);
 }
 
 .cancel:hover,
 .simular:hover {
-  background-color: var(--component-hover);
+  background: var(--component-hover);
 }
 
 .informations {

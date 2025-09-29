@@ -72,6 +72,7 @@
   --border-payment-card: #4a4947;
   --bg-icon: #2a2828;
   --icons-color-payment: #94a0b8;
+  --gradient-buttons: linear-gradient(135deg, #FF2626 0%, #FFFF26 100%);
 }
 
 html.white-theme {
@@ -141,6 +142,12 @@ html.white-theme {
   --border-payment-card: #dbdbe1;
   --bg-icon: #94a0b8;
   --icons-color-payment: #2a2828;
+  --gradient-buttons: linear-gradient(
+    90deg,
+    #97c4f7 5.18%,
+    #2563eb 51.45%,
+    rgba(162, 200, 242, 0.7) 98.02%
+  );
 }
 
 html {

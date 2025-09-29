@@ -1,10 +1,11 @@
 <div class="success-modal-container">
-  <h1 mat-dialog-title>Pagamento Aprovado!</h1>
-  <div mat-dialog-content>
-    <p>Seu pagamento foi processado com sucesso.</p>
-    <p>Obrigado pela sua compra!</p>
+  <h1 class="color-titles --title-text-24px poppins-medium" mat-dialog-title>Pagamento Aprovado!</h1>
+  <div mat-dialog-content class="payment-success-text">
+    <canvas #dotlottieCanvas style="width: 200px; height: 200px; margin-top: 20px;"></canvas>
+    <p class="color-titles --text-16px min-text">Seu pagamento foi processado com sucesso.</p>
+    <p class="color-titles --text-16px big-text">Obrigado pela sua compra! Dentro de 24 horas a nossa equipe irá entrar em contato com você!</p>
   </div>
   <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="close()">Fechar</button>
+    <button class="button" mat-raised-button color="primary" (click)="close()">Fechar</button>
   </div>
 </div>

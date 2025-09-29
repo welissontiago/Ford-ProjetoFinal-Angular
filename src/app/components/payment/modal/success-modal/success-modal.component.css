@@ -1,3 +1,38 @@
 .success-modal-container {
   text-align: center;
+  background-color: var(--hover-filter);
+  border-radius: 5px;
+}
+
+.success-modal-container h1{
+  margin-top: 25px;
+}
+
+.min-text{
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.big-text{
+  font-weight: 300;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.button{
+  box-sizing: border-box;
+  color: var(--text-color-four);
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--components-color-two);
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.button:hover{
+  background-color: var(--component-hover);
 }

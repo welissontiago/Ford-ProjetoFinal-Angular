@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { loggedInGuard } from './core/guards/logged-in.guard';
-// import { adminGuard } from './core/guards/admin.guard';
+import { adminGuard } from './core/guards/admin.guard';
 
 export const routes: Routes = [
   {
@@ -50,6 +50,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/pagamento/pagamento.component').then(
         (m) => m.PagamentoComponent
+      ),
+  },
+
+  {
+    path: 'dashboard',
+    canActivate: [adminGuard],
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
       ),
   },
 

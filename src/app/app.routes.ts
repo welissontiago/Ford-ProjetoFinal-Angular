@@ -60,6 +60,37 @@ export const routes: Routes = [
       import('./pages/dashboard/dashboard.component').then(
         (m) => m.DashboardComponent
       ),
+    children: [
+      { path: '', redirectTo: 'dashboard-home', pathMatch: 'full' },
+      {
+        path: 'dashboard-home',
+        loadComponent: () =>
+          import(
+            './components/admin/dashboard-home/dashboard-home.component'
+          ).then((m) => m.DashboardHomeComponent),
+      },
+      {
+        path: 'veiculos',
+        loadComponent: () =>
+          import('./components/admin/veiculos/veiculos.component').then(
+            (m) => m.VeiculosComponent
+          ),
+      },
+      {
+        path: 'propostas',
+        loadComponent: () =>
+          import('./components/admin/propostas/propostas.component').then(
+            (m) => m.PropostasComponent
+          ),
+      },
+      {
+        path: 'relatorios',
+        loadComponent: () =>
+          import('./components/admin/relatorios/relatorios.component').then(
+            (m) => m.RelatoriosComponent
+          ),
+      },
+    ],
   },
 
   {

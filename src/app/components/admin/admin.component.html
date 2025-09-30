@@ -18,7 +18,7 @@
   <mat-drawer #drawer class="example-sidenav" mode="side" opened [ngClass]="{ 'sidenav-collapsed': sidenavCollapsed }">
     <ul class="nav-list">
       <li *ngFor="let item of navData" class="nav-item">
-        <a href="#" class="nav-link">
+        <a [routerLink]="[item.router]" class="nav-link">
           <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
           <span class="nav-label">{{ item.label }}</span>
         </a>
@@ -27,6 +27,6 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <ng-content></ng-content>
+    <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>

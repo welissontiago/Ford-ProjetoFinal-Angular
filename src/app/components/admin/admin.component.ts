@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -16,6 +17,7 @@ import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme
     MatIconModule,
     CommonModule,
     ThemeToggleComponent,
+    RouterModule,
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
@@ -24,11 +26,11 @@ export class AdminComponent {
   sidenavCollapsed = false;
 
   navData = [
-    { icon: 'dashboard', label: 'Dashboard' },
-    { icon: 'airport_shuttle', label: 'Veiculos' },
-    { icon: 'emoji_people', label: 'Propostas' },
-    { icon: 'bar_chart_4_bars', label: 'Relatórios' },
-    { icon: 'settings', label: 'Configurações' },
+    { icon: 'dashboard', label: 'Dashboard', router: '/dashboard-home' },
+    { icon: 'airport_shuttle', label: 'Veiculos', router: '/veiculos' },
+    { icon: 'emoji_people', label: 'Propostas', router: '/propostas' },
+    { icon: 'bar_chart_4_bars', label: 'Relatórios', router: '/relatorios' },
+    { icon: 'settings', label: 'Configurações', router: '/dashboard-home' },
   ];
 
   toggleSidenav(): void {

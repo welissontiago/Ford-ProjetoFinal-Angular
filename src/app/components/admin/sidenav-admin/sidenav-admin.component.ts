@@ -1,38 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { navbarData } from './nav-data';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
-interface SideNavToglle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+import { navbarData } from './nav-data';
 
 @Component({
   selector: 'app-sidenav-admin',
-  imports: [CommonModule, RouterLink],
+  standalone: true,
+  imports: [],
   templateUrl: './sidenav-admin.component.html',
-  styleUrl: './sidenav-admin.component.css',
+  styleUrls: ['./sidenav-admin.component.css'],
 })
-export class SidenavAdminComponent {
-  @Output() onToggleSideNav: EventEmitter<SideNavToglle> = new EventEmitter();
-  collapsed = false;
-  screenWidth = 0;
-  navData = navbarData;
-
-  togglecollapsed(): void {
-    this.collapsed = !this.collapsed;
-    this.onToggleSideNav.emit({
-      collapsed: this.collapsed,
-      screenWidth: this.screenWidth,
-    });
-  }
-
-  closeSidenav(): void {
-    this.collapsed = false;
-    this.onToggleSideNav.emit({
-      collapsed: this.collapsed,
-      screenWidth: this.screenWidth,
-    });
-  }
-}
+export class SidenavAdminComponent {}

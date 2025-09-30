@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { SidenavAdminComponent } from '../../components/admin/sidenav-admin/sidenav-admin.component';
-import { RouterOutlet } from '@angular/router';
+import { AdminComponent } from '../../components/admin/admin.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [SidenavAdminComponent],
+  standalone: true,
+  imports: [AdminComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
+  styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {
-  isSideNavCollapsed = false;
-  screenWidth = 0;
-}
+export class DashboardComponent {}

@@ -1,0 +1,129 @@
+.example-container {
+  height: calc(100vh - 94px);
+  background: var(--bg-titles-inventario);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item {
+  display: flex;
+  gap: 20px;
+}
+
+.toolbar.mat-toolbar {
+  background: var(--header-bg) !important;
+  gap: 20px;
+}
+
+::ng-deep html.white-theme .icon {
+  color: white !important;
+}
+
+.hamburger-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger-button .mat-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger-button .menu-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.hamburger-button .close-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.hamburger-button.is-active .menu-icon {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.hamburger-button.is-active .close-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.example-sidenav {
+  width: 250px;
+  background: var(--bg-titles-inventario);
+  transition: width 0.3s ease-in-out;
+}
+
+.example-sidenav.sidenav-collapsed {
+  width: 65px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  height: 50px;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-link-admin);
+}
+
+.nav-icon {
+  font-size: 24px;
+}
+
+.nav-link:hover .nav-icon {
+  color: white;
+}
+
+.nav-label {
+  margin-left: 15px;
+  transition: opacity 0.2s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.nav-link:hover .nav-label {
+  color: var(--text-title);
+}
+
+.sidenav-collapsed .nav-label {
+  opacity: 0;
+  width: 0;
+}
+
+.sidenav-collapsed .nav-link {
+  justify-content: center;
+  padding: 10px;
+}
+
+.sidenav-collapsed .nav-label {
+  margin-left: 0;
+}
+
+::ng-deep .mat-drawer-content {
+  background: var(--dashboard-blackground);
+}

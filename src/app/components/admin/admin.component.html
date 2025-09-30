@@ -1,1 +1,32 @@
-<p>admin works!</p>
+<mat-toolbar class="toolbar">
+  <div class="flex-item">
+    <button mat-icon-button (click)="toggleSidenav()" class="hamburger-button" [ngClass]="{ 'is-active': !sidenavCollapsed }" aria-label="Toggle sidenav">
+      <mat-icon class="icon menu-icon">menu</mat-icon>
+      <mat-icon class="icon close-icon">close</mat-icon>
+    </button>
+    <div class="toolbar-logo">
+      <img src="/logo-ford/nome.png" alt="logo da ford" />
+    </div>
+  </div>
+
+  <div class="theme">
+    <app-theme-toggle></app-theme-toggle>
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened [ngClass]="{ 'sidenav-collapsed': sidenavCollapsed }">
+    <ul class="nav-list">
+      <li *ngFor="let item of navData" class="nav-item">
+        <a href="#" class="nav-link">
+          <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+          <span class="nav-label">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <ng-content></ng-content>
+  </div>
+</mat-drawer-container>

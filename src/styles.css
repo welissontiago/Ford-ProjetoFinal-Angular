@@ -75,6 +75,8 @@
   --gradient-buttons: linear-gradient(135deg, #ff2626 0%, #ffff26 100%);
   --gradient-hover: linear-gradient(86deg, #ff2626 0%, #ffff26 100%);
   --specs-bg: #2a2828;
+  --dashboard-blackground: #1c1c1d;
+  --nav-link-admin: black;
 }
 
 html.white-theme {
@@ -147,6 +149,8 @@ html.white-theme {
   --gradient-buttons: linear-gradient(135deg, #0e7cdb 0%, #89c0e6 100%);
   --gradient-hover: linear-gradient(90deg, #0098fe 100%, #0e7cdb 0%);
   --specs-bg: #d9e0ee;
+  --dashboard-blackground: #dbdbe1;
+  --nav-link-admin: #2563eb;
 }
 
 html {

@@ -1,0 +1,16 @@
+.dash-infos {
+  background: var(--lista-destaques-bg);
+  box-sizing: border-box;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1rem;
+}

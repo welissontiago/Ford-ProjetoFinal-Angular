@@ -1,1 +1,38 @@
-<p>dashboard-home works!</p>
+<section class="dahsboard" aria-label="dashboard-content-initial">
+  <div class="inital-content" aria-label="initial titles and add vehicle">
+    <div class="titles">
+      <h1>Dashboard Administrativo</h1>
+      <p>Gerenciamento de vendas e veiculos da Ford</p>
+    </div>
+    <button class="btn-add" mat-button matStepperPrevious>
+      <mat-icon>add</mat-icon>
+      Adicionar novo veiculo
+    </button>
+  </div>
+
+  <div class="minicards-content" aria-label="cards contents dashboard">
+    <app-mini-card class="card">
+      <h1 class="title-card" title>Total de Veículos</h1>
+      <mat-icon class="icon-card" icon>directions_car</mat-icon>
+      <h2 class="content-card" content>{{ cars.length }}</h2>
+    </app-mini-card>
+
+    <app-mini-card class="card">
+      <h1 class="title-card" title>Veículos em Destaque</h1>
+      <mat-icon class="icon-card" icon>star</mat-icon>
+      <h2 class="content-card" content>{{ cars.length }}</h2>
+    </app-mini-card>
+
+    <app-mini-card class="card">
+      <h1 class="title-card" title>Total de Veículos</h1>
+      <mat-icon class="icon-card" icon>directions_car</mat-icon>
+      <h2 class="content-card" content>{{ cars.length }}</h2>
+    </app-mini-card>
+
+    <app-mini-card class="card">
+      <h1 class="title-card" title>Total de Veículos</h1>
+      <mat-icon class="icon-card" icon>directions_car</mat-icon>
+      <h2 class="content-card" content>{{ cars.length }}</h2>
+    </app-mini-card>
+  </div>
+</section>

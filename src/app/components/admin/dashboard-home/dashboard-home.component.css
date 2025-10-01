@@ -1,0 +1,49 @@
+.dahsboard {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.inital-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titles h1,
+p {
+  color: var(--text-title);
+}
+
+.btn-add {
+  background: var(--components-color);
+  color: var(--text-color-four) !important;
+  border-radius: 5px;
+}
+
+.btn-add:hover {
+  background: var(--gradient-buttons);
+}
+
+.minicards-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 35px;
+  margin-top: 80px;
+}
+
+.title-card {
+  font-size: 1rem;
+  color: var(--text-title);
+}
+
+.content-card {
+  font-size: 1.5rem;
+  color: var(--text-title);
+  margin-top: 10px;
+}
+
+.icon-card {
+  color: var(--components-color);
+}

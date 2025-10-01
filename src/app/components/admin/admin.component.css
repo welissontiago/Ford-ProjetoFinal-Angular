@@ -1,5 +1,5 @@
 .example-container {
-  height: calc(100vh - 94px);
+  height: calc(100vh - 64px);
   background: var(--bg-titles-inventario);
 }
 

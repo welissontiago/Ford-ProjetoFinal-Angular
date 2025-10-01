@@ -26,11 +26,11 @@ export class AdminComponent {
   sidenavCollapsed = false;
 
   navData = [
-    { icon: 'dashboard', label: 'Dashboard', router: '/dashboard-home' },
-    { icon: 'airport_shuttle', label: 'Veiculos', router: '/veiculos' },
-    { icon: 'emoji_people', label: 'Propostas', router: '/propostas' },
-    { icon: 'bar_chart_4_bars', label: 'Relatórios', router: '/relatorios' },
-    { icon: 'settings', label: 'Configurações', router: '/dashboard-home' },
+    { icon: 'dashboard', label: 'Dashboard', router: 'dashboard-home' },
+    { icon: 'airport_shuttle', label: 'Veiculos', router: 'veiculos' },
+    { icon: 'emoji_people', label: 'Propostas', router: 'propostas' },
+    { icon: 'bar_chart_4_bars', label: 'Relatórios', router: 'relatorios' },
+    { icon: 'home', label: 'Voltar pro site', router: '' },
   ];
 
   toggleSidenav(): void {

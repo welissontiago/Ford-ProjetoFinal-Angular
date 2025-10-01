@@ -13,4 +13,8 @@ export class PurchaseService {
   savePurchase(purchase: Omit<Purchase, 'id'>): Observable<Purchase> {
     return this.http.post<Purchase>(this.apiUrl, purchase);
   }
+
+  getAllPurchases(): Observable<Purchase[]> {
+    return this.http.get<Purchase[]>(this.apiUrl);
+  }
 }

@@ -5,6 +5,9 @@ import { MiniCardComponent } from './mini-card/mini-card.component';
 import { Cars } from '../../../core/models/cars.model';
 import { CommonModule } from '@angular/common';
 import { CarsService } from '../../../core/services/cars.service';
+import { PurchaseService } from '../../../core/services/purchase.service';
+import { Purchase } from '../../../core/models/purchase.model';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -15,12 +18,37 @@ import { CarsService } from '../../../core/services/cars.service';
 export class DashboardHomeComponent implements OnInit {
   @Input() car!: Cars;
   cars: Cars[] = [];
+  featuredCarsCount = 0;
+  totalSales = 0;
+  newPurchasesCount = 0;
 
-  constructor(private carsService: CarsService) {}
+  constructor(
+    private carsService: CarsService,
+    private purchaseService: PurchaseService
+  ) {}
 
   ngOnInit(): void {
-    this.carsService.getCars().subscribe((data) => {
-      this.cars = data;
+    forkJoin({
+      cars: this.carsService.getCars(),
+      featuredCars: this.carsService.getFeaturedCars(),
+      purchases: this.purchaseService.getAllPurchases(),
+    }).subscribe(({ cars, featuredCars, purchases }) => {
+      this.cars = cars;
+      this.featuredCarsCount = featuredCars.length;
+      this.calculateSales(purchases);
     });
+  }
+
+  calculateSales(purchases: Purchase[]): void {
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+    this.totalSales = purchases.reduce(
+      (sum, purchase) => sum + purchase.car.preco,
+      0
+    );
+    this.newPurchasesCount = purchases.filter(
+      (p) => new Date(p.purchaseDate) > sevenDaysAgo
+    ).length;
   }
 }

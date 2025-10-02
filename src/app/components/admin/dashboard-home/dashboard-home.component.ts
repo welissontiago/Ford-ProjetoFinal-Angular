@@ -8,10 +8,17 @@ import { CarsService } from '../../../core/services/cars.service';
 import { PurchaseService } from '../../../core/services/purchase.service';
 import { Purchase } from '../../../core/models/purchase.model';
 import { forkJoin } from 'rxjs';
+import { CardLastVehiclesComponent } from './card-last-vehicles/card-last-vehicles.component';
 
 @Component({
   selector: 'app-dashboard-home',
-  imports: [MatButtonModule, MatIconModule, MiniCardComponent, CommonModule],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MiniCardComponent,
+    CommonModule,
+    CardLastVehiclesComponent,
+  ],
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.css',
 })

@@ -1,9 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { DotLottie } from '@lottiefiles/dotlottie-web';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })

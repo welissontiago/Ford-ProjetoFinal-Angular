@@ -1,0 +1,51 @@
+.details-bg {
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid var(--element-line);
+  border-radius: 5px;
+  max-width: 1250px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.left-infos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.left-infos h1,
+p {
+  color: var(--text-title);
+}
+
+.left-infos h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.left-infos p {
+  font-size: 1rem;
+}
+
+.rigt-infos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--gradient-buttons);
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--gradient-hover);
+}

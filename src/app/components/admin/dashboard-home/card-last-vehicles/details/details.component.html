@@ -2,8 +2,21 @@
   <div class="flex-container">
     <div class="left-infos">
       <canvas #dotlottieCanvas style="width: 80px; height: 80px;"></canvas>
-      <h1>car-name</h1>
-      <p>car-price</p>
+      <div class="left-infos-car">
+        <h1>car-name</h1>
+        <p>car-price</p>
+      </div>
+    </div>
+    <div class="rigt-infos">
+      <p>data de alteração:</p>
+      <span class="status">Disponivel</span>
+      <span class="destaque">Destaque</span>
+      <button class="button" matFab aria-label="Example icon button with a edit icon">
+        <mat-icon style="color: var(--text-color-four);">edit</mat-icon>
+      </button>
+      <button class="button" matFab aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
   </div>
 </div>

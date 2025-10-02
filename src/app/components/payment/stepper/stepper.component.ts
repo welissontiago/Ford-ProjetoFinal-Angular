@@ -45,6 +45,7 @@ import { User } from '../../../core/models/user.model';
 import { SuccessModalComponent } from '../modal/success-modal/success-modal.component';
 import { EnterPixComponent } from '../modal/enter-pix/enter-pix.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CarsService } from '../../../core/services/cars.service';
 
 @Component({
   selector: 'app-stepper',
@@ -71,6 +72,7 @@ export class StepperComponent implements OnChanges, OnInit {
   @Input() car!: Cars;
   @Input() corSelecionada?: Cores;
   @Output() corSelecionadaChange = new EventEmitter<Cores>();
+  private carsService = inject(CarsService);
 
   @ViewChild(MatStepper) stepper!: MatStepper;
 
@@ -297,6 +299,13 @@ export class StepperComponent implements OnChanges, OnInit {
     this.purchaseService.savePurchase(purchaseData).subscribe({
       next: () => {
         console.log('Compra finalizada com sucesso!');
+        if (this.car && this.car.id) {
+          this.car.estoque -= 1;
+          this.carsService.updateCar(this.car).subscribe({
+            next: () => console.log('Estoque atualizado!'),
+            error: (err) => console.error('Erro ao atualizar o estoque:', err),
+          });
+        }
         this.router.navigate(['/home']);
         this.stepper.reset();
       },

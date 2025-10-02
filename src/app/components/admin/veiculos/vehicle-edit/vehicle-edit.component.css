@@ -163,3 +163,220 @@ textarea[matInput] {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+.cores-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.title-colors {
+  margin-bottom: 30px;
+}
+
+.color-btn-add {
+  background-color: var(--components-color);
+  color: var(--text-color-four) !important;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.color-btn-add:hover {
+  background-color: var(--component-hover);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 400px) minmax(200px, 400px) minmax(
+      200px,
+      400px
+    );
+  gap: 35px;
+}
+
+.flex-fields-container {
+  margin-top: 30px;
+}
+
+.hex {
+  width: 150px;
+}
+
+.remove-cor-btn {
+  font-size: 1rem;
+}
+
+.cores-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.cor-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  position: relative;
+}
+
+.cor-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.cor-imagem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.image-preview {
+  position: relative;
+  width: 150px;
+  height: 100px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-preview .remove-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.remove-cor-btn {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
+.input-file {
+  margin-bottom: 15px;
+}
+
+.remove-cor-btn:hover {
+  color: red;
+}
+
+.preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.preview .remove-btn-img-principal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.preview .remove-btn-img-principal:hover {
+  background-color: red;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  color: var(--text-title) !important;
+}
+
+.grid-equip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-equip h3 {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.btn-add-equip {
+  background: var(--components-color);
+  color: var(--text-color-four);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-add-equip:hover {
+  background: var(--gradient-hover);
+}
+
+.btn-equip-delet {
+  background: var(--bg-card-cars);
+  box-sizing: border-box;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--components-color);
+}
+
+.btn-equip-delet:hover {
+  background: #edadad;
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.flex-equip {
+  display: flex;
+  gap: 15px;
+  align-items: start;
+}
+
+.forms-equips {
+  max-width: 300px !important;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.buttons .save {
+  background: var(--gradient-buttons);
+  color: black !important;
+}
+
+.buttons .save:hover {
+  background: var(--component-hover);
+}
+
+.buttons .cancel {
+  color: var(--text-special);
+}

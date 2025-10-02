@@ -15,6 +15,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CarsService } from '../../../../core/services/cars.service';
 import { Cars } from '../../../../core/models/cars.model';
 import { MatSelectModule } from '@angular/material/select';
+import { Cores } from '../../../../core/models/cores.model';
 
 @Component({
   selector: 'app-vehicle-edit',
@@ -58,9 +59,7 @@ export class VehicleEditComponent implements OnInit {
       estoque: ['', Validators.required],
       descricao: ['', Validators.required],
       imagem_principal: ['', Validators.required],
-      cores: this.fb.array([
-        
-      ]),
+      cores: this.fb.array([]),
       combustiveis: ['', Validators.required],
       destaque: [false],
       categoria: ['', Validators.required],
@@ -86,7 +85,9 @@ export class VehicleEditComponent implements OnInit {
 
     this.carsService.getCar(this.vehicleId).subscribe((car) => {
       this.editForm.patchValue(car);
-      car.cores.forEach((cor) => this.cores.push(this.fb.control(cor)));
+      this.cores.clear();
+      car.cores.forEach((cor) => this.addCor(cor));
+
       car.galeria.forEach((img) => this.galeria.push(this.fb.control(img)));
       car.equipamentos.seguranca.forEach((item) =>
         this.seguranca.push(this.fb.control(item))
@@ -102,6 +103,42 @@ export class VehicleEditComponent implements OnInit {
 
   get cores() {
     return this.editForm.get('cores') as FormArray;
+  }
+
+  createCorGroup(
+    cor: Cores = { nome: '', precoAdicional: 0, codigoCor: '', imagem: '' }
+  ): FormGroup {
+    return this.fb.group({
+      nome: [cor.nome, Validators.required],
+      precoAdicional: [
+        cor.precoAdicional,
+        [Validators.required, Validators.min(0)],
+      ],
+      codigoCor: [cor.codigoCor, Validators.required],
+      imagem: [cor.imagem, Validators.required],
+    });
+  }
+
+  addCor(cor?: Cores): void {
+    const corGroup = this.createCorGroup(cor);
+    this.cores.push(corGroup);
+  }
+
+  removeCor(index: number): void {
+    this.cores.removeAt(index);
+  }
+
+  onFileSelectedCor(event: Event, index: number): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        const corGroup = this.cores.at(index) as FormGroup;
+        corGroup.get('imagem')?.setValue(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
   get galeria() {

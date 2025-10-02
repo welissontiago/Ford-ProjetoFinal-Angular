@@ -19,10 +19,7 @@
           <mat-form-field class="column-1-form">
             <mat-label>Combustível</mat-label>
             <mat-select formControlName="combustiveis">
-              <mat-option
-                *ngFor="let combustivel of combustiveis"
-                [value]="combustivel"
-              >
+              <mat-option *ngFor="let combustivel of combustiveis" [value]="combustivel">
                 {{ combustivel }}
               </mat-option>
             </mat-select>
@@ -45,12 +42,9 @@
           <input matInput formControlName="ano" type="number" />
         </mat-form-field>
         <mat-form-field class="column-3-form">
-          <mat-label>Categoria</mat-label>
+          <mat-label class="color-titles">Categoria</mat-label>
           <mat-select formControlName="categoria">
-            <mat-option
-              *ngFor="let categoria of categorias"
-              [value]="categoria"
-            >
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria">
               {{ categoria }}
             </mat-option>
           </mat-select>
@@ -61,33 +55,15 @@
     <div class="big-texts">
       <div class="desc">
         <mat-form-field class="textarea-form">
-          <mat-label>Descrição</mat-label>
-          <textarea
-            matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="10"
-            cdkAutosizeMaxRows="20"
-            formControlName="descricao"
-          ></textarea>
+          <mat-label class="color-titles">Descrição</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="20" formControlName="descricao"></textarea>
         </mat-form-field>
       </div>
       <div class="history">
         <mat-form-field class="textarea-form">
-          <mat-label>História</mat-label>
-          <textarea
-            class="textarea"
-            matInput
-            cdkTextareaAutosize
-            cdkAutosizeMinRows="10"
-            cdkAutosizeMaxRows="25"
-            formControlName="historia"
-            #message
-            maxlength="2500"
-            placeholder="Ex. I need help with..."
-          ></textarea>
-          <mat-hint align="start"
-            ><strong>Não bote informações pessoais aqui</strong>
+          <mat-label class="color-titles">História</mat-label>
+          <textarea class="textarea" matInput cdkTextareaAutosize cdkAutosizeMinRows="10" cdkAutosizeMaxRows="25" formControlName="historia" #message maxlength="2500" placeholder="Ex. I need help with..."></textarea>
+          <mat-hint align="start"><strong>Não bote informações pessoais aqui</strong>
           </mat-hint>
           <mat-hint align="end">{{ message.value.length }} / 2500</mat-hint>
         </mat-form-field>
@@ -95,32 +71,16 @@
     </div>
 
     <div formArrayName="galeria" class="galery">
-      <h2>Galeria</h2>
-      <div
-        class="upload-box"
-        (drop)="onFileDropped($event)"
-        (dragover)="onDragOver($event)"
-      >
-        <p>Arraste imagens aqui ou clique para selecionar</p>
-        <input
-          type="file"
-          accept="image/*"
-          multiple
-          (change)="onFileSelected($event)"
-        />
+      <h2 class="color-titles">Galeria</h2>
+      <div class="upload-box" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)">
+        <p class="color-titles">Arraste imagens aqui</p>
+        <input type="file" accept="image/*" multiple (change)="onFileSelected($event)" />
       </div>
 
       <div class="gallery-preview">
-        <div
-          class="img-wrapper"
-          *ngFor="let img of galeria.controls; let i = index"
-        >
+        <div class="img-wrapper" *ngFor="let img of galeria.controls; let i = index">
           <img class="imagem" [src]="img.value" alt="Imagem da galeria" />
-          <button
-            type="button"
-            class="remove-btn"
-            (click)="removeControl('galeria', i)"
-          >
+          <button type="button" class="remove-btn" (click)="removeControl('galeria', i)">
             ✖
           </button>
         </div>
@@ -128,31 +88,15 @@
     </div>
 
     <div formControlName="imagem_principal" class="img_principal">
-      <h2>Imagem Principal</h2>
-      <div
-        class="upload-box"
-        (drop)="onFileDroppedPrincipal($event)"
-        (dragover)="onDragOver($event)"
-      >
-        <p>Arraste a imagem aqui ou clique para selecionar</p>
-        <input
-          type="file"
-          accept="image/*"
-          (change)="onFileSelectedPrincipal($event)"
-        />
+      <h2 class="color-titles">Imagem Principal</h2>
+      <div class="upload-box" (drop)="onFileDroppedPrincipal($event)" (dragover)="onDragOver($event)">
+        <p class="color-titles">Arraste a imagem aqui</p>
+        <input type="file" accept="image/*" (change)="onFileSelectedPrincipal($event)" />
       </div>
 
       <div class="preview" *ngIf="editForm.get('imagem_principal')?.value">
-        <img
-          class="imagem"
-          [src]="editForm.get('imagem_principal')?.value"
-          alt="Imagem Principal"
-        />
-        <button
-          type="button"
-          class="remove-btn"
-          (click)="editForm.get('imagem_principal')?.reset()"
-        >
+        <img class="imagem-principal" [src]="editForm.get('imagem_principal')?.value" alt="Imagem Principal" />
+        <button type="button" class="remove-btn-img-principal" (click)="editForm.get('imagem_principal')?.reset()">
           ✖
         </button>
       </div>
@@ -206,82 +150,123 @@
       </div>
     </div>
 
-    <div formArrayName="cores">
-      <h2>Cores</h2>
-      <button type="button" (click)="addControl('cores')">Adicionar Cor</button>
-      <div *ngFor="let cor of cores.controls; let i = index">
-        <mat-form-field>
-          <mat-label>Cor {{ i + 1 }}</mat-label>
-          <input matInput [formControlName]="i" />
-        </mat-form-field>
-        <button type="button" (click)="removeControl('cores', i)">
-          Remover
-        </button>
+    <div formArrayName="cores" class="cores-container">
+      <h2 class="color-titles title-colors">Cores</h2>
+      <button class="color-btn-add" mat-stroked-button color="primary" type="button" (click)="addCor()">Adicionar Nova Cor</button>
+
+      <div class="grid-container">
+        <div *ngFor="let corGroup of cores.controls; let i = index" [formGroupName]="i" class="cor-item">
+
+          <div class="car-container">
+            <div class="cor-imagem">
+              <div class="input-file">
+                <input type="file" accept="image/*" (change)="onFileSelectedCor($event, i)" class="file-input">
+              </div>
+              <div *ngIf="corGroup.get('imagem')?.value" class="image-preview">
+                <img class="imagem-colors" [src]="corGroup.get('imagem')?.value" alt="Preview da cor">
+                <button type="button" class="remove-btn" (click)="corGroup.get('imagem')?.reset()">
+                  ✖
+                </button>
+              </div>
+            </div>
+
+            <div class="flex-fields-container">
+              <div class="cor-fields">
+                <mat-form-field class="colors-forms">
+                  <mat-label>Nome da Cor</mat-label>
+                  <input matInput formControlName="nome" placeholder="Ex: Vermelho Radiante">
+                </mat-form-field>
+
+                <mat-form-field class="colors-forms">
+                  <mat-label>Preço Adicional</mat-label>
+                  <input matInput formControlName="precoAdicional" type="number" placeholder="Ex: 1500">
+                </mat-form-field>
+              </div>
+
+              <div class="form-hex">
+                <mat-form-field class="hex colors-forms">
+                  <mat-label>Código da Cor (Hex)</mat-label>
+                  <input matInput formControlName="codigoCor" placeholder="Ex: #FF0000">
+                </mat-form-field>
+
+                <button mat-icon-button color="warn" type="button" (click)="removeCor(i)" class="remove-cor-btn">
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div formGroupName="equipamentos">
-      <h2>Equipamentos</h2>
+      <h2 class="color-titles equip-title">Equipamentos</h2>
 
-      <div formArrayName="seguranca">
-        <h3>Segurança</h3>
-        <button type="button" (click)="addControl('seguranca')">
-          Adicionar
-        </button>
-        <div *ngFor="let item of seguranca.controls; let i = index">
-          <mat-form-field>
-            <mat-label>Item {{ i + 1 }}</mat-label>
-            <input matInput [formControlName]="i" />
-          </mat-form-field>
-          <button type="button" (click)="removeControl('seguranca', i)">
-            Remover
+      <div class="grid-equip">
+        <div formArrayName="seguranca">
+          <h3 class="color-titles">Segurança</h3>
+          <button class="btn-add-equip" type="button" (click)="addControl('seguranca')">
+            Adicionar
           </button>
+          <div class="flex-equip" *ngFor="let item of seguranca.controls; let i = index">
+            <mat-form-field class="forms-equips">
+              <mat-label>Item {{ i + 1 }}</mat-label>
+              <input matInput [formControlName]="i" />
+            </mat-form-field>
+            <div>
+              <button class="btn-equip-delet" type="button" (click)="removeControl('seguranca', i)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+
+          </div>
         </div>
-      </div>
 
-      <div formArrayName="tecnologia">
-        <h3>Tecnologia</h3>
-        <button type="button" (click)="addControl('tecnologia')">
-          Adicionar
-        </button>
-        <div *ngFor="let item of tecnologia.controls; let i = index">
-          <mat-form-field>
-            <mat-label>Item {{ i + 1 }}</mat-label>
-            <input matInput [formControlName]="i" />
-          </mat-form-field>
-          <button type="button" (click)="removeControl('tecnologia', i)">
-            Remover
+        <div formArrayName="tecnologia">
+          <h3>Tecnologia</h3>
+          <button class="btn-add-equip" type="button" (click)="addControl('tecnologia')">
+            Adicionar
           </button>
+          <div class="flex-equip" *ngFor="let item of tecnologia.controls; let i = index">
+            <mat-form-field class="forms-equips">
+              <mat-label>Item {{ i + 1 }}</mat-label>
+              <input matInput [formControlName]="i" />
+            </mat-form-field>
+            <div>
+              <button class="btn-equip-delet" type="button" (click)="removeControl('tecnologia', i)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+
+          </div>
         </div>
-      </div>
 
-      <div formArrayName="interior">
-        <h3>Interior</h3>
-        <button type="button" (click)="addControl('interior')">
-          Adicionar
-        </button>
-        <div *ngFor="let item of interior.controls; let i = index">
-          <mat-form-field>
-            <mat-label>Item {{ i + 1 }}</mat-label>
-            <input matInput [formControlName]="i" />
-          </mat-form-field>
-          <button type="button" (click)="removeControl('interior', i)">
-            Remover
+        <div formArrayName="interior">
+          <h3>Interior</h3>
+          <button class="btn-add-equip" type="button" (click)="addControl('interior')">
+            Adicionar
           </button>
+          <div class="flex-equip" *ngFor="let item of interior.controls; let i = index">
+            <mat-form-field class="forms-equips">
+              <mat-label>Item {{ i + 1 }}</mat-label>
+              <input matInput [formControlName]="i" />
+            </mat-form-field>
+            <div>
+              <button class="btn-equip-delet" type="button" (click)="removeControl('interior', i)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
 
     <div class="buttons">
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        [disabled]="editForm.invalid"
-      >
+      <button class="save" mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid">
         Salvar
       </button>
-      <button mat-button routerLink="/dashboard/dashboard-home">
+      <button class="cancel" mat-button routerLink="/dashboard/dashboard-home">
         Cancelar
       </button>
     </div>

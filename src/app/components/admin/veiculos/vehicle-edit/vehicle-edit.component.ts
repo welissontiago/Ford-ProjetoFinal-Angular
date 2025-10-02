@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CarsService } from '../../../../core/services/cars.service';
 import { Cars } from '../../../../core/models/cars.model';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-vehicle-edit',
@@ -25,6 +26,7 @@ import { Cars } from '../../../../core/models/cars.model';
     MatButtonModule,
     MatIconModule,
     RouterModule,
+    MatSelectModule,
   ],
   templateUrl: './vehicle-edit.component.html',
   styleUrl: './vehicle-edit.component.css',
@@ -34,6 +36,14 @@ export class VehicleEditComponent implements OnInit {
   private router = inject(Router);
   private fb = inject(FormBuilder);
   private carsService = inject(CarsService);
+  categorias: string[] = ['SUV', 'Esportivo', 'Picape'];
+  combustiveis: string[] = [
+    'Gasolina',
+    'Eletrico',
+    'Hibrido',
+    'Diesel',
+    'Etanol',
+  ];
 
   editForm!: FormGroup;
   vehicleId!: number;
@@ -48,7 +58,9 @@ export class VehicleEditComponent implements OnInit {
       estoque: ['', Validators.required],
       descricao: ['', Validators.required],
       imagem_principal: ['', Validators.required],
-      cores: this.fb.array([]),
+      cores: this.fb.array([
+        
+      ]),
       combustiveis: ['', Validators.required],
       destaque: [false],
       categoria: ['', Validators.required],
@@ -165,6 +177,28 @@ export class VehicleEditComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = () => {
       this.galeria.push(this.fb.control(reader.result as string));
+    };
+    reader.readAsDataURL(file);
+  }
+
+  onFileSelectedPrincipal(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      this.readFilePrincipal(input.files[0]);
+    }
+  }
+
+  onFileDroppedPrincipal(event: DragEvent): void {
+    event.preventDefault();
+    if (event.dataTransfer?.files && event.dataTransfer.files[0]) {
+      this.readFilePrincipal(event.dataTransfer.files[0]);
+    }
+  }
+
+  private readFilePrincipal(file: File): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.editForm.get('imagem_principal')?.setValue(reader.result as string);
     };
     reader.readAsDataURL(file);
   }

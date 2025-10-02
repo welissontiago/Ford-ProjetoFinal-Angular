@@ -52,6 +52,7 @@
   --lista-destaques-bg: #333333;
   --border-c1: #919293;
   --border-c2: #272727;
+  --border-c3: #4e4f4f;
   --bg-color-parceiros: #1a1a1a;
   --icone-beneficios: #efefef;
   --stroke-icones-beneficios: #272727;
@@ -126,6 +127,7 @@ html.white-theme {
   --lista-destaques-bg: #e6eaf0;
   --border-c1: #b6b8c4;
   --border-c2: #b6b8c4;
+  --border-c3: #b6b8c4;
   --bg-color-parceiros: cornflowerblue;
   --icone-beneficios: #1c1c1d;
   --stroke-icones-beneficios: #272727;

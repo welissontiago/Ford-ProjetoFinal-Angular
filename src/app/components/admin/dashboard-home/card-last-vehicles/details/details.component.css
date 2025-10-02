@@ -42,8 +42,10 @@ p {
   box-sizing: border-box;
   padding: 8px 10px;
   border-radius: 10px;
-  background: var(--gradient-buttons);
+  background: var(--dashboard-blackground);
   cursor: pointer;
+  color: var(--text-color-six);
+  border: 1px solid var(--border-c3);
 }
 
 .button:hover {
@@ -52,11 +54,29 @@ p {
 
 .status.indisponivel {
   color: red;
+  padding: 4px 6px;
+  background: #edadad;
+  border-radius: 15px;
+}
+
+.status {
+  font-size: 0.875rem;
+  color: #138a27;
+  padding: 4px 6px;
+  border-radius: 15px;
+  background: #c7fcd1;
 }
 
 .destaque {
   background-color: var(--components-color);
   color: white;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.left-infos img {
+  width: 150px;
+  height: 100px;
 }

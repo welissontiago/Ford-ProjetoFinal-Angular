@@ -192,7 +192,7 @@
       "modelo": "SUV Elétrico 2025",
       "createdAt": "2024-09-20T10:00:00Z",
       "updatedAt": "2025-06-28T15:30:00Z",
-      "estoque": 100,
+      "estoque": 99,
       "nome": "Mustang Mach-E",
       "cores": ["Vermelho", "Prata", "Preto"],
       "preco": 389990,

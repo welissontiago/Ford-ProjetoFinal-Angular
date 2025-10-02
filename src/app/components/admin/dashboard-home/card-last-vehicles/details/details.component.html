@@ -1,7 +1,7 @@
 <div class="details-bg">
   <div class="flex-container">
     <div class="left-infos">
-      <canvas #dotlottieCanvas style="width: 80px; height: 80px;"></canvas>
+      <img [src]="vehicle.imagem_principal" [alt]="vehicle.nome">
       <div class="left-infos-car">
         <h1>{{ vehicle.nome }}</h1>
         <p>{{ vehicle.preco | currency:'BRL' }}</p>
@@ -14,9 +14,9 @@
       </span>
       <span *ngIf="vehicle.destaque" class="destaque">Destaque</span>
       <button class="button" matFab aria-label="Example icon button with a edit icon">
-        <mat-icon style="color: var(--text-color-four);">edit</mat-icon>
+        <mat-icon>edit</mat-icon>
       </button>
-      <button class="button" matFab aria-label="Example icon button with a delete icon">
+      <button class="button" matFab aria-label="Example icon button with a delete icon" (click)="onDelete()">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

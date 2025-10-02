@@ -1,4 +1,11 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DotLottie } from '@lottiefiles/dotlottie-web';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,15 +20,9 @@ import { CommonModule } from '@angular/common';
 })
 export class DetailsComponent {
   @Input() vehicle!: Cars;
+  @Output() deleteRequested = new EventEmitter<number | string>();
 
-  @ViewChild('dotlottieCanvas') dotlottieCanvas!: ElementRef<HTMLCanvasElement>;
-
-  ngAfterViewInit(): void {
-    new DotLottie({
-      autoplay: true,
-      loop: true,
-      canvas: this.dotlottieCanvas.nativeElement,
-      src: 'https://lottie.host/96e35001-d3e6-438a-bae4-5d3d1d3eea64/gjn8a6msFR.lottie',
-    });
+  onDelete(): void {
+    this.deleteRequested.emit(this.vehicle.id);
   }
 }

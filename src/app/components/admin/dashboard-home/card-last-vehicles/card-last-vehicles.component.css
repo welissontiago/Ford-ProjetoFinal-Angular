@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   background: var(--lista-destaques-bg);
-  border: 1px solid var(--element-line);
+  border: 1px solid var(--border-c2);
   margin-top: 60px;
   border-radius: 6px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   margin-bottom: 40px;
 }
 

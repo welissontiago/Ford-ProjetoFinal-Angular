@@ -4,6 +4,6 @@
     <p>Últimos veículos adicionados ao estoque</p>
   </div>
   <div *ngIf="lastVehicles$ | async as vehicles">
-    <app-details *ngFor="let vehicle of vehicles" [vehicle]="vehicle"></app-details>
+    <app-details *ngFor="let vehicle of vehicles" [vehicle]="vehicle" (deleteRequested)="deleteCar($event)"></app-details>
   </div>
 </section>

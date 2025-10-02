@@ -13,7 +13,7 @@
         {{ vehicle.estoque > 0 ? 'Disponível' : 'Indisponível' }}
       </span>
       <span *ngIf="vehicle.destaque" class="destaque">Destaque</span>
-      <button class="button" matFab aria-label="Example icon button with a edit icon">
+      <button class="button" matFab [routerLink]="['/dashboard/veiculos/edit', vehicle.id]" aria-label="Example icon button with a edit icon">
         <mat-icon>edit</mat-icon>
       </button>
       <button class="button" matFab aria-label="Example icon button with a delete icon" (click)="onDelete()">

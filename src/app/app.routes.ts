@@ -90,6 +90,13 @@ export const routes: Routes = [
             (m) => m.RelatoriosComponent
           ),
       },
+      {
+        path: 'veiculos/edit/:id',
+        loadComponent: () =>
+          import(
+            './components/admin/veiculos/vehicle-edit/vehicle-edit.component'
+          ).then((m) => m.VehicleEditComponent),
+      },
     ],
   },
 

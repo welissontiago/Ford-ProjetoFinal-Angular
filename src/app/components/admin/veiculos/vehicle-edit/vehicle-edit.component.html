@@ -1,0 +1,128 @@
+<div class="edit-container">
+  <h1>Editar Veículo</h1>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input matInput formControlName="modelo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ano</mat-label>
+      <input matInput formControlName="ano" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Preço</mat-label>
+      <input matInput formControlName="preco" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Estoque</mat-label>
+      <input matInput formControlName="estoque" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName="descricao"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Imagem Principal (URL)</mat-label>
+      <input matInput formControlName="imagem_principal">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Combustível</mat-label>
+      <input matInput formControlName="combustiveis">
+    </mat-form-field>
+    <mat-checkbox formControlName="destaque">Destaque</mat-checkbox>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <input matInput formControlName="categoria">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>História</mat-label>
+      <textarea matInput formControlName="historia"></textarea>
+    </mat-form-field>
+
+    <div formArrayName="cores">
+      <h2>Cores</h2>
+      <button type="button" (click)="addControl('cores')">Adicionar Cor</button>
+      <div *ngFor="let cor of cores.controls; let i=index">
+        <mat-form-field>
+          <mat-label>Cor {{i + 1}}</mat-label>
+          <input matInput [formControlName]="i">
+        </mat-form-field>
+        <button type="button" (click)="removeControl('cores', i)">Remover</button>
+      </div>
+    </div>
+
+    <div formArrayName="galeria">
+      <h2>Galeria</h2>
+      <div class="upload-box" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)">
+        <p>Arraste imagens aqui ou clique para selecionar</p>
+        <input type="file" accept="image/*" multiple (change)="onFileSelected($event)">
+      </div>
+
+      <div class="gallery-preview">
+        <div class="img-wrapper" *ngFor="let img of galeria.controls; let i=index">
+          <img [src]="img.value" alt="Imagem da galeria">
+          <button type="button" class="remove-btn" (click)="removeControl('galeria', i)">
+            ✖
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="especificacoes">
+      <h2>Especificações</h2>
+      <mat-form-field>
+        <mat-label>Motor</mat-label>
+        <input matInput formControlName="motor">
+      </mat-form-field>
+    </div>
+
+    <div formGroupName="equipamentos">
+      <h2>Equipamentos</h2>
+
+      <div formArrayName="seguranca">
+        <h3>Segurança</h3>
+        <button type="button" (click)="addControl('seguranca')">Adicionar</button>
+        <div *ngFor="let item of seguranca.controls; let i=index">
+          <mat-form-field>
+            <mat-label>Item {{i + 1}}</mat-label>
+            <input matInput [formControlName]="i">
+          </mat-form-field>
+          <button type="button" (click)="removeControl('seguranca', i)">Remover</button>
+        </div>
+      </div>
+
+      <div formArrayName="tecnologia">
+        <h3>Tecnologia</h3>
+        <button type="button" (click)="addControl('tecnologia')">Adicionar</button>
+        <div *ngFor="let item of tecnologia.controls; let i=index">
+          <mat-form-field>
+            <mat-label>Item {{i + 1}}</mat-label>
+            <input matInput [formControlName]="i">
+          </mat-form-field>
+          <button type="button" (click)="removeControl('tecnologia', i)">Remover</button>
+        </div>
+      </div>
+
+      <div formArrayName="interior">
+        <h3>Interior</h3>
+        <button type="button" (click)="addControl('interior')">Adicionar</button>
+        <div *ngFor="let item of interior.controls; let i=index">
+          <mat-form-field>
+            <mat-label>Item {{i + 1}}</mat-label>
+            <input matInput [formControlName]="i">
+          </mat-form-field>
+          <button type="button" (click)="removeControl('interior', i)">Remover</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid">Salvar</button>
+      <button mat-button routerLink="/dashboard/dashboard-home">Cancelar</button>
+    </div>
+  </form>
+</div>

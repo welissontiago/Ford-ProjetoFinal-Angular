@@ -3,5 +3,7 @@
     <h1>Veículos Recentes</h1>
     <p>Últimos veículos adicionados ao estoque</p>
   </div>
-  <app-details></app-details>
+  <div *ngIf="lastVehicles$ | async as vehicles">
+    <app-details *ngFor="let vehicle of vehicles" [vehicle]="vehicle"></app-details>
+  </div>
 </section>

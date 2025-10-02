@@ -3,9 +3,10 @@
   flex-direction: column;
   background: var(--lista-destaques-bg);
   border: 1px solid var(--element-line);
-  margin-top: 90px;
+  margin-top: 60px;
   border-radius: 6px;
   padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .title {

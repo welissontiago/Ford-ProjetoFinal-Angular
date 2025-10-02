@@ -35,6 +35,9 @@
     {
       "id": "1",
       "modelo": "SUV 2025",
+      "createdAt": "2025-09-20T10:00:00Z",
+      "updatedAt": "2025-09-28T15:30:00Z",
+      "estoque": 1,
       "nome": "Mustang GT 5.0",
       "cores": [
         {
@@ -133,12 +136,11 @@
     {
       "id": "2",
       "modelo": "Picape 2025",
+      "createdAt": "2024-09-20T10:00:00Z",
+      "updatedAt": "2025-07-28T15:30:00Z",
+      "estoque": 100,
       "nome": "Ford Maverick",
-      "cores": [
-        "Azul",
-        "Preto",
-        "Cinza"
-      ],
+      "cores": ["Azul", "Preto", "Cinza"],
       "preco": 239990,
       "combustiveis": "Etanol",
       "destaque": true,
@@ -188,12 +190,11 @@
     {
       "id": "3",
       "modelo": "SUV Elétrico 2025",
+      "createdAt": "2024-09-20T10:00:00Z",
+      "updatedAt": "2025-06-28T15:30:00Z",
+      "estoque": 100,
       "nome": "Mustang Mach-E",
-      "cores": [
-        "Vermelho",
-        "Prata",
-        "Preto"
-      ],
+      "cores": ["Vermelho", "Prata", "Preto"],
       "preco": 389990,
       "combustiveis": "Eletrico",
       "destaque": false,
@@ -243,12 +244,11 @@
     {
       "id": "4",
       "modelo": "Van 2025",
+      "createdAt": "2025-09-20T10:00:00Z",
+      "updatedAt": "2025-10-28T15:30:00Z",
+      "estoque": 0,
       "nome": "Ford Transit Minibus",
-      "cores": [
-        "Branco",
-        "Prata",
-        "Azul"
-      ],
+      "cores": ["Branco", "Prata", "Azul"],
       "preco": 319990,
       "combustiveis": "Diesel",
       "destaque": false,
@@ -285,19 +285,16 @@
         ]
       },
       "imagem_principal": "carros/Forgao.png",
-      "galeria": [
-        "/carros/forgao/ford-transit.jpg"
-      ]
+      "galeria": ["/carros/forgao/ford-transit.jpg"]
     },
     {
       "id": "5",
       "modelo": "SUV Off-Road 2025",
+      "createdAt": "2025-09-20T10:00:00Z",
+      "updatedAt": "2025-10-28T15:30:00Z",
+      "estoque": 40,
       "nome": "Ford Bronco",
-      "cores": [
-        "Verde",
-        "Cinza",
-        "Preto"
-      ],
+      "cores": ["Verde", "Cinza", "Preto"],
       "preco": 459990,
       "combustiveis": "Gasolina",
       "destaque": false,
@@ -347,12 +344,11 @@
     {
       "id": "6",
       "modelo": "SUV Médio 2025",
+      "createdAt": "2025-09-20T10:00:00Z",
+      "updatedAt": "2025-10-28T15:30:00Z",
+      "estoque": 0,
       "nome": "Ford Territory",
-      "cores": [
-        "Prata",
-        "Preto",
-        "Branco"
-      ],
+      "cores": ["Prata", "Preto", "Branco"],
       "preco": 199990,
       "combustiveis": "Gasolina",
       "destaque": true,

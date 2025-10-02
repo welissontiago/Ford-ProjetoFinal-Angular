@@ -1,6 +1,6 @@
 .details-bg {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
   border: 1px solid var(--element-line);
   border-radius: 5px;
   max-width: 1250px;
@@ -48,4 +48,15 @@ p {
 
 .button:hover {
   background: var(--gradient-hover);
+}
+
+.status.indisponivel {
+  color: red;
+}
+
+.destaque {
+  background-color: var(--components-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

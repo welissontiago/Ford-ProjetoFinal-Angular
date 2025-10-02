@@ -7,6 +7,9 @@ import { Especificacoes } from './especificacoes.model';
 export interface Cars {
   id?: number;
   modelo: string;
+  estoque: number;
+  createdAt: Date;
+  updatedAt: Date;
   nome: string;
   cores: Cores[];
   preco: number;

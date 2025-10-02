@@ -3,14 +3,16 @@
     <div class="left-infos">
       <canvas #dotlottieCanvas style="width: 80px; height: 80px;"></canvas>
       <div class="left-infos-car">
-        <h1>car-name</h1>
-        <p>car-price</p>
+        <h1>{{ vehicle.nome }}</h1>
+        <p>{{ vehicle.preco | currency:'BRL' }}</p>
       </div>
     </div>
     <div class="rigt-infos">
-      <p>data de alteração:</p>
-      <span class="status">Disponivel</span>
-      <span class="destaque">Destaque</span>
+      <p>data de alteração: {{ vehicle.updatedAt | date: 'dd/MM/yyyy' }}</p>
+      <span class="status" [ngClass]="{'disponivel': vehicle.estoque > 0, 'indisponivel': vehicle.estoque === 0}">
+        {{ vehicle.estoque > 0 ? 'Disponível' : 'Indisponível' }}
+      </span>
+      <span *ngIf="vehicle.destaque" class="destaque">Destaque</span>
       <button class="button" matFab aria-label="Example icon button with a edit icon">
         <mat-icon style="color: var(--text-color-four);">edit</mat-icon>
       </button>

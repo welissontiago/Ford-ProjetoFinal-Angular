@@ -24,6 +24,12 @@ export class CarsService {
     return this.http.get<Cars[]>(`${this.apiUrl}?destaque=true`);
   }
 
+  getLastVehicles(): Observable<Cars[]> {
+    return this.http.get<Cars[]>(
+      `${this.apiUrl}?_sort=updatedAt&_order=desc&_limit=4`
+    );
+  }
+
   addCar(car: Omit<Cars, 'id'>): Observable<Cars> {
     return this.http.post<Cars>(this.apiUrl, car);
   }

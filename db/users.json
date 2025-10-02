@@ -140,7 +140,20 @@
       "updatedAt": "2025-07-28T15:30:00Z",
       "estoque": 100,
       "nome": "Ford Maverick",
-      "cores": ["Azul", "Preto", "Cinza"],
+      "cores": [
+        {
+          "nome": "Verde Esmeralda",
+          "precoAdicional": 0,
+          "codigoCor": "#003400",
+          "imagem": "carros/carro-verde-card.png"
+        },
+        {
+          "nome": "Branco Cristal",
+          "precoAdicional": 3000,
+          "codigoCor": "#FF0000",
+          "imagem": "/carros/maverick/maverick-branco.png"
+        }
+      ],
       "preco": 239990,
       "combustiveis": "Etanol",
       "destaque": true,
@@ -194,7 +207,20 @@
       "updatedAt": "2025-06-28T15:30:00Z",
       "estoque": 99,
       "nome": "Mustang Mach-E",
-      "cores": ["Vermelho", "Prata", "Preto"],
+      "cores": [
+        {
+          "nome": "Amarelo Ouro",
+          "precoAdicional": 0,
+          "codigoCor": "#FFC222",
+          "imagem": "carros/carro-amarelo-card.png"
+        },
+        {
+          "nome": "Azul Safira",
+          "precoAdicional": 3000,
+          "codigoCor": "#00A8FF",
+          "imagem": "/carros/mustangMechE/mechE-Azul.png"
+        }
+      ],
       "preco": 389990,
       "combustiveis": "Eletrico",
       "destaque": false,
@@ -248,7 +274,20 @@
       "updatedAt": "2025-10-28T15:30:00Z",
       "estoque": 0,
       "nome": "Ford Transit Minibus",
-      "cores": ["Branco", "Prata", "Azul"],
+      "cores": [
+        {
+          "nome": "Branco",
+          "precoAdicional": 0,
+          "codigoCor": "#FFFFFF",
+          "imagem": "carros/Forgao.png"
+        },
+        {
+          "nome": "Preto",
+          "precoAdicional": 3000,
+          "codigoCor": "#000000",
+          "imagem": "/carros/forgao/forgao-preto.png"
+        }
+      ],
       "preco": 319990,
       "combustiveis": "Diesel",
       "destaque": false,
@@ -294,7 +333,20 @@
       "updatedAt": "2025-10-28T15:30:00Z",
       "estoque": 40,
       "nome": "Ford Bronco",
-      "cores": ["Verde", "Cinza", "Preto"],
+      "cores": [
+        {
+          "nome": "Preto",
+          "precoAdicional": 0,
+          "codigoCor": "#000000",
+          "imagem": "carros/Bronco.png"
+        },
+        {
+          "nome": "Amarelo Ouro",
+          "precoAdicional": 3000,
+          "codigoCor": "#FFC222",
+          "imagem": "/carros/bronco/bronco-amarelo.png"
+        }
+      ],
       "preco": 459990,
       "combustiveis": "Gasolina",
       "destaque": false,
@@ -348,7 +400,32 @@
       "updatedAt": "2025-10-28T15:30:00Z",
       "estoque": 0,
       "nome": "Ford Territory",
-      "cores": ["Prata", "Preto", "Branco"],
+      "cores": [
+        {
+          "nome": "Branco Cristal",
+          "precoAdicional": 2500,
+          "codigoCor": "#F0F0F0",
+          "imagem": "/carros/carro-branco-card.png"
+        },
+        {
+          "nome": "Vermelho Sangue",
+          "precoAdicional": 3000,
+          "codigoCor": "#FF0000",
+          "imagem": "/carros/mustang/mustang-vermelho.png"
+        },
+        {
+          "nome": "Azul Safira",
+          "precoAdicional": 2000,
+          "codigoCor": "#0000FF",
+          "imagem": "/carros/mustang/mustang-azul.png"
+        },
+        {
+          "nome": "Vantablack",
+          "precoAdicional": 3000,
+          "codigoCor": "#000000",
+          "imagem": "/carros/mustang/mustang-preto.png"
+        }
+      ],
       "preco": 199990,
       "combustiveis": "Gasolina",
       "destaque": true,

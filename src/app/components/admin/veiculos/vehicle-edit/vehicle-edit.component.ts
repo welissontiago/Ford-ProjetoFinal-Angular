@@ -16,6 +16,7 @@ import { CarsService } from '../../../../core/services/cars.service';
 import { Cars } from '../../../../core/models/cars.model';
 import { MatSelectModule } from '@angular/material/select';
 import { Cores } from '../../../../core/models/cores.model';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @Component({
   selector: 'app-vehicle-edit',
@@ -28,6 +29,7 @@ import { Cores } from '../../../../core/models/cores.model';
     MatIconModule,
     RouterModule,
     MatSelectModule,
+    MatStepperModule,
   ],
   templateUrl: './vehicle-edit.component.html',
   styleUrl: './vehicle-edit.component.css',
@@ -54,7 +56,7 @@ export class VehicleEditComponent implements OnInit {
     this.editForm = this.fb.group({
       nome: ['', Validators.required],
       modelo: ['', Validators.required],
-      ano: ['', Validators.required],
+      ano: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
       preco: ['', Validators.required],
       estoque: ['', Validators.required],
       descricao: ['', Validators.required],
@@ -80,7 +82,7 @@ export class VehicleEditComponent implements OnInit {
         tecnologia: this.fb.array([]),
         interior: this.fb.array([]),
       }),
-      galeria: this.fb.array([]),
+      galeria: this.fb.array([], [Validators.maxLength(10)]),
     });
 
     this.carsService.getCar(this.vehicleId).subscribe((car) => {

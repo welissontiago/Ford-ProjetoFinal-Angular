@@ -107,7 +107,7 @@
 }
 
 .nav-link:hover .nav-label {
-  color: var(--text-title);
+  color: white;
 }
 
 .sidenav-collapsed .nav-label {

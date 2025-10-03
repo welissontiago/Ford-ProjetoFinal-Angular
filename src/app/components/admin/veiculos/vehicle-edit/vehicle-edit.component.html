@@ -7,12 +7,19 @@
           <mat-form-field class="column-1-form">
             <mat-label>Nome</mat-label>
             <input matInput formControlName="nome" />
+             <mat-error *ngIf="editForm.get('nome')?.hasError('required')">
+              O nome do veículo é obrigatório.
+             </mat-error>
           </mat-form-field>
         </div>
+        
         <div>
           <mat-form-field class="column-1-form">
             <mat-label>Modelo</mat-label>
             <input matInput formControlName="modelo" />
+              <mat-error *ngIf="editForm.get('modelo')?.hasError('required')">
+                Campo obrigatório
+              </mat-error>
           </mat-form-field>
         </div>
         <div>
@@ -23,6 +30,9 @@
                 {{ combustivel }}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="editForm.get('combustiveis')?.hasError('required')">
+                Campo obrigatório
+            </mat-error>
           </mat-form-field>
         </div>
       </div>
@@ -30,16 +40,25 @@
         <mat-form-field class="column-2-form">
           <mat-label>Preço</mat-label>
           <input matInput formControlName="preco" type="number" />
+           <mat-error *ngIf="editForm.get('preco')?.hasError('required')">
+                Campo obrigatório
+            </mat-error>
         </mat-form-field>
         <mat-form-field class="column-2-form">
           <mat-label>Estoque</mat-label>
           <input matInput formControlName="estoque" type="number" />
+          <mat-error *ngIf="editForm.get('estoque')?.hasError('required')">
+                Campo obrigatório
+            </mat-error>
         </mat-form-field>
       </div>
       <div class="column-3">
         <mat-form-field class="column-3-form">
           <mat-label>Ano</mat-label>
           <input matInput formControlName="ano" type="number" />
+          <mat-error *ngIf="editForm.get('ano')?.hasError('required')">
+                Campo obrigatório
+            </mat-error>
         </mat-form-field>
         <mat-form-field class="column-3-form">
           <mat-label class="color-titles">Categoria</mat-label>
@@ -48,6 +67,9 @@
               {{ categoria }}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="editForm.get('categoria')?.hasError('required')">
+                A categoria do veículo é obrigatório.
+            </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -56,7 +78,7 @@
       <div class="desc">
         <mat-form-field class="textarea-form">
           <mat-label class="color-titles">Descrição</mat-label>
-          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="20" formControlName="descricao"></textarea>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="25" formControlName="descricao" #messageDesc maxlength="2500"></textarea>
         </mat-form-field>
       </div>
       <div class="history">
@@ -73,10 +95,12 @@
     <div formArrayName="galeria" class="galery">
       <h2 class="color-titles">Galeria</h2>
       <div class="upload-box" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)">
-        <p class="color-titles">Arraste imagens aqui</p>
+        <p class="color-titles">Arraste imagens aqui ou clique aqui</p>
         <input type="file" accept="image/*" multiple (change)="onFileSelected($event)" />
       </div>
-
+      <mat-error *ngIf="galeria.hasError('maxlength')">
+          A galeria pode ter no máximo 10 imagens.
+      </mat-error>
       <div class="gallery-preview">
         <div class="img-wrapper" *ngFor="let img of galeria.controls; let i = index">
           <img class="imagem" [src]="img.value" alt="Imagem da galeria" />
@@ -85,12 +109,13 @@
           </button>
         </div>
       </div>
+        
     </div>
 
-    <div formControlName="imagem_principal" class="img_principal">
+    <div class="img_principal">
       <h2 class="color-titles">Imagem Principal</h2>
       <div class="upload-box" (drop)="onFileDroppedPrincipal($event)" (dragover)="onDragOver($event)">
-        <p class="color-titles">Arraste a imagem aqui</p>
+        <p class="color-titles">Arraste a imagem aqui ou clique aqui</p>
         <input type="file" accept="image/*" (change)="onFileSelectedPrincipal($event)" />
       </div>
 
@@ -199,7 +224,7 @@
       </div>
     </div>
 
-    <div formGroupName="equipamentos">
+    <div formGroupName="equipamentos" class="equipamentos">
       <h2 class="color-titles equip-title">Equipamentos</h2>
 
       <div class="grid-equip">
@@ -223,7 +248,7 @@
         </div>
 
         <div formArrayName="tecnologia">
-          <h3>Tecnologia</h3>
+          <h3 class="color-titles">Tecnologia</h3>
           <button class="btn-add-equip" type="button" (click)="addControl('tecnologia')">
             Adicionar
           </button>
@@ -242,7 +267,7 @@
         </div>
 
         <div formArrayName="interior">
-          <h3>Interior</h3>
+          <h3 class="color-titles">Interior</h3>
           <button class="btn-add-equip" type="button" (click)="addControl('interior')">
             Adicionar
           </button>

@@ -9,6 +9,7 @@ import { PurchaseService } from '../../../core/services/purchase.service';
 import { Purchase } from '../../../core/models/purchase.model';
 import { forkJoin } from 'rxjs';
 import { CardLastVehiclesComponent } from './card-last-vehicles/card-last-vehicles.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -18,6 +19,7 @@ import { CardLastVehiclesComponent } from './card-last-vehicles/card-last-vehicl
     MiniCardComponent,
     CommonModule,
     CardLastVehiclesComponent,
+    RouterModule,
   ],
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.css',

@@ -97,6 +97,13 @@ export const routes: Routes = [
             './components/admin/veiculos/vehicle-edit/vehicle-edit.component'
           ).then((m) => m.VehicleEditComponent),
       },
+      {
+        path: 'veiculos/add',
+        loadComponent: () =>
+          import(
+            './components/admin/veiculos/add-vehicle/add-vehicle.component'
+          ).then((m) => m.AddVehicleComponent),
+      },
     ],
   },
 

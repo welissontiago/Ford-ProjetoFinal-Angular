@@ -4,7 +4,12 @@
       <h1>Dashboard Administrativo</h1>
       <p>Gerenciamento de vendas e veiculos da Ford</p>
     </div>
-    <button class="btn-add" mat-button matStepperPrevious>
+    <button
+      [routerLink]="['/dashboard/veiculos/add']"
+      class="btn-add"
+      mat-button
+      matStepperPrevious
+    >
       <mat-icon>add</mat-icon>
       Adicionar novo veiculo
     </button>
@@ -20,11 +25,11 @@
     <app-mini-card class="card">
       <h1 class="title-card" title>Total de Vendas</h1>
       <mat-icon class="icon-card" icon>point_of_sale</mat-icon>
-      <h2 class="content-card" content>{{ totalSales | currency:'BRL' }}</h2>
+      <h2 class="content-card" content>{{ totalSales | currency : "BRL" }}</h2>
     </app-mini-card>
 
     <app-mini-card class="card">
-      <h1 class="title-card" title>Novas Compras </h1>
+      <h1 class="title-card" title>Novas Compras</h1>
       <mat-icon class="icon-card" icon>shopping_cart</mat-icon>
       <h2 class="content-card" content>{{ newPurchasesCount }}</h2>
       <p>dos ultimos 7 dias</p>

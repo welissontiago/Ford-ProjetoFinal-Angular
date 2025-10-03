@@ -14,3 +14,17 @@
   margin-top: 20px;
   color: var(--text-title);
 }
+
+@media (max-width: 1460px) {
+  .last-vehicles {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .last-vehicles {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

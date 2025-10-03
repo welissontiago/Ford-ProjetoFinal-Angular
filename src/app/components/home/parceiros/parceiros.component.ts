@@ -60,14 +60,12 @@ export class ParceirosComponent implements AfterViewInit, OnDestroy {
   private setupAnimations = (): void => {
     if (!this.brandsColumnsContainer) return;
 
-    // mata animações antigas
     this.activeTimelines.forEach((tl) => tl.kill());
     this.activeTimelines = [];
 
     const allColumns: NodeListOf<HTMLElement> =
       this.brandsColumnsContainer.querySelectorAll('.brand-column');
 
-    // pega só colunas realmente visíveis (display !== none via CSS)
     const visibleColumns = Array.from(allColumns).filter(
       (column) => column.offsetParent !== null
     );

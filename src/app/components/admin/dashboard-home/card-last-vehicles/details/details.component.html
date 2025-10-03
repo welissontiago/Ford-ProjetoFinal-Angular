@@ -1,24 +1,45 @@
 <div class="details-bg">
   <div class="flex-container">
     <div class="left-infos">
-      <img [src]="vehicle.imagem_principal" [alt]="vehicle.nome">
+      <img [src]="vehicle.imagem_principal" [alt]="vehicle.nome" />
       <div class="left-infos-car">
         <h1>{{ vehicle.nome }}</h1>
-        <p>{{ vehicle.preco | currency:'BRL' }}</p>
+        <p>{{ vehicle.preco | currency : "BRL" }}</p>
       </div>
     </div>
     <div class="rigt-infos">
-      <p>data de alteração: {{ vehicle.updatedAt | date: 'dd/MM/yyyy' }}</p>
-      <span class="status" [ngClass]="{'disponivel': vehicle.estoque > 0, 'indisponivel': vehicle.estoque === 0}">
-        {{ vehicle.estoque > 0 ? 'Disponível' : 'Indisponível' }}
-      </span>
-      <span *ngIf="vehicle.destaque" class="destaque">Destaque</span>
-      <button class="button" matFab [routerLink]="['/dashboard/veiculos/edit', vehicle.id]" aria-label="Example icon button with a edit icon">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button class="button" matFab aria-label="Example icon button with a delete icon" (click)="onDelete()">
-        <mat-icon>delete</mat-icon>
-      </button>
+      <p>data de alteração: {{ vehicle.updatedAt | date : "dd/MM/yyyy" }}</p>
+      <div class="status-bg">
+        <span
+          class="status"
+          [ngClass]="{
+            disponivel: vehicle.estoque > 0,
+            indisponivel: vehicle.estoque === 0
+          }"
+        >
+          {{ vehicle.estoque > 0 ? "Disponível" : "Indisponível" }}
+        </span>
+        <span *ngIf="vehicle.destaque" class="destaque">Destaque</span>
+      </div>
+
+      <div class="flex-buttons">
+        <button
+          class="button"
+          matFab
+          [routerLink]="['/dashboard/veiculos/edit', vehicle.id]"
+          aria-label="Example icon button with a edit icon"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          class="button"
+          matFab
+          aria-label="Example icon button with a delete icon"
+          (click)="onDelete()"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -127,3 +127,15 @@
 ::ng-deep .mat-drawer-content {
   background: var(--dashboard-blackground);
 }
+
+@media (max-width: 750px) {
+  .nav-label {
+    font-size: 0.865rem;
+  }
+  .nav-link {
+    padding: 0;
+  }
+  .example-sidenav {
+    width: 170px;
+  }
+}

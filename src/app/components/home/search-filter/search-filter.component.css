@@ -48,7 +48,8 @@ select {
 }
 
 .button-search {
-  background-color: var(--components-color);
+  background-color: var(--components-color) !important;
+  color: var(--input-bg);
   margin-top: 20px;
   max-height: 50px;
   border-radius: 5px;
@@ -57,7 +58,7 @@ select {
 }
 
 .button-search .icon-search {
-  color: var(--text-color-three);
+  color: var(--input-bg);
   font-size: 1.4rem;
 }
 

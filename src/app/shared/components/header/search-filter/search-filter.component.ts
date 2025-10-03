@@ -1,17 +1,18 @@
-import { AsyncPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {
+  MatAutocompleteModule,
+  MatAutocompleteSelectedEvent,
+} from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
-export interface State {
-  flag: string;
-  name: string;
-  population: string;
-}
+import { Cars } from '../../../../core/models/cars.model';
+import { CarsService } from '../../../../core/services/cars.service';
 
 @Component({
   selector: 'app-search-filter',
@@ -21,51 +22,43 @@ export interface State {
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatSlideToggleModule,
-    AsyncPipe,
+    CommonModule,
   ],
   templateUrl: './search-filter.component.html',
-  styleUrl: './search-filter.component.css',
+  styleUrls: ['./search-filter.component.css'],
 })
-export class SearchFilterComponent {
-  stateCtrl = new FormControl('');
-  filteredStates: Observable<State[]>;
+export class SearchFilterComponent implements OnInit {
+  private carsService = inject(CarsService);
+  private router = inject(Router);
 
-  states: State[] = [
-    {
-      name: 'Arkansas',
-      population: '2.978M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg',
-    },
-    {
-      name: 'California',
-      population: '39.14M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg',
-    },
-    {
-      name: 'Florida',
-      population: '20.27M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg',
-    },
-    {
-      name: 'Texas',
-      population: '27.47M',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg',
-    },
-  ];
+  carCtrl = new FormControl<string | Cars>('');
+  filteredCars!: Observable<Cars[]>;
+  cars: Cars[] = [];
 
-  constructor() {
-    this.filteredStates = this.stateCtrl.valueChanges.pipe(
-      startWith(''),
-      map((state) => (state ? this._filterStates(state) : this.states.slice()))
+  ngOnInit(): void {
+    this.carsService.getCars().subscribe((cars) => {
+      this.cars = cars;
+      this.filteredCars = this.carCtrl.valueChanges.pipe(
+        startWith(''),
+        map((value) => (typeof value === 'string' ? value : value?.nome ?? '')),
+        map((name) => (name ? this._filterCars(name) : this.cars.slice()))
+      );
+    });
+  }
+
+  private _filterCars(value: string): Cars[] {
+    const filterValue = value.toLowerCase();
+    return this.cars.filter((car) =>
+      car.nome.toLowerCase().includes(filterValue)
     );
   }
 
-  private _filterStates(value: string): State[] {
-    const filterValue = value.toLowerCase();
+  displayFn(car: Cars): string {
+    return car && car.nome ? car.nome : '';
+  }
 
-    return this.states.filter((state) =>
-      state.name.toLowerCase().includes(filterValue)
-    );
+  onOptionSelected(event: MatAutocompleteSelectedEvent): void {
+    const car: Cars = event.option.value;
+    this.router.navigate(['/veiculo', car.id]);
   }
 }

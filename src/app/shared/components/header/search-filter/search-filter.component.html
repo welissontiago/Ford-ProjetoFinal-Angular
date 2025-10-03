@@ -1,15 +1,29 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Veiculos</mat-label>
-    <input matInput aria-label="Veiculos" [matAutocomplete]="auto" [formControl]="stateCtrl" />
-    <mat-autocomplete #auto="matAutocomplete">
-      @for (state of filteredStates | async; track state) {
-      <mat-option [value]="state.name">
-        <img alt="" class="example-option-img" [src]="state.flag" height="25" />
-        <span>{{ state.name }}</span> |
-        <small>Population: {{ state.population }}</small>
+    <input
+      matInput
+      aria-label="Veiculos"
+      [matAutocomplete]="auto"
+      [formControl]="carCtrl"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+      (optionSelected)="onOptionSelected($event)"
+    >
+      <mat-option *ngFor="let car of filteredCars | async" [value]="car">
+        <img
+          alt="{{ car.nome }}"
+          class="example-option-img"
+          [src]="car.imagem_principal"
+          height="25"
+        />
+        <div class="container-flex">
+          <span>{{ car.nome }}</span>
+          <small>Preço: {{ car.preco | currency : "BRL" }}</small>
+        </div>
       </mat-option>
-      }
     </mat-autocomplete>
   </mat-form-field>
 </form>

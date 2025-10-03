@@ -1,8 +1,13 @@
 .example-full-width {
-  max-width: 250px;
+  max-width: 300px;
   width: 100%;
-  max-height: 50px;
+  max-height: 100px;
   height: 100%;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
 }
 
 ::ng-deep .mat-mdc-form-field-subscript-wrapper {
@@ -30,6 +35,16 @@
   .mat-mdc-form-field:not(.mat-form-field-disabled):hover
   .mat-mdc-floating-label.mdc-floating-label {
   color: var(--components-color);
+}
+
+::ng-deep
+  .cdk-overlay-pane:not(.mat-mdc-autocomplete-panel-above)
+  div.mat-mdc-autocomplete-panel {
+  background-color: var(--card-background) !important;
+}
+
+.example-option-img {
+  height: 60px;
 }
 
 @media (max-width: 1150px) {

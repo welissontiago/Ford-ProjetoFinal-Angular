@@ -134,12 +134,13 @@
       ]
     },
     {
-      "id": "2",
-      "modelo": "Picape 2025",
-      "createdAt": "2024-09-20T10:00:00Z",
-      "updatedAt": "2025-07-28T15:30:00Z",
-      "estoque": 100,
       "nome": "Ford Maverick",
+      "modelo": "Picape 2025",
+      "ano": 2025,
+      "preco": 239990,
+      "estoque": 100,
+      "descricao": "Uma picape versátil, robusta e ideal para uso urbano e fora de estrada.",
+      "imagem_principal": "carros/carro-verde-card.png",
       "cores": [
         {
           "nome": "Verde Esmeralda",
@@ -154,12 +155,9 @@
           "imagem": "/carros/maverick/maverick-branco.png"
         }
       ],
-      "preco": 239990,
       "combustiveis": "Etanol",
       "destaque": true,
-      "descricao": "Uma picape versátil, robusta e ideal para uso urbano e fora de estrada.",
       "categoria": "Picape",
-      "ano": 2025,
       "historia": "O Ford Maverick é uma picape compacta que foi introduzida pela Ford em 2021, marcando o retorno da marca ao segmento de picapes pequenas após um hiato de várias décadas. Projetada para atender às necessidades dos consumidores modernos, o Maverick combina a praticidade e a funcionalidade de uma picape com o conforto e a eficiência de um veículo urbano. Com um design robusto e contemporâneo, o Maverick apresenta linhas aerodinâmicas e uma postura imponente, destacando-se tanto na cidade quanto em terrenos mais desafiadores. \n O interior do Maverick é focado no conforto e na tecnologia, oferecendo uma cabine espaçosa com materiais de alta qualidade e uma série de recursos tecnológicos, incluindo uma central multimídia avançada e conectividade para dispositivos móveis. A versatilidade é um dos pontos fortes do Maverick, com uma caçamba funcional que pode ser adaptada para diferentes usos, desde transporte de cargas até atividades recreativas. \n O Ford Maverick está disponível com opções de motorização eficientes, incluindo um motor híbrido que proporciona excelente economia de combustível sem comprometer o desempenho. Com sua combinação única de estilo, funcionalidade e inovação, o Ford Maverick se posiciona como uma escolha atraente para aqueles que buscam uma picape prática e moderna.",
       "especificacoes": {
         "motor": "2.0 EcoBoost Turbo Flex",
@@ -185,11 +183,9 @@
         ],
         "interior": [
           "Bancos em tecido premium",
-          "Ar-condicionado digital dual zone",
-          "Porta-objetos inteligentes"
+          "Ar-condicionado digital dual zone"
         ]
       },
-      "imagem_principal": "carros/carro-verde-card.png",
       "galeria": [
         "/carros/maverick/ford-maverick-carregando.jpeg",
         "/carros/maverick/ford-maverick-fora.jpeg",
@@ -198,15 +194,18 @@
         "/carros/maverick/ford-maverick-radio.jpeg",
         "/carros/maverick/ford-maverick-sensor.jpeg",
         "/carros/maverick/ford-maverick-volante.jpeg"
-      ]
+      ],
+      "id": "2",
+      "updatedAt": "2025-10-03T00:06:18.718Z"
     },
     {
-      "id": "3",
-      "modelo": "SUV Elétrico 2025",
-      "createdAt": "2024-09-20T10:00:00Z",
-      "updatedAt": "2025-06-28T15:30:00Z",
-      "estoque": 99,
       "nome": "Mustang Mach-E",
+      "modelo": "SUV Elétrico 2025",
+      "ano": 2025,
+      "preco": 389990,
+      "estoque": 99,
+      "descricao": "SUV 100% elétrico inspirado no ícone Mustang, unindo performance, autonomia e tecnologia de ponta.",
+      "imagem_principal": "carros/carro-amarelo-card.png",
       "cores": [
         {
           "nome": "Amarelo Ouro",
@@ -221,12 +220,9 @@
           "imagem": "/carros/mustangMechE/mechE-Azul.png"
         }
       ],
-      "preco": 389990,
       "combustiveis": "Eletrico",
       "destaque": false,
-      "descricao": "SUV 100% elétrico inspirado no ícone Mustang, unindo performance, autonomia e tecnologia de ponta.",
       "categoria": "SUV",
-      "ano": 2025,
       "historia": "O Ford Mustang Mach-E representa uma nova era para a icônica linha Mustang, trazendo a emoção e o desempenho característicos da marca para o mundo dos veículos elétricos. Lançado em 2020, o Mach-E foi desenvolvido para oferecer uma experiência de condução dinâmica, combinando a potência instantânea dos motores elétricos com um design moderno e aerodinâmico. Com várias opções de bateria e tração, o Mach-E atende a diferentes necessidades, desde trajetos urbanos até aventuras mais longas, tudo isso com zero emissões. Seu interior é equipado com tecnologia avançada, incluindo uma central multimídia de última geração e recursos de assistência ao motorista, garantindo conforto e segurança. O Mustang Mach-E não é apenas um SUV elétrico; é uma declaração de que o futuro da mobilidade pode ser emocionante e sustentável.",
       "especificacoes": {
         "motor": "Elétrico Dual Motor",
@@ -256,7 +252,6 @@
           "Sistema de som premium B&O"
         ]
       },
-      "imagem_principal": "carros/carro-amarelo-card.png",
       "galeria": [
         "/carros/mustangMechE/MechE-banco.jpeg",
         "/carros/mustangMechE/mechE-capu.jpeg",
@@ -265,15 +260,17 @@
         "/carros/mustangMechE/mechE-fora.jpeg",
         "/carros/mustangMechE/MechE-marcha.jpeg",
         "/carros/mustangMechE/mechE-traseira.jpeg"
-      ]
+      ],
+      "id": "3"
     },
     {
-      "id": "4",
-      "modelo": "Van 2025",
-      "createdAt": "2025-09-20T10:00:00Z",
-      "updatedAt": "2025-10-28T15:30:00Z",
-      "estoque": 0,
       "nome": "Ford Transit Minibus",
+      "modelo": "Van 2025",
+      "ano": 2025,
+      "preco": 319990,
+      "estoque": 0,
+      "descricao": "Van confortável e espaçosa para transporte de passageiros, ideal para uso comercial e corporativo.",
+      "imagem_principal": "carros/Forgao.png",
       "cores": [
         {
           "nome": "Branco",
@@ -288,12 +285,9 @@
           "imagem": "/carros/forgao/forgao-preto.png"
         }
       ],
-      "preco": 319990,
       "combustiveis": "Diesel",
       "destaque": false,
-      "descricao": "Van confortável e espaçosa para transporte de passageiros, ideal para uso comercial e corporativo.",
       "categoria": "SUV",
-      "ano": 2025,
       "historia": "A Ford Transit Minibus é uma van projetada para atender às necessidades de transporte de passageiros, oferecendo uma combinação de espaço, conforto e versatilidade. Parte da renomada linha Ford Transit, a Minibus é ideal para empresas, instituições educacionais e serviços de transporte que exigem um veículo confiável e eficiente. Com capacidade para acomodar até 15 passageiros, a Transit Minibus é equipada com assentos confortáveis e um interior espaçoso, garantindo uma viagem agradável para todos os ocupantes. \n O design exterior da Transit Minibus é funcional e robusto, refletindo a durabilidade e a praticidade que são marcas registradas da Ford. A van também oferece uma série de recursos tecnológicos e de segurança, incluindo sistemas avançados de assistência ao motorista, conectividade para dispositivos móveis e opções de entretenimento a bordo. \n A Ford Transit Minibus é movida por um motor diesel eficiente, proporcionando um equilíbrio ideal entre desempenho e economia de combustível. Com sua combinação de capacidade, conforto e tecnologia, a Transit Minibus se destaca como uma escolha confiável para quem precisa de um veículo de transporte de passageiros versátil e bem equipado.",
       "especificacoes": {
         "motor": "2.2 Diesel Turbo",
@@ -319,12 +313,13 @@
         ],
         "interior": [
           "Bancos reclináveis em tecido",
-          "Espaço para até 15 passageiros",
-          "Iluminação interna em LED"
+          "Espaço para até 15 passageiros"
         ]
       },
-      "imagem_principal": "carros/Forgao.png",
-      "galeria": ["/carros/forgao/ford-transit.jpg"]
+      "galeria": [
+        "/carros/forgao/ford-transit.jpg"
+      ],
+      "id": "4"
     },
     {
       "id": "5",
@@ -394,12 +389,13 @@
       ]
     },
     {
-      "id": "6",
-      "modelo": "SUV Médio 2025",
-      "createdAt": "2025-09-20T10:00:00Z",
-      "updatedAt": "2025-10-28T15:30:00Z",
-      "estoque": 0,
       "nome": "Ford Territory",
+      "modelo": "SUV Médio 2025",
+      "ano": 2025,
+      "preco": 199990,
+      "estoque": 1,
+      "descricao": "SUV médio moderno e tecnológico, ideal para famílias e viagens urbanas ou rodoviárias.",
+      "imagem_principal": "carros/Territory.png",
       "cores": [
         {
           "nome": "Branco Cristal",
@@ -426,12 +422,9 @@
           "imagem": "/carros/mustang/mustang-preto.png"
         }
       ],
-      "preco": 199990,
       "combustiveis": "Gasolina",
       "destaque": true,
-      "descricao": "SUV médio moderno e tecnológico, ideal para famílias e viagens urbanas ou rodoviárias.",
       "categoria": "SUV",
-      "ano": 2025,
       "historia": "O Ford Territory é um SUV médio que foi introduzido pela Ford para atender à crescente demanda por veículos versáteis e familiares no segmento de utilitários esportivos. Lançado inicialmente em mercados como China e Austrália, o Territory rapidamente ganhou popularidade devido ao seu design moderno, tecnologia avançada e conforto. Com um foco claro em praticidade e funcionalidade, o Ford Territory é ideal para famílias que buscam um veículo espaçoso, seguro e eficiente para uso diário, bem como para viagens mais longas. \n O design do Territory combina linhas elegantes com uma postura robusta, refletindo a identidade da Ford enquanto oferece uma presença imponente na estrada. O interior é cuidadosamente projetado para maximizar o espaço e o conforto dos ocupantes, com materiais de alta qualidade e uma série de recursos tecnológicos, incluindo uma central multimídia intuitiva e conectividade para dispositivos móveis. \n Equipado com motores eficientes e uma suspensão ajustada para proporcionar uma condução suave, o Ford Territory oferece um equilíbrio ideal entre desempenho e economia de combustível. Com sua combinação de estilo, tecnologia e praticidade, o Ford Territory se destaca como uma escolha atraente para aqueles que procuram um SUV médio confiável e bem equipado.",
       "especificacoes": {
         "motor": "1.5 EcoBoost Turbo",
@@ -461,13 +454,14 @@
           "Ar-condicionado digital dual zone"
         ]
       },
-      "imagem_principal": "carros/Territory.png",
       "galeria": [
         "/carros/territory/territory-banco.avif",
         "/carros/territory/territory-fora.avif",
         "/carros/territory/territory-rodas.avif",
         "/carros/territory/territory-tela.jpg"
-      ]
+      ],
+      "id": "6",
+      "updatedAt": "2025-10-03T00:07:09.257Z"
     }
   ],
   "purchases": [

@@ -242,7 +242,11 @@ export class VehicleEditComponent implements OnInit {
 
   onSubmit(): void {
     if (this.editForm.valid) {
-      const updatedCar: Cars = { ...this.editForm.value, id: this.vehicleId };
+      const updatedCar: Cars = {
+        ...this.editForm.value,
+        id: this.vehicleId,
+        updatedAt: new Date(),
+      };
       this.carsService.updateCar(updatedCar).subscribe(() => {
         this.router.navigate(['/dashboard/dashboard-home']);
       });

@@ -16,7 +16,7 @@ import { CarsService } from '../../../../core/services/cars.service';
 import { Cars } from '../../../../core/models/cars.model';
 import { MatSelectModule } from '@angular/material/select';
 import { Cores } from '../../../../core/models/cores.model';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-vehicle-edit',
@@ -49,14 +49,17 @@ export class VehicleEditComponent implements OnInit {
   ];
 
   editForm!: FormGroup;
-  vehicleId!: number;
+  vehicleId!: number | string;
 
   ngOnInit(): void {
-    this.vehicleId = +this.route.snapshot.paramMap.get('id')!;
+    this.vehicleId = this.route.snapshot.paramMap.get('id')!;
     this.editForm = this.fb.group({
       nome: ['', Validators.required],
       modelo: ['', Validators.required],
-      ano: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      ano: [
+        '',
+        [Validators.required, Validators.minLength(4), Validators.maxLength(4)],
+      ],
       preco: ['', Validators.required],
       estoque: ['', Validators.required],
       descricao: ['', Validators.required],

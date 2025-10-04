@@ -5,7 +5,7 @@ import { Equipamentos } from './equipamentos.model';
 import { Especificacoes } from './especificacoes.model';
 
 export interface Cars {
-  id?: number;
+  id?: number | string;
   modelo: string;
   estoque: number;
   createdAt: Date;

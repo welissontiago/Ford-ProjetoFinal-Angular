@@ -23,8 +23,8 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     const carId = this.route.snapshot.paramMap.get('id');
     if (carId) {
-      this.car$ = this.carsService.getCar(+carId);
-      this.car$.subscribe(car => {
+      this.car$ = this.carsService.getCar(carId);
+      this.car$.subscribe((car) => {
         if (car.cores && car.cores.length > 0) {
           this.corSelecionada = car.cores[0];
         }

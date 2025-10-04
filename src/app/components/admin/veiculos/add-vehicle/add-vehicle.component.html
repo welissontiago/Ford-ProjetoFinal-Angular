@@ -1,1 +1,285 @@
-<p>add-vehicle works!</p>
+<div class="add-container">
+  <h1 class="color-titles">Adicionar Novo Veículo</h1>
+
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <mat-stepper [linear]="true" #stepper>
+      <mat-step [stepControl]="addForm.get('nome')!">
+        <ng-template matStepLabel>Informações do Veículo</ng-template>
+        <div class="flex-container">
+          <div class="column-1">
+            <div>
+              <mat-form-field class="column-1-form">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome" />
+                <mat-error *ngIf="addForm.get('nome')?.hasError('required')">
+                  O nome do veículo é obrigatório.
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="column-1-form">
+                <mat-label>Modelo</mat-label>
+                <input matInput formControlName="modelo" />
+                <mat-error *ngIf="addForm.get('modelo')?.hasError('required')">
+                  Campo obrigatório
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="column-1-form">
+                <mat-label>Combustível</mat-label>
+                <mat-select formControlName="combustiveis">
+                  <mat-option *ngFor="let combustivel of combustiveis" [value]="combustivel">
+                    {{ combustivel }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="addForm.get('combustiveis')?.hasError('required')">
+                  Campo obrigatório
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="column-2">
+            <mat-form-field class="column-2-form">
+              <mat-label>Preço</mat-label>
+              <input matInput formControlName="preco" type="number" />
+              <mat-error *ngIf="addForm.get('preco')?.hasError('required')">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="column-2-form">
+              <mat-label>Estoque</mat-label>
+              <input matInput formControlName="estoque" type="number" />
+              <mat-error *ngIf="addForm.get('estoque')?.hasError('required')">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="column-3">
+            <mat-form-field class="column-3-form">
+              <mat-label>Ano</mat-label>
+              <input matInput formControlName="ano" type="number" />
+              <mat-error *ngIf="addForm.get('ano')?.hasError('required')">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="column-3-form">
+              <mat-label class="color-titles">Categoria</mat-label>
+              <mat-select formControlName="categoria">
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                  {{ categoria }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addForm.get('categoria')?.hasError('required')">
+                A categoria do veículo é obrigatório.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="addForm.get('descricao')!">
+        <ng-template matStepLabel>História e Descrição</ng-template>
+        <div class="big-texts">
+          <div class="desc">
+            <mat-form-field class="textarea-form">
+              <mat-label class="color-titles">Descrição</mat-label>
+              <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="25" formControlName="descricao" #messageDesc maxlength="2500"></textarea>
+            </mat-form-field>
+          </div>
+          <div class="history">
+            <mat-form-field class="textarea-form">
+              <mat-label class="color-titles">História</mat-label>
+              <textarea class="textarea" matInput cdkTextareaAutosize cdkAutosizeMinRows="10" cdkAutosizeMaxRows="25" formControlName="historia" #message maxlength="2500" placeholder="Ex. I need help with..."></textarea>
+              <mat-hint align="start"><strong>Não bote informações pessoais aqui</strong></mat-hint>
+              <mat-hint align="end">{{ message.value.length }} / 2500</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="addForm.get('galeria')!">
+        <ng-template matStepLabel>Galeria de Imagens</ng-template>
+        <div formArrayName="galeria" class="galery">
+          <h2 class="color-titles">Galeria</h2>
+          <div class="upload-box" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)">
+            <p class="color-titles">Arraste imagens aqui ou clique aqui</p>
+            <input type="file" accept="image/*" multiple (change)="onFileSelected($event)" />
+          </div>
+          <mat-error *ngIf="galeria.hasError('maxlength')">
+            A galeria pode ter no máximo 10 imagens.
+          </mat-error>
+          <div class="gallery-preview">
+            <div class="img-wrapper" *ngFor="let img of galeria.controls; let i = index">
+              <img class="imagem" [src]="img.value" alt="Imagem da galeria" />
+              <button type="button" class="remove-btn" (click)="removeControl('galeria', i)">
+                ✖
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="addForm.get('imagem_principal')!">
+        <ng-template matStepLabel>Imagem Principal</ng-template>
+        <div class="img_principal">
+          <h2 class="color-titles">Imagem Principal</h2>
+          <div class="upload-box" (drop)="onFileDroppedPrincipal($event)" (dragover)="onDragOver($event)">
+            <p class="color-titles">Arraste a imagem aqui ou clique aqui</p>
+            <input type="file" accept="image/*" (change)="onFileSelectedPrincipal($event)" />
+          </div>
+
+          <div class="preview" *ngIf="addForm.get('imagem_principal')?.value">
+            <img class="imagem-principal" [src]="addForm.get('imagem_principal')?.value" alt="Imagem Principal" />
+            <button type="button" class="remove-btn-img-principal" (click)="addForm.get('imagem_principal')?.reset()">
+              ✖
+            </button>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious type="button">Voltar</button>
+          <button mat-button matStepperNext type="button">Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="addForm.get('cores')!">
+        <ng-template matStepLabel>Cores</ng-template>
+        <div formArrayName="cores" class="cores-container">
+          <h2 class="color-titles title-colors">Cores</h2>
+          <button class="color-btn-add" mat-stroked-button color="primary" type="button" (click)="addCor()">Adicionar Nova Cor</button>
+
+          <div class="grid-container">
+            <div *ngFor="let corGroup of cores.controls; let i = index" [formGroupName]="i" class="cor-item">
+
+              <div class="car-container">
+                <div class="cor-imagem">
+                  <div class="input-file">
+                    <input type="file" accept="image/*" (change)="onFileSelectedCor($event, i)" class="file-input">
+                  </div>
+                  <div *ngIf="corGroup.get('imagem')?.value" class="image-preview">
+                    <img class="imagem-colors" [src]="corGroup.get('imagem')?.value" alt="Preview da cor">
+                    <button type="button" class="remove-btn" (click)="corGroup.get('imagem')?.reset()">
+                      ✖
+                    </button>
+                  </div>
+                </div>
+
+                <div class="flex-fields-container">
+                  <div class="cor-fields">
+                    <mat-form-field class="colors-forms">
+                      <mat-label>Nome da Cor</mat-label>
+                      <input matInput formControlName="nome" placeholder="Ex: Vermelho Radiante">
+                    </mat-form-field>
+
+                    <mat-form-field class="colors-forms">
+                      <mat-label>Preço Adicional</mat-label>
+                      <input matInput formControlName="precoAdicional" type="number" placeholder="Ex: 1500">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="form-hex">
+                    <mat-form-field class="hex colors-forms">
+                      <mat-label>Código da Cor (Hex)</mat-label>
+                      <input matInput formControlName="codigoCor" placeholder="Ex: #FF0000">
+                    </mat-form-field>
+
+                    <button mat-icon-button color="warn" type="button" (click)="removeCor(i)" class="remove-cor-btn">
+                      <mat-icon>delete_forever</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious type="button">Voltar</button>
+          <button mat-button matStepperNext type="button">Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="addForm.get('especificacoes')!">
+        <ng-template matStepLabel>Especificações</ng-template>
+        <div formGroupName="especificacoes" class="especs">
+          <h2>Especificações</h2>
+
+          <div class="espec-colum-1">
+            <mat-form-field class="column-1-form">
+              <mat-label>Motor</mat-label>
+              <input matInput formControlName="motor" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>Potencia</mat-label>
+              <input matInput formControlName="potencia" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>Aceleracão</mat-label>
+              <input matInput formControlName="aceleracao" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>aceleracao de 0 a 100</mat-label>
+              <input matInput formControlName="aceleracao_0_100" />
+            </mat-form-field>
+          </div>
+
+          <div class="espec-colum-2">
+            <mat-form-field class="column-1-form">
+              <mat-label>Suspensao</mat-label>
+              <input matInput formControlName="suspensao" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>Velocidade Maxima</mat-label>
+              <input matInput formControlName="velocidade_maxima" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>Combustivel</mat-label>
+              <input matInput formControlName="combustivel" />
+            </mat-form-field>
+
+            <mat-form-field class="column-1-form">
+              <mat-label>Tracão</mat-label>
+              <input matInput formControlName="tracao" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious type="button">Voltar</button>
+          <button mat-button matStepperNext type="button">Próximo</button>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Salvar</ng-template>
+        <div class="buttons">
+          <button class="save" mat-raised-button color="primary" (click)="onSubmit()" [disabled]="addForm.invalid">
+            Salvar
+          </button>
+          <button class="cancel" mat-button routerLink="/dashboard/dashboard-home">
+            Cancelar
+          </button>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</div>

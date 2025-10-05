@@ -24,7 +24,6 @@ export class VehicleListComponent implements OnInit {
   @Input() car!: Cars;
   cars: Cars[] = [];
   featuredCarsCount = 0;
-  @Output() deleteRequested = new EventEmitter<number | string>();
   public AllVehicles$!: Observable<Cars[]>;
   public deletedCars$!: Observable<Cars>;
 
@@ -50,9 +49,5 @@ export class VehicleListComponent implements OnInit {
         console.error('Erro ao deletar carro:', err);
       },
     });
-  }
-
-  onDelete(): void {
-    this.deleteRequested.emit(this.car.id);
   }
 }

@@ -1,0 +1,61 @@
+<section class="list-vehicle-container" aria-label="lista de todos os veiculos do site">
+  <div class="list-title">
+    <h1>Propostas recebidas</h1>
+    <p><span>{{ persons.length }}</span> propostas encontrados</p>
+  </div>
+
+  <div class="columns-container">
+    <div class="column-1">
+      <div class="column-titles">
+        <div class="title-row">
+          <h1 class="title-list">Cliente</h1>
+          <h1 class="title-list">Contato</h1>
+          <h1 class="title-list">Veículo</h1>
+          <h1 class="title-list">Status</h1>
+          <h1 class="title-list">Ações</h1>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div class="container-infos" *ngFor="let person of persons">
+        <div class="row">
+          <div class="col veiculo">
+            <div class="left-infos">
+              <div class="left-info-cars">
+                <p>{{ person.user.name }}</p>
+                <p>{{person.purchaseDate | date: 'dd/MM/yyyy'}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col categoria">
+          <p>{{person.user.email}}</p>
+          <p>{{person.user.phone}}</p>
+        </div>
+
+        <div class="col preco">
+          <p>{{person.car.nome}}</p>
+        </div>
+
+        <div class="col status">
+          <!-- <span [ngClass]="{
+              disponivel: car.estoque > 0,
+              indisponivel: car.estoque === 0
+            }">
+            {{ car.estoque > 0 ? "Disponível" : "Indisponível" }}
+          </span>
+          <span *ngIf="car.destaque" class="destaque">Destaque</span> -->
+        </div>
+
+        <div class="col acoes">
+          <div class="actions">
+            <!-- <button [routerLink]="['/dashboard/veiculos/edit', car.id]" class="edit-button" mat-icon-button><mat-icon>edit</mat-icon></button>
+            <button class="delet-button" mat-icon-button (click)="deleteCar(car.id!)" color="warn"><mat-icon>delete</mat-icon></button> -->
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+</section>

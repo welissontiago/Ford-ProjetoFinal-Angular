@@ -56,7 +56,7 @@
           <div class="col acoes">
             <div class="actions">
               <button [routerLink]="['/dashboard/veiculos/edit', car.id]" class="edit-button" mat-icon-button><mat-icon>edit</mat-icon></button>
-              <button class="delet-button" mat-icon-button (click)="onDelete()" color="warn"><mat-icon>delete</mat-icon></button>
+              <button class="delet-button" mat-icon-button (click)="deleteCar(car.id!)" color="warn"><mat-icon>delete</mat-icon></button>
             </div>
           </div>
         </div>

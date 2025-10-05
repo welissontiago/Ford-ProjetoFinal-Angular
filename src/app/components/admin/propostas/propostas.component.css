@@ -1,0 +1,79 @@
+.example-full-width {
+  max-width: 450px;
+  max-height: 80px;
+  width: 100%;
+  height: 100%;
+}
+
+.example-full-width-2 {
+  max-width: 850px;
+  max-height: 80px;
+  width: 100%;
+  height: 100%;
+}
+
+.container-forms {
+  display: flex;
+  gap: 25px;
+}
+
+.Admin-vehicles-crud {
+  max-width: 1450px;
+  width: 100%;
+  margin: 50px auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+.btn-add {
+  background: var(--components-color);
+  color: var(--text-color-four) !important;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: var(--gradient-buttons);
+}
+
+.container-initial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titles {
+  margin-bottom: 45px;
+}
+
+.filter {
+  padding: 25px 20px;
+  border: 1px solid var(--border-c3);
+  align-items: center;
+  border-radius: 5px;
+}
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  color: var(--text-title);
+}
+
+.filters-forms {
+  display: flex;
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  border: 1px solid var(--border-c3);
+}
+
+::ng-deep
+  .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled)
+  .mat-mdc-text-field-wrapper {
+  border: 1px solid var(--border-c3);
+}

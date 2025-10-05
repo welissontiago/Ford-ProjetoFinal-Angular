@@ -1,1 +1,39 @@
-<p>propostas works!</p>
+<section class="Admin-vehicles-crud" aria-label="Pagina de administração geral de veiculos">
+  <div class="margins-box">
+    <div class="container-initial">
+      <div class="titles">
+        <h1 class="color-titles">Todas as propostas</h1>
+        <p class="color-titles">Veja aqui as solicitações de compras e vendas dos clientes</p>
+      </div>
+    </div>
+
+
+    <div class="filter" aria-label="Filtros para Veiculos">
+      <div class="filter-title">
+        <mat-icon class="icon-card" icon>filter_alt</mat-icon>
+        <h2>Filtros</h2>
+      </div>
+
+
+      <div class="container-forms">
+        <mat-form-field class="example-full-width">
+          <mat-label>Selecionar por status</mat-label>
+          <mat-select>
+            <mat-option value="one">Todos os Status</mat-option>
+            <mat-option value="two">Pendente</mat-option>
+            <mat-option value="three">Aprovada</mat-option>
+            <mat-option value="three">Rejeitada</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width-2">
+          <mat-icon matSuffix>search</mat-icon>
+          <mat-label>Buscar por nome, email, veiculo ou telefone </mat-label>
+          <input matInput placeholder="Ex. Maria ou maria@gmail.com">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <app-list-person></app-list-person>
+</section>

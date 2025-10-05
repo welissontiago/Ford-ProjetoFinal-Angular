@@ -78,7 +78,7 @@
           </div>
         </div>
         <div>
-          <button mat-button matStepperNext>Próximo</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 
@@ -100,9 +100,9 @@
             </mat-form-field>
           </div>
         </div>
-        <div>
-          <button mat-button matStepperPrevious>Voltar</button>
-          <button mat-button matStepperNext>Próximo</button>
+        <div class="container-buttons">
+          <button class="voltar" mat-button matStepperPrevious type="button">Voltar</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 
@@ -127,9 +127,9 @@
           </div>
 
         </div>
-        <div>
-          <button mat-button matStepperPrevious>Voltar</button>
-          <button mat-button matStepperNext>Próximo</button>
+        <div class="container-buttons">
+          <button class="voltar" mat-button matStepperPrevious type="button">Voltar</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 
@@ -149,9 +149,9 @@
             </button>
           </div>
         </div>
-        <div>
-          <button mat-button matStepperPrevious type="button">Voltar</button>
-          <button mat-button matStepperNext type="button">Próximo</button>
+        <div class="container-buttons">
+          <button class="voltar" mat-button matStepperPrevious type="button">Voltar</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 
@@ -171,7 +171,7 @@
                   </div>
                   <div *ngIf="corGroup.get('imagem')?.value" class="image-preview">
                     <img class="imagem-colors" [src]="corGroup.get('imagem')?.value" alt="Preview da cor">
-                    <button type="button" class="remove-btn" (click)="corGroup.get('imagem')?.reset()">
+                    <button type="button" class="remove-btn-colors" (click)="corGroup.get('imagem')?.reset()">
                       ✖
                     </button>
                   </div>
@@ -205,9 +205,9 @@
             </div>
           </div>
         </div>
-        <div>
-          <button mat-button matStepperPrevious type="button">Voltar</button>
-          <button mat-button matStepperNext type="button">Próximo</button>
+        <div class="container-buttons">
+          <button class="voltar" mat-button matStepperPrevious type="button">Voltar</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 
@@ -216,53 +216,56 @@
         <div formGroupName="especificacoes" class="especs">
           <h2>Especificações</h2>
 
-          <div class="espec-colum-1">
-            <mat-form-field class="column-1-form">
-              <mat-label>Motor</mat-label>
-              <input matInput formControlName="motor" />
-            </mat-form-field>
+          <div class="father-columns">
+            <div class="espec-colum-1">
+              <mat-form-field class="column-1-form">
+                <mat-label>Motor</mat-label>
+                <input matInput formControlName="motor" />
+              </mat-form-field>
 
-            <mat-form-field class="column-1-form">
-              <mat-label>Potencia</mat-label>
-              <input matInput formControlName="potencia" />
-            </mat-form-field>
+              <mat-form-field class="column-1-form">
+                <mat-label>Potencia</mat-label>
+                <input matInput formControlName="potencia" />
+              </mat-form-field>
 
-            <mat-form-field class="column-1-form">
-              <mat-label>Aceleracão</mat-label>
-              <input matInput formControlName="aceleracao" />
-            </mat-form-field>
+              <mat-form-field class="column-1-form">
+                <mat-label>Aceleracão</mat-label>
+                <input matInput formControlName="aceleracao" />
+              </mat-form-field>
 
-            <mat-form-field class="column-1-form">
-              <mat-label>aceleracao de 0 a 100</mat-label>
-              <input matInput formControlName="aceleracao_0_100" />
-            </mat-form-field>
+              <mat-form-field class="column-1-form">
+                <mat-label>aceleracao de 0 a 100</mat-label>
+                <input matInput formControlName="aceleracao_0_100" />
+              </mat-form-field>
+            </div>
+
+            <div class="espec-colum-2">
+              <mat-form-field class="column-1-form">
+                <mat-label>Suspensao</mat-label>
+                <input matInput formControlName="suspensao" />
+              </mat-form-field>
+
+              <mat-form-field class="column-1-form">
+                <mat-label>Velocidade Maxima</mat-label>
+                <input matInput formControlName="velocidade_maxima" />
+              </mat-form-field>
+
+              <mat-form-field class="column-1-form">
+                <mat-label>Combustivel</mat-label>
+                <input matInput formControlName="combustivel" />
+              </mat-form-field>
+
+              <mat-form-field class="column-1-form">
+                <mat-label>Tracão</mat-label>
+                <input matInput formControlName="tracao" />
+              </mat-form-field>
+            </div>
           </div>
 
-          <div class="espec-colum-2">
-            <mat-form-field class="column-1-form">
-              <mat-label>Suspensao</mat-label>
-              <input matInput formControlName="suspensao" />
-            </mat-form-field>
-
-            <mat-form-field class="column-1-form">
-              <mat-label>Velocidade Maxima</mat-label>
-              <input matInput formControlName="velocidade_maxima" />
-            </mat-form-field>
-
-            <mat-form-field class="column-1-form">
-              <mat-label>Combustivel</mat-label>
-              <input matInput formControlName="combustivel" />
-            </mat-form-field>
-
-            <mat-form-field class="column-1-form">
-              <mat-label>Tracão</mat-label>
-              <input matInput formControlName="tracao" />
-            </mat-form-field>
-          </div>
         </div>
-        <div>
-          <button mat-button matStepperPrevious type="button">Voltar</button>
-          <button mat-button matStepperNext type="button">Próximo</button>
+        <div class="container-buttons">
+          <button class="voltar" mat-button matStepperPrevious type="button">Voltar</button>
+          <button class="proximo" mat-button matStepperNext type="button">Próximo</button>
         </div>
       </mat-step>
 

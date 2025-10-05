@@ -45,6 +45,8 @@
   margin-bottom: 20px;
   transition: border-color 0.3s ease;
   position: relative;
+  width: 1100px;
+  max-width: 100%;
 }
 
 .upload-box:hover {
@@ -113,6 +115,39 @@
   border-radius: 8px;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.color-btn-add {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.remove-btn-colors {
+  position: absolute;
+  top: 5px;
+  right: -124px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.remove-btn-colors:hover {
+  color: red;
+  background-color: #ebb9b9;
+}
+
 .cor-item {
   display: flex;
   align-items: flex-start;
@@ -124,12 +159,137 @@
   position: relative;
 }
 
+input[type="file" i] {
+  margin-bottom: 25px;
+}
+
 .cor-imagem .image-preview {
   position: relative;
   width: 150px;
   height: 100px;
 }
 
+.imagem-colors {
+  max-width: 280px;
+  max-height: 200px;
+}
+
+.flex-fields-container {
+  margin-top: 100px;
+}
+
 .buttons {
   margin-top: 20px;
+}
+
+::ng-deep .mat-horizontal-stepper-wrapper {
+  background: var(--dashboard-blackground) !important;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background: var(--bg-card-cars) !important;
+  border: 1px solid var(--border-c3) !important;
+}
+
+::ng-deep
+  .mat-mdc-form-field:not(.mat-form-field-disabled)
+  .mat-mdc-floating-label.mdc-floating-label {
+  color: var(--text-title) !important;
+}
+
+::ng-deep
+  .mat-mdc-form-field.mat-form-field-animations-enabled
+  .mdc-text-field__input {
+  color: var(--text-title) !important;
+}
+
+::ng-deep
+  .cdk-overlay-pane:not(.mat-mdc-select-panel-above)
+  div.mat-mdc-select-panel {
+  background: var(--card-background) !important;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  ) {
+  background: var(--bg-element-color-one) !important;
+}
+
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text {
+  color: var(--text-title-three) !important;
+}
+
+::ng-deep .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {
+  color: var(--text-title) !important;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  color: var(--text-title);
+}
+
+::ng-deep
+  .mat-mdc-form-field:not(.mat-form-field-disabled)
+  .mat-mdc-floating-label.mdc-floating-label {
+  color: var(--text-title) !important;
+}
+
+::ng-deep .mat-step-icon-selected {
+  background: var(--components-color) !important;
+}
+
+::ng-deep .mat-step-icon-selected {
+  color: var(--input-bg) !important;
+}
+
+.save,
+.cancel,
+.voltar,
+.proximo {
+  box-sizing: border-box !important;
+  border: 1px solid var(--border-c3) !important;
+  background: var(--components-color) !important;
+  border-radius: 5px !important;
+  color: var(--input-bg) !important;
+}
+
+.save:hover,
+.cancel:hover,
+.voltar:hover,
+.proximo:hover {
+  background: var(--component-hover) !important;
+}
+
+.container-buttons {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.img_principal {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-principal {
+  max-width: 800px;
+  max-height: 500px;
+}
+
+.espec-colum-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.espec-colum-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.father-columns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }

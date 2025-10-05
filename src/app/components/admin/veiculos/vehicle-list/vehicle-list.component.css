@@ -1,0 +1,120 @@
+.list-title {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.list-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.list-title p {
+  color: var(--text-color-two);
+}
+
+.column-titles {
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.title-list {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-two);
+  text-transform: capitalize;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 0;
+}
+
+.left-infos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.left-infos img {
+  width: 100px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.left-info-cars h1 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-title);
+}
+
+.mini-infos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color-two);
+  font-size: 0.875rem;
+}
+
+.categoria p,
+.preco p {
+  font-weight: 500;
+  color: var(--text-title);
+}
+
+.status span {
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: 15px;
+}
+
+.status .disponivel {
+  color: #138a27;
+  background: #c7fcd1;
+}
+
+.status .indisponivel {
+  color: #c41515;
+  background: #fdd2d2;
+}
+
+.destaque {
+  background-color: var(--components-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: 0.875rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-button,
+.delet-button {
+  background: var(--search-bg);
+}
+
+.edit-button:hover,
+.delet-button:hover {
+  background: var(--components-color);
+  color: white;
+}
+
+mat-divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

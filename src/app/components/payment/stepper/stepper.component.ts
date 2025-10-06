@@ -294,6 +294,7 @@ export class StepperComponent implements OnChanges, OnInit {
       selectedColor: this.corSelecionada,
       payment: this.paymentService.getPaymentData(),
       purchaseDate: new Date(),
+      status: 'pendente',
     };
 
     this.purchaseService.savePurchase(purchaseData).subscribe({

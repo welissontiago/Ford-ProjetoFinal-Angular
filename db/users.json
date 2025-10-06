@@ -582,6 +582,7 @@
         "codigoCor": "#F0F0F0",
         "imagem": "/carros/carro-branco-card.png"
       },
+      "status": "pendente",
       "payment": {
         "paymentMethod": "card"
       },

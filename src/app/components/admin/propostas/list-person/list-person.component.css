@@ -65,53 +65,45 @@
   font-size: 0.875rem;
 }
 
-.categoria p,
-.preco p {
-  font-weight: 500;
+.contato p,
+.car-name p {
+  font-weight: 300;
   color: var(--text-title);
+  font-size: 1rem;
+}
+
+.left-info-cars p {
+  font-weight: 400;
+  color: var(--text-title);
+  font-size: 1rem;
 }
 
 .status span {
   font-size: 0.875rem;
   padding: 4px 8px;
   border-radius: 15px;
+  text-transform: capitalize;
 }
 
-.status .disponivel {
+.status-pendente {
+  color: #ca8a04;
+  background: #fef9c3;
+}
+
+.status-aprovado {
   color: #138a27;
   background: #c7fcd1;
 }
 
-.status .indisponivel {
+.status-rejeitado {
   color: #c41515;
   background: #fdd2d2;
-}
-
-.destaque {
-  background-color: var(--components-color);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 500;
-  margin-left: 10px;
-  font-size: 0.875rem;
 }
 
 .actions {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.edit-button,
-.delet-button {
-  background: var(--search-bg);
-}
-
-.edit-button:hover,
-.delet-button:hover {
-  background: var(--components-color);
-  color: white;
 }
 
 mat-divider {

@@ -11,10 +11,18 @@ export class PurchaseService {
   private http = inject(HttpClient);
 
   savePurchase(purchase: Omit<Purchase, 'id'>): Observable<Purchase> {
-    return this.http.post<Purchase>(this.apiUrl, purchase);
+    const purchaseWithStatus = { ...purchase, status: 'pendente' } as Omit<
+      Purchase,
+      'id'
+    >;
+    return this.http.post<Purchase>(this.apiUrl, purchaseWithStatus);
   }
 
   getAllPurchases(): Observable<Purchase[]> {
     return this.http.get<Purchase[]>(this.apiUrl);
+  }
+
+  updatePurchase(purchase: Purchase): Observable<Purchase> {
+    return this.http.put<Purchase>(`${this.apiUrl}/${purchase.id}`, purchase);
   }
 }

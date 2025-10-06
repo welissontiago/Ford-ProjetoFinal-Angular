@@ -10,4 +10,5 @@ export interface Purchase {
   selectedColor: Cores;
   payment: PaymentData;
   purchaseDate: Date;
+  status: 'pendente' | 'aprovado' | 'rejeitado';
 }

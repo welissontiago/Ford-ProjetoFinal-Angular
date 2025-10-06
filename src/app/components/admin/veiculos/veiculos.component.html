@@ -1,18 +1,30 @@
-<section class="Admin-vehicles-crud" aria-label="Pagina de administração geral de veiculos">
+<section
+  class="Admin-vehicles-crud"
+  aria-label="Pagina de administração geral de veiculos"
+>
   <div class="margins-box">
     <div class="container-initial">
       <div class="titles">
         <h1 class="color-titles">Gerenciar veículos</h1>
         <p class="color-titles">Adicionar, editar e visão geral do estoque</p>
       </div>
-      <button [routerLink]="['/dashboard/veiculos/add']" class="btn-add" mat-button matStepperPrevious>
+      <button
+        [routerLink]="['/dashboard/veiculos/add']"
+        class="btn-add"
+        mat-button
+        matStepperPrevious
+      >
         <mat-icon>add</mat-icon>
         Adicionar novo veiculo
       </button>
     </div>
 
-
-    <div class="filter" aria-label="Filtros para Veiculos">
+    <div
+      class="filter"
+      aria-label="Filtros para Veiculos"
+      class="filtro"
+      (filtrosMudaram)="aplicarFiltros()"
+    >
       <div class="filter-title">
         <mat-icon class="icon-card" icon>filter_alt</mat-icon>
         <h2>Filtros</h2>
@@ -22,13 +34,16 @@
         <mat-form-field class="example-full-width">
           <mat-icon matSuffix>search</mat-icon>
           <mat-label>Buscar Veículos</mat-label>
-          <input matInput placeholder="Ex. Mustang">
+          <input matInput placeholder="Ex. Mustang" />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Categoria</mat-label>
-          <mat-select>
-            <mat-option value="one">Todas as categorias</mat-option>
+          <mat-label>Todas as Categorias</mat-label>
+          <mat-select
+            [(ngModel)]="categoriaSelecionada"
+            (selectionChange)="aplicarFiltros()"
+          >
+            <mat-option [value]="null">Todas as Categorias</mat-option>
             <mat-option value="two">Esportivo</mat-option>
             <mat-option value="three">Picape</mat-option>
             <mat-option value="four">SUV</mat-option>
@@ -36,18 +51,24 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Selecionar por status</mat-label>
-          <mat-select>
-            <mat-option value="one">Todos os Status</mat-option>
+          <mat-label>Todos os Status</mat-label>
+          <mat-select
+            [(ngModel)]="statusSelecionado"
+            (selectionChange)="aplicarFiltros()"
+          >
+            <mat-option [value]="null">Todos os Status</mat-option>
             <mat-option value="two">Disponivel</mat-option>
             <mat-option value="three">Indisponivel</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Tipo de Combustivel</mat-label>
-          <mat-select>
-            <mat-option value="one">Todos os tipos</mat-option>
+          <mat-label>Todos os Combustiveis</mat-label>
+          <mat-select
+            [(ngModel)]="combustivelSelecionado"
+            (selectionChange)="aplicarFiltros()"
+          >
+            <mat-option [value]="null">Todos os Combustiveis</mat-option>
             <mat-option value="two">Hibrido</mat-option>
             <mat-option value="three">Eletrico</mat-option>
             <mat-option value="two">Gasolina</mat-option>

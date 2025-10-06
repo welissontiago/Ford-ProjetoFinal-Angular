@@ -1,7 +1,12 @@
-<section class="list-vehicle-container" aria-label="lista de todos os veiculos do site">
+<section
+  class="list-vehicle-container"
+  aria-label="lista de todos os veiculos do site"
+>
   <div class="list-title">
     <h1>Lista de Veículos</h1>
-    <p><span>{{ cars.length }}</span> veículos encontrados</p>
+    <p>
+      <span>{{ cars.length }}</span> veículos encontrados
+    </p>
   </div>
 
   <div class="columns-container">
@@ -21,33 +26,35 @@
         <div class="row">
           <div class="col veiculo">
             <div class="left-infos">
-              <img [src]="car.imagem_principal" [alt]="car.nome">
+              <img [src]="car.imagem_principal" [alt]="car.nome" />
               <div class="left-info-cars">
                 <h1>{{ car.nome }}</h1>
                 <div class="mini-infos">
-                  <p>{{car.ano}}</p>
+                  <p>{{ car.ano }}</p>
                   <span>•</span>
-                  <p>{{car.combustiveis}}</p>
+                  <p>{{ car.combustiveis }}</p>
                   <span>•</span>
-                  <p>{{ car.modelo}}</p>
+                  <p>{{ car.modelo }}</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="col categoria">
-            <p>{{car.categoria}}</p>
+            <p>{{ car.categoria }}</p>
           </div>
 
           <div class="col preco">
-            <p>{{car.preco | currency : "BRL"}}</p>
+            <p>{{ car.preco | currency : "BRL" }}</p>
           </div>
 
           <div class="col status">
-            <span [ngClass]="{
-              disponivel: car.estoque > 0,
-              indisponivel: car.estoque === 0
-            }">
+            <span
+              [ngClass]="{
+                disponivel: car.estoque > 0,
+                indisponivel: car.estoque === 0
+              }"
+            >
               {{ car.estoque > 0 ? "Disponível" : "Indisponível" }}
             </span>
             <span *ngIf="car.destaque" class="destaque">Destaque</span>
@@ -55,8 +62,21 @@
 
           <div class="col acoes">
             <div class="actions">
-              <button [routerLink]="['/dashboard/veiculos/edit', car.id]" class="edit-button" mat-icon-button><mat-icon>edit</mat-icon></button>
-              <button class="delet-button" mat-icon-button (click)="deleteCar(car.id!)" color="warn"><mat-icon>delete</mat-icon></button>
+              <button
+                [routerLink]="['/dashboard/veiculos/edit', car.id]"
+                class="edit-button"
+                mat-icon-button
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                class="delet-button"
+                mat-icon-button
+                (click)="deleteCar(car.id!)"
+                color="warn"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
             </div>
           </div>
         </div>

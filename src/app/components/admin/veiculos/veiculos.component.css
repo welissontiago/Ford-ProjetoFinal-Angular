@@ -117,3 +117,14 @@ mat-label {
   .mat-mdc-text-field-wrapper {
   border: 1px solid var(--border-c3);
 }
+
+@media (max-width: 633px) {
+  .filters-forms {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Admin-vehicles-crud {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

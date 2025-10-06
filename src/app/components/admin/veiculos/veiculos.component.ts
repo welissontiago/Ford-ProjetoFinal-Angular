@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './veiculos.component.css',
 })
 export class VeiculosComponent {
-  @Output() filtrosMudaram = new EventEmitter<any>();
+  @ViewChild('vehicleList') vehicleListComponent!: VehicleListComponent;
 
   categoriaSelecionada: string = '';
   veiculoNome: String = '';
@@ -34,7 +34,7 @@ export class VeiculosComponent {
   statusSelecionado: string = '';
 
   aplicarFiltros() {
-    this.filtrosMudaram.emit({
+    this.vehicleListComponent.aplicarFiltros({
       categoria: this.categoriaSelecionada,
       nome: this.veiculoNome,
       combustivel: this.combustivelSelecionado,

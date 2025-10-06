@@ -68,3 +68,32 @@ p {
     margin-right: 0px;
   }
 }
+
+@media (max-width: 430px) {
+  .titles h1 {
+    font-size: 1.4rem;
+  }
+  .title-card {
+    font-size: 0.875rem;
+  }
+  .content-card {
+    font-size: 0.875rem;
+  }
+  .minicards-content {
+    gap: 15px;
+  }
+  .icon-card {
+    display: none;
+  }
+  .minicards-content {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .inital-content {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  ::ng-deep .mat-mdc-button > .mat-icon {
+    display: none !important;
+  }
+}

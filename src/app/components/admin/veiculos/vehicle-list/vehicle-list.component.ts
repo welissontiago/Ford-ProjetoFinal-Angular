@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { Cars } from '../../../../core/models/cars.model';
 import { CarsService } from '../../../../core/services/cars.service';
@@ -8,6 +8,7 @@ import {
   forkJoin,
   map,
   Observable,
+  startWith,
 } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,6 +45,7 @@ export class VehicleListComponent implements OnInit {
   constructor(private carsService: CarsService) {}
 
   ngOnInit(): void {
+    this.AllVehicles$ = this.carsService.getCars();
     forkJoin({
       cars: this.carsService.getCars(),
       featuredCars: this.carsService.getFeaturedCars(),
@@ -54,24 +56,41 @@ export class VehicleListComponent implements OnInit {
 
     const allCars$ = this.carsService.getCars();
 
-    this.carsFiltrados$ = combineLatest([allCars$, this.filtrosSubject]).pipe(
+    this.carsFiltrados$ = combineLatest([
+      this.AllVehicles$,
+      this.filtrosSubject.pipe(startWith({})),
+    ]).pipe(
       map(([cars, filtros]) => {
         return cars.filter((car) => {
           const atendeCategoria =
             !filtros.categoria ||
             car.categoria.toLowerCase() === filtros.categoria.toLowerCase();
 
-          const status = !filtros.status || car.estoque === +filtros.estoque;
+          const atendeStatus =
+            !filtros.status ||
+            (filtros.status === 'disponivel' && car.estoque > 0) ||
+            (filtros.status === 'indisponivel' && car.estoque === 0);
 
           const atendeCombustivel =
             !filtros.combustivel ||
             car.combustiveis
               .toLowerCase()
               .includes(filtros.combustivel.toLowerCase());
-          return atendeCategoria && status && atendeCombustivel;
+
+          const atendeNome =
+            !filtros.nome ||
+            car.nome.toLowerCase().includes(filtros.nome.toLowerCase());
+
+          return (
+            atendeCategoria && atendeStatus && atendeCombustivel && atendeNome
+          );
         });
       })
     );
+
+    this.carsFiltrados$.subscribe((filteredCars) => {
+      this.cars = filteredCars;
+    });
   }
 
   aplicarFiltros(filtros: any) {

@@ -124,3 +124,28 @@ p {
     flex-direction: column;
   }
 }
+
+@media (max-width: 430px) {
+  .details-bg {
+    border: none;
+    border-bottom: 1px solid var(--border-c3);
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+  .left-infos p {
+    margin-top: 10px;
+  }
+  .rigt-infos p {
+    margin-top: 10px;
+  }
+  .flex-buttons {
+    flex-direction: row;
+  }
+  .flex-container {
+    margin-bottom: 20px;
+  }
+  .left-infos img {
+    border-radius: 5px;
+  }
+}

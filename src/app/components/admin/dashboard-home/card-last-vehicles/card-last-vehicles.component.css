@@ -28,3 +28,11 @@
     margin-right: 0px;
   }
 }
+
+@media (max-width: 430px) {
+  .last-vehicles {
+    background: none;
+    border: none;
+    
+  }
+}

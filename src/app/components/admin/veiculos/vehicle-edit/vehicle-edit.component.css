@@ -443,4 +443,48 @@ textarea[matInput] {
   .grid-container {
     grid-template-columns: 1fr 1fr;
   }
+  .grid-equip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .cor-item {
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-equip {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .flex-container {
+    gap: 10px;
+  }
+  mat-form-field.column-1-form {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  mat-form-field.column-1-form {
+    width: 200px !important;
+  }
+  mat-form-field.column-2-form {
+    width: 200px !important;
+  }
+  mat-form-field.column-3-form {
+    width: 200px !important;
+  }
+  .textarea-form {
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .flex-container {
+    grid-template-columns: 1fr;
+  }
 }

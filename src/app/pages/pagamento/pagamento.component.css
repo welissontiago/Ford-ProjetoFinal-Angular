@@ -4,21 +4,20 @@
   padding-top: 50px;
 }
 
-@media (max-width: 1115px){
-  ::ng-deep .footer-container{
+@media (max-width: 1115px) {
+  ::ng-deep .footer-container {
     margin-top: 950px !important;
   }
 }
 
-@media (max-width: 792px){
-  ::ng-deep .footer-container{
-    margin-top: 1150px !important;
+@media (max-width: 792px) {
+  ::ng-deep .footer-container {
+    margin-top: 1550px !important;
   }
 }
 
-
-@media (max-width: 543px){
-  ::ng-deep .footer-container{
-    margin-top: 1300px !important;
+@media (max-width: 543px) {
+  ::ng-deep .footer-container {
+    margin-top: 2000px !important;
   }
 }

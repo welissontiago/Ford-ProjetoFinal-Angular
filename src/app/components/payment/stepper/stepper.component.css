@@ -310,6 +310,23 @@
   color: var(--text-color-six);
 }
 
+::ng-deep
+  .cdk-overlay-pane:not(.mat-mdc-select-panel-above)
+  div.mat-mdc-select-panel {
+  background: var(--bg-card-cars) !important;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  color: var(--text-title) !important;
+}
+
+::ng-deep
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(
+    .mat-mdc-option-multiple
+  ) {
+  background: var(--bg-element-color-one) !important;
+}
+
 .grid-list {
   display: flex;
   justify-content: center;
@@ -584,7 +601,7 @@ column-2 {
 
 @media (max-width: 620px) {
   .flex-container {
-    gap: 20px;
+    gap: 5px;
   }
 }
 
@@ -604,6 +621,10 @@ column-2 {
   .cep mat-form-field,
   .adress mat-form-field {
     width: 200px;
+  }
+
+  .flex-container-payment-forms {
+    flex-direction: column;
   }
 }
 

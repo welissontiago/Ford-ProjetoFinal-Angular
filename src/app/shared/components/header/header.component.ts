@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MegamenuMobileComponent } from './megamenu-mobile/megamenu-mobile.component';
 import { AuthService } from '../../../core/services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -26,13 +27,14 @@ import { AuthService } from '../../../core/services/auth.service';
     MatSidenavModule,
     MatListModule,
     MegamenuMobileComponent,
+    RouterModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   public themeService = inject(ThemeService);
-  private authService = inject(AuthService);
+  public authService = inject(AuthService);
   isMenuOpen = false;
 
   @Output() menuToggle = new EventEmitter<void>();

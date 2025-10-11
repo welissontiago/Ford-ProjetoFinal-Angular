@@ -29,7 +29,7 @@ export class SectionGaleriaEComprarComponent implements OnInit {
       switchMap((params) => {
         const carId = params.get('id');
         if (carId) {
-          return this.carsService.getCar(+carId);
+          return this.carsService.getCar(carId);
         }
         return new Observable<Cars>();
       })

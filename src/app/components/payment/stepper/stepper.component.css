@@ -385,6 +385,10 @@ column-2 {
   margin-bottom: 7px;
 }
 
+::ng-deep .mat-mdc-select-panel-above div.mat-mdc-select-panel {
+  background: var(--bg-card-cars) !important;
+}
+
 .adress-flex-container {
   display: flex;
   justify-content: center;

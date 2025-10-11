@@ -291,6 +291,7 @@
             <div>
               <mat-form-field>
                 <input matInput appCepMask placeholder="00000-000" formControlName="cep" required />
+                <mat-spinner *ngIf="threeFormGroup.get('cep')?.pending" diameter="20" matSuffix></mat-spinner>
               </mat-form-field>
               <mat-error *ngIf="
                   threeFormGroup.get('cep')?.invalid &&

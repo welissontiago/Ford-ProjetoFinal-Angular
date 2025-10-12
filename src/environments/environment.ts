@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  googleApiKey: 'Minha_API_key',
+  googleApiKey: 'AIzaSyD_U7cueqcsNuieGv_fArzbAeoKxBzK-z4',
 };

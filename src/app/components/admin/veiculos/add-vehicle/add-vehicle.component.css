@@ -288,6 +288,15 @@ input[type="file" i] {
   flex-direction: column;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.voltar-end {
+  margin-top: 25px;
+}
+
 .father-columns {
   display: flex;
   justify-content: center;
